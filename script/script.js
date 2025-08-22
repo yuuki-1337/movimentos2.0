@@ -9,7 +9,8 @@ function trocarLogo(){
     }
 
 }
-window.addEventListener("resize", trocarLogo);
+trocarLogo();
+window.addEventListener("resize", trocarLogo)
 
 document.getElementById("verMais").addEventListener("click", function(){
     let proximo = document.getElementById("mainContent");
