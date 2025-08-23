@@ -51,12 +51,16 @@ header{
     background-color: var(--cor-verde);
     padding: 10px 30px;
     border-radius: 50px;
-    transition: 0.3s;
+    transition: 0.3s all ease;
     
 }
 .aria-label ul a:hover{
     filter: brightness(0.7);
 
+}
+
+.aria-label ul a.active{
+    border: 1px solid white;
 }
 
 #sideBar{
@@ -87,7 +91,7 @@ main{
 }
 
 main section{
-    padding: 30px;
+    padding: 30px 8%;
 }
 
 .initial-content{
@@ -98,7 +102,7 @@ main section{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 10vh 30px 0 30px;
+    padding: 10vh 8% 0 8%;
     gap: 30px;
 }
 
@@ -143,7 +147,7 @@ main section{
     padding: 60px 0 60px 0;
 }
 .main-content p{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     padding: 0px 0 30px 0;
     width: 500px;
     font-weight: 400;
@@ -152,12 +156,12 @@ main section{
     font-size: 3.5rem;
 }
 .main-content-2 div p{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     padding: 30px;
 }
 .main-content-2 p{
     margin: var(--espacamento);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 .main-content-2 div{
     display: flex;
@@ -204,15 +208,52 @@ main section{
     font-weight: 400;
 }
 
+.main-content-3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.main-content-3-images{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.main-content-3-images img{
+    max-width: 250px;
+}
+
+.main-content-3-text h4{
+    color: var(--cor-verde);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+.main-content-3-text p{
+    font-size: 1.3rem;
+}
+
 footer{
     display: flex;
     flex-direction: column;
-    padding: 30px;
+    padding: 8%;
     color: white;
     gap: 50px;
     font-size: 30px;
     font-weight: 600;
+    align-items: center;
 
+}
+footer p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #051129;
+    border: 1px solid transparent;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 40px;
+    color: white;
+    border-radius: 20px;
 }
 
 footer ul{
@@ -226,22 +267,90 @@ footer{
     text-decoration: none;
     color: white;
     border-top: 2px solid var(--cor-verde);
-    border-bottom: 2px solid white;
 }
 
 footer img{
     max-width: 500px;
 }
-.lists{
+.redes-sociais{
     display: flex;
-    gap: 100px;
-    font-size: 1.5rem;
-    font-weight: 400;
+    align-self: start;
+    flex-direction: column;
+    width: 100%;
+    
 }
-.lists ul li a{
+.redes-sociais ul{
+    display: flex;
+    flex-direction: row;
+}
+.redes-sociais ul li a{
     text-decoration: none;
+    display: flex;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    justify-content: center;
     color: white;
+    background-color: #051129;
+    padding: 15px;
+    border-radius: 10px;
+}
+.redes-sociais i{
+    font-size: 50px;
+}
+.instagrams{
+    align-self: start;
+    display: none;
+    background-color: black;
+    border-radius: 10px;
+    margin-top: 5px;
+    transition: 5.3s ease;
+}
+.instagrams ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    transition: 5.3s ease;
+}
+.instagrams ul li a{
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.018);
+    border-radius: 10px;
+}
+.instagrams img{
+    width: 35px;
+    border-radius: 50px;
+    margin-right: 10px;
+}
+.instagrams.active{
+    display: flex;
+}
 
+.linkedins{
+    align-self: start;
+    display: none;
+    background-color: black;
+    border-radius: 10px;
+    margin-top: 5px;
+    transition: 5.3s ease;
+}
+.linkedins ul{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+    transition: 5.3s ease;
+}
+.linkedins ul li a{
+    font-size: 20px;
+    border-radius: 10px;
+    background: none;
+    margin-right: 10px;
+}
+.linkedins img{
+    width: 35px;
+    border-radius: 50px;
+}
+.linkedins.active{
+    display: flex;
 }
 @media (max-width: 768px) {
     #menu-toggle{
