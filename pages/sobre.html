@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movimentos 2.0/ Sobre nós</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+ 
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #0b1a3c;
+      color: #fff;
+      line-height: 1.6;
+    }
+ 
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      background-color: #0b1a3c;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+ 
+    header img {
+      height: 40px;
+    }
+ 
+    nav a {
+      text-decoration: none;
+      margin: 0 10px;
+      padding: 8px 20px;
+      background-color: #dfff00;
+      border-radius: 20px;
+      color: #000;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+ 
+    nav a:hover {
+      background-color: #b5d400;
+    }
+ 
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+ 
+    h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+    }
+ 
+    h2 span {
+      color: #dfff00;
+    }
+ 
+    .sobre-nos img {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 800px;
+      border-radius: 12px;
+    }
+ 
+    .sobre-nos p {
+      background: #000;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px auto 0;
+      max-width: 800px;
+      text-align: center;
+    }
+ 
+    .historia {
+      text-align: center;
+    }
+ 
+    .historia p {
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+ 
+    .equipe-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+ 
+    .membro {
+      background-color: #13254d;
+      border-radius: 15px;
+      padding: 15px;
+      text-align: center;
+    }
+ 
+    .membro img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+ 
+    .membro h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+ 
+    .membro p {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+ 
+    footer {
+      background-color: #0b1a3c;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 50px;
+      border-top: 1px solid #444;
+    }
+ 
+    footer p {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+ 
+    .footer-links {
+      margin-bottom: 15px;
+    }
+ 
+    .footer-links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #dfff00;
+    }
+ 
+    .social a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+    }
+ 
+    .social a:hover {
+      color: #dfff00;
+    }
+  </style>
+</head>
+<body>
+ 
+<header>
+  <img src="./img/Movimento 2.0.png" alt="Movimentos 2.0">
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#">Treinos</a>
+    <a href="#">Blog</a>
+    <a href="#">Sobre Nós</a>
+  </nav>
+</header>
+ 
+<section class="sobre-nos">
+  <h2>Sobre <span>Nós</span></h2>
+  <img src="./img/3D 1.png" alt="Equipe Movimentos 2.0">
+  <p>
+    Movimentos 2.0 é uma plataforma inteligente de treino que ajuda você a registrar exercícios com facilidade,
+    acompanhar sua evolução com gráficos precisos e se conectar com uma comunidade vibrante de atletas em busca de superação.
+  </p>
+</section>
+ 
+<section class="historia">
+  <h2>Nossa <span>História</span></h2>
+  <p>Nossa jornada começou em 2025. Não estávamos satisfeitos com os rastreadores de exercícios existentes no mercado, então decidimos construir uma plataforma mais completa que permitisse aos usuários interagir com seus amigos. Desde então, construímos a Movimentos graças à nossa incrível comunidade.
+    Nossa missão é fornecer aos atletas de academia as ferramentas para que eles tenham mais sucesso em atingir seus objetivos de condicionamento físico.
+    Ao contrário de outros apps de fitness, a Movimentos tem uma abordagem mais prática. Não dizemos aos atletas como se exercitar – isso é decisão deles. Simplesmente fornecemos as ferramentas para que eles tenham mais sucesso nos treinos.</p>
+</section>
+ 
+<section class="equipe">
+  <h2>Equipe</h2>
+  <div class="equipe-grid">
+    <div class="membro">
+      <img src="y.png" alt="Patricia Dias">
+      <h3>Patrícia Dias</h3>
+      <p>Cofundora e CEO<br>Sou de São Paulo e atuo como CEO e cofundadora do Movimentos 2.0. Estou no mundo fitness há alguns anos, tendo trabalhado nos maiores aplicativos de fitness do mundo. Agora, estou construindo o Movimentos 2.0, um novo capítulo nessa jornada</p>
+    </div>
+    <div class="membro">
+      <img src="tt.png" alt="Paulo Ricardo">
+      <h3>Paulo Ricardo</h3>
+      <p>Cofundor e CTO<br>Code Monkey e cofundador técnico do Movimentos 2.0. Construindo um rastreador de treino de alto nível para uma comunidade incrível de atletas.</p>
+    </div>
+    <div class="membro">
+      <img src="ye.png" alt="Ismael Laurentino">
+      <h3>Ismael Laurentino</h3>
+      <p>Chefe de Desenvolvimento<br>Lidero a criação de soluções digitais focadas em treino, saúde e performance. Transformo dados e tecnologia em ferramentas práticas para quem busca evolução nos treinos, com uma plataforma eficiente, intuitiva e completa.</p>
+    </div>
+    <div class="membro">
+        <img src="#" alt="Samuel Brito">
+        <h3>Samuel Brito</h3>
+        <p>Desingner<br>Sou do Brasil. No Movimentos 2.0, atuo como Designer de Produto, garantindo que a experiência dos nossos usuários seja a melhor possível. Pessoalmente, sou entusiasta de academia e atividades ao ar livre.</p>
+    </div>
+    <div class="membro">
+        <img src="#" alt="Raul Lucena">
+        <h3>Raul Lucena</h3>
+        <p>Contente<br>Sou personal trainer e coach de treinamento de força certificado pelo Movimentos 2.0. Adoro transformar minha experiência prática como coach em artigos úteis e bem pesquisados para leitores do mundo todo.</p>
+    </div>
+    <div class="membro">
+        <img src="#" alt="Kauê Yuuki">
+        <h3>Kauê Yuuki</h3>
+        <p>Desenvolvedor<br>Sou um desenvolvedor master do Brasil. Gosto de levantar pesos para clarear a mente e desafiar meus limites. Estou animado para trabalhar em algo que ajude outras pessoas a aprimorarem suas jornadas fitness!</p>
+    </div>
+    <div class="membro">
+        <img src="#" alt="Pedro Pascon">
+        <h3>Pedro Pascon</h3>
+        <p>Gerente de Conteúdo e Suporte<br>Sou brasileiro e gerente de conteúdo do Movimentos 2.0. Sou apaixonado por fitness há quase toda a minha vida; sou professor de fit dance e entusiasta de academia.</p>
+    </div>
+    <div class="membro">
+        <img src="#" alt="Filippi Denner">
+        <h3>Filippi Denner</h3>
+        <p>Gerente de Produto<br>Moro em São Paulo e sou apaixonado por criar e desenvolver produtos incríveis como o Movimentos 2.0! Meu foco é criar experiências excepcionais para nossos milhões de usuários. Também adoro ir à academia todas as manhãs para minha rotina PPL.</p>
+    </div>
+    <div class="membro">
+        <img src="#" alt="Maria Clara">
+        <h3>Maria Clara</h3>
+        <p>Marketing<br>Sou uma criativa brasileira que adora malhar. Uso o Movimentos 2.0 em todos os treinos, o que me ajuda a manter a consistência, a me esforçar mais e a acompanhar meu progresso. Meu objetivo é que todos treinem usando o aplicativo Movimentos 2.0 e sintam seus benefícios.</p>
+    </div>
+    <div class="membro">
+        <img src="#" alt="João Pedro">
+        <h3>João Pedro</h3>
+        <p>Desenvolvedor<br>Sou do Brasil e sou desenvolvedor júnior na Movimentos 2.0. Sou apaixonado por usar minhas habilidades de programação e conhecimento  fitness para ajudar a construir um dos melhores aplicativos de fitness disponíveis, e pratico varios esportes.</p>
+    </div>
+    <div class="membro">
+        <img src="#" alt="Eduardo Marques">
+        <h3>Eduardo Marques</h3>
+        <p>Engenheiro de Software Sênior<br>Sou engenheiro de software brasileiro na Movimentos 2.0. Para mim, programação e levantamento de peso são sinônimo de melhoria contínua, e estou muito feliz em desenvolver um aplicativo que ajuda as pessoas em suas jornadas fitness.</p>
+    </div>
+  </div>
+</section>
+ 
+<footer>
+  <p>Movimentos 2.0</p>
+  <div class="footer-links">
+    <a href="#">Termos de Responsabilidade</a> |
+    <a href="#">Contatos</a> |
+    <a href="#">Perguntas</a>
+  </div>
+  <div class="social">
+    <a href="#">Instagram</a>
+    <a href="#">LinkedIn</a>
+  </div>
+</footer>
+ 
+</body>
+</html>
+ 
