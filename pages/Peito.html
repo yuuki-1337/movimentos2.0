@@ -3,40 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina de treino
-    </title>
+    <title>Pagina de treino</title>
     <link rel="stylesheet" href="../css/style.css">
+    <script>
+        // Contadores de séries separados para cada exercício
+        const seriesAtuais = {
+            peck: 3,
+            paralelas: 3,
+            flexao: 3
+        };
+        const maxSeries = 5;
 
+        function adicionarSerie(exercicioId) {
+            if (seriesAtuais[exercicioId] >= maxSeries) {
+                alert("Limite máximo de séries atingido!");
+                return;
+            }
+
+            const container = document.getElementById(exercicioId);
+
+            // Adiciona nova série
+            const serie = container.querySelector('.serie');
+            const novaSerie = document.createElement('div');
+            novaSerie.classList.add('serienumero');
+            novaSerie.innerHTML = '<input type="number" min="1" max="999" placeholder="0">';
+            serie.appendChild(novaSerie);
+
+            // Adiciona nova repetição
+            const repeticoes = container.querySelector('.repeticoes');
+            const novaRepeticao = document.createElement('div');
+            novaRepeticao.classList.add('repeticoesnumero');
+            novaRepeticao.innerHTML = '<input type="number" min="1" max="999" placeholder="0">';
+            repeticoes.appendChild(novaRepeticao);
+
+            // Adiciona nova carga
+            const carga = container.querySelector('.carga');
+            const novaCarga = document.createElement('div');
+            novaCarga.classList.add('cargaadicionada');
+            novaCarga.innerHTML = '<input type="number" placeholder="0">';
+            carga.appendChild(novaCarga);
+
+            seriesAtuais[exercicioId]++;
+        }
+    </script>
     <!-- GOOGLE FONTS -->
-     
-     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_forward_ios" />
-     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_forward_ios" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
 </head>
 <body>
-    <header>
-        <a href="../index.html" class="logo"><img src="../img/logo.png" alt="Movimentos 2.0" id="logo"></a>
-        <nav class="aria-label">
-            <ul>
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="../pages/treinos.html">Treinos</a></li>
-                <li><a href="./pages/blog.html">Blogs</a></li>
-            </ul>
-        </nav>
-        
+<header>
+    <a href="../index.html" class="logo"><img src="../img/logo.png" alt="Movimentos 2.0" id="logo"></a>
+    <nav class="aria-label">
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../pages/treinos.html">Treinos</a></li>
+            <li><a href="./pages/blog.html">Blogs</a></li>
+        </ul>
+    </nav>
 
-        <!-- MENU LATERAL -->
-        <button id="menu-toggle">
-            <span class="material-symbols-outlined">
-                menu
-            </span>
-        </button>
-        <nav id="sideBar">
+    <button id="menu-toggle">
+        <span class="material-symbols-outlined">menu</span>
+    </button>
+    <nav id="sideBar"></nav>
+</header>
 
-        </nav>
-    </header>
-    <main>
-        
-    </main>
+<main class="peito">
+
+    <!-- PECK DECK / VOADOR -->
+    <div class="treinoTitulo"><h1>PECK DECK / VOADOR</h1></div>
+    <div class="imagemdetalhe"><img src="../img/Voador.gif" alt="voador"></div>
+    <div class="repeticoes-container" id="peck">
+        <div class="serie">
+            <h1>SÉRIE</h1>
+            <div class="serienumero"><input type="number" min="1" max="999" placeholder="0"></div>
+            <div class="serienumero"><input type="number" min="1" max="999" placeholder="0"></div>
+            <div class="serienumero"><input type="number" min="1" max="999" placeholder="0"></div>
+        </div>
+        <div class="repeticoes">
+            <h1>REPETIÇÕES</h1>
+            <div class="repeticoesnumero"><input type="number" min="1" max="999" placeholder="0"></div>
+            <div class="repeticoesnumero"><input type="number" min="1" max="999" placeholder="0"></div>
+            <div class="repeticoesnumero"><input type="number" min="1" max="999" placeholder="0"></div>
+        </div>
+        <div class="carga">
+            <h1>CARGA ADICIONADA (KG)</h1>
+            <div class="cargaadicionada"><input type="number" placeholder="0"></div>
+            <div class="cargaadicionada"><input type="number" placeholder="0"></div>
+            <div class="cargaadicionada"><input type="number" placeholder="0"></div>
+        </div>
+    </div>
+    <div class="botoes">
+        <a class="adicionar" type="button" onclick="adicionarSerie('peck')"><img src="../img/AdicionarIcon.png" alt=""></a>
+        <button class="Criar" type="button" onclick="adicionarSerie('peck')">Adicionar série</button>
+    </div>
     
-        
-</body> 
+
+    <!-- PARALELAS -->
+    <div class="treinoTitulo"><h1>PARALELAS</h1></div>
+    <div class="imagemdetalhe"><img src="../img/paralelas.gif" alt="paralelas"></div>
+    <div class="repeticoes-container" id="paralelas">
+        <div class="serie">
+            <h1>SÉRIE</h1>
+            <div class="serienumero"><input type="number" min="1" max="999" placeholder="0"></div>
+            <div class="serienumero"><input type="number" min="1" max="999" placeholder="0"></div>
+            <div class="serienumero"><input type="number" min="1" max="999" placeholder="0"></div>
+        </div>
+        <div class="repeticoes">
+            <h1>REPETIÇÕES</h1>
+            <div class="repeticoesnumero"><input type="number" min="1" max="999" placeholder="0"></div>
+            <div class="repeticoesnumero"><input type="number" min="1" max="999" placeholder="0"></div>
+            <div class="repeticoesnumero"><input type="number" min="1" max="999" placeholder="0"></div>
+        </div>
+        <div class="carga">
+            <h1>CARGA ADICIONADA (KG)</h1>
+            <div class="cargaadicionada"><input type="number" placeholder="0"></div>
+            <div class="cargaadicionada"><input type="number" placeholder="0"></div>
+            <div class="cargaadicionada"><input type="number" placeholder="0"></div>
+        </div>
+    </div>
+    <div class="botoes">
+        <a class="adicionar" type="button" onclick="adicionarSerie('paralelas')"><img src="../img/AdicionarIcon.png" alt=""></a>
+        <button class="Criar" type="button" onclick="adicionarSerie('paralelas')">Adicionar série</button>
+    </div>
+    
+
+    <!-- FLEXÃO DE BRAÇO -->
+    <div class="treinoTitulo"><h1>FLEXÃO DE BRAÇO</h1></div>
+    <div class="imagemdetalhe"><img src="../img/Flexao.gif" alt="flexao"></div>
+    <div class="repeticoes-container" id="flexao">
+        <div class="serie">
+            <h1>SÉRIE</h1>
+            <div class="serienumero"><input type="number" min="1" max="999" placeholder="0"></div>
+            <div class="serienumero"><input type="number" min="1" max="999" placeholder="0"></div>
+            <div class="serienumero"><input type="number" min="1" max="999" placeholder="0"></div>
+        </div>
+        <div class="repeticoes">
+            <h1>REPETIÇÕES</h1>
+            <div class="repeticoesnumero"><input type="number" min="1" max="999" placeholder="0"></div>
+            <div class="repeticoesnumero"><input type="number" min="1" max="999" placeholder="0"></div>
+            <div class="repeticoesnumero"><input type="number" min="1" max="999" placeholder="0"></div>
+        </div>
+        <div class="carga">
+            <h1>CARGA ADICIONADA (KG)</h1>
+            <div class="cargaadicionada"><input type="number" placeholder="0"></div>
+            <div class="cargaadicionada"><input type="number" placeholder="0"></div>
+            <div class="cargaadicionada"><input type="number" placeholder="0"></div>
+        </div>
+    </div>
+    <div class="botoes">
+        <a class="adicionar" type="button" onclick="adicionarSerie('flexao')"><img src="../img/AdicionarIcon.png" alt=""></a>
+        <button class="Criar" type="button" onclick="adicionarSerie('flexao')">Adicionar série</button>
+    </div>
+   
+
+</main>
+</body>
+</html>
