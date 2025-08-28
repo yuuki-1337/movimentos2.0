@@ -6,45 +6,67 @@
     <title>Movimentos 2.0</title>
     <link rel="stylesheet" href="./css/style.css">
 
-    <!-- GOOGLE FONTS -->
-     
-     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_forward_ios" />
-     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-     <!-- FONTAWESOME -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- GOOGLE FONTS -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
 <body>
     <header>
-        <a href="#" class="logo"><img src="./img/logo.png" alt="Movimentos 2.0" id="logo"></a>
-        <nav class="aria-label">
-            <ul>
-                <li><a href=".pages/sobre.html">Sobre</a></li>
-                <li><a href="./pages/blog.html">Blog</a></li>
-                <li><a href="./pages/treinos.html" class="treinos-pg">Treinos</a></li>
-            </ul>
-        </nav>
-        
 
-        <!-- MENU LATERAL -->
-        <button id="menu-toggle">
-            <span class="material-symbols-outlined">
-                menu
-            </span>
-        </button>
-        <nav id="sideBar">
-
+        <!-- MENU -->
+        <nav class="navbar">
+          <a href="#"><img src="./img/logo.png" alt="" class="navbar-logo"></a>
+          <ul class="navbar-items">
+            <li class="navbar-item"><a href="" class="navbar-link">Sobre</a></li>
+            <li class="navbar-item"><a href="" class="navbar-link">Blog</a></li>
+            <li class="navbar-item"><a href="" class="navbar-link navbar-link-treinos">Treinos</a></li>
+          </ul>
+          <button class="menu-toggle" id="menu_toggle">
+            <span class="material-symbols-outlined">menu</span>
+          </button>
         </nav>
-    </header>
+    
+        <!-- MENU MOBILE -->
+        <nav class="menu-mobile" id="menu_mobile">
+          <ul class="menu-mobile-items">
+            <li class="menu-mobile-item">
+              <a href="" class="menu-mobile-link"><i class="fa-regular fa-house"></i>Home</a>
+            </li>
+            <li class="menu-mobile-item">
+              <a href="" class="menu-mobile-link">Sobre</a>
+            </li>
+            <li class="menu-mobile-item">
+              <a href="" class="menu-mobile-link">Blog</a>
+            </li>
+            <li class="menu-mobile-item"><a href="" class="menu-mobile-link menu-mobile-treinos"><i class="fa-solid fa-dumbbell"></i>Treinos</a>
+            </li>
+          </ul>
+        </nav>
+    
+        <!-- MENU SCROLL -->
+        <nav class="navbar-scroll">
+          <img src="./img/logo2.png" alt="" class="navbar-scroll-image">
+          <ul class="navbar-scroll-list">
+            <li class="navbar-scroll-list-item"><a href="" class="navbar-scroll-list-link"><i class="fa-regular fa-house"></i></a></li>
+            <li class="navbar-scroll-list-item"><a href="" class="navbar-scroll-list-link">Sobre</a></li>
+            <li class="navbar-scroll-list-item"><a href="" class="navbar-scroll-list-link">Blog</a></li>
+            <li class="navbar-scroll-list-item"><a href="" class="navbar-scroll-list-link navbar-scroll-list-treinos">Treinos</a></li>
+          </ul>
+          <button class="menu-toggle" id="menu_toggle_scroll">
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+        </nav>
+      </header>
     <main>
         <section class="initial-content">
-            <h1>Transforme seu corpo com <br> estratégias de treino <br> personalizadas.</h1>
-            <a href="">Começar agora</a>
-            <div id="verMais">
-                <p>Ver mais</p>
-                <span class="material-symbols-outlined">
-                    arrow_forward_ios
-                </span>
+            <h1 class="initial-content-title">Transforme seu corpo com <br> estratégias de treino <br> personalizadas.</h1>
+            <a href="./pages/treinos.html" class="initial-content-link">Começar agora</a>
+            <div class="initial-content-btn" id="initial_content_btn">
+              Ver mais
+              <i class="fa-solid fa-angle-right"></i>
             </div>
         </section>
         <section class="main-content" id="mainContent">
