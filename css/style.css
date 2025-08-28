@@ -14,7 +14,7 @@
   
 body{
     font-family: "inter";
-    background-color: black;
+    background-color: var(--cor-de-fundo);
     color: white;
 }
   
@@ -520,6 +520,9 @@ footer img{
     .Biblioteca-content h1{
         font-size: 32px !important;
         font-family: poppins;
+        margin-top: 20px !important;
+    }
+    .Biblioteca-content{
         margin-top: 20px !important;
     }
     .Biblioteca-content p{
