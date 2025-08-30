@@ -641,6 +641,171 @@ footer img{
     }
     
 }
+@media (max-width: 1000px) {
+    
+    .navbar-logo{
+        content: url("../img/logo2.png");
+      }
+      .navbar-items{
+        display: none;
+      }
+      .navbar-scroll-list{
+        display: none;
+      }
+      .menu-toggle{
+        display: flex;
+      }
+      .initial-content-title{
+        font-size: 1.5rem;
+      }
+    .div1{
+        flex-direction: column;
+    }
+    .rightT{
+        margin-top: 30px;
+    }
+    .rightT2{
+        margin-top: 30px;
+    }
+    .div2{
+        margin-top: -100px;
+    }
+    .div2{
+        flex-direction: column;
+        
+    }
+    .floorMusc1{
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+    }
+    .musculo1{
+        margin-top: 30px;
+    }
+    .Biblioteca-content h1{
+        font-size: 32px !important;
+        font-family: poppins;
+        margin-top: 20px !important;
+    }
+    .Biblioteca-content{
+        margin-top: 20px !important;
+    }
+    .Biblioteca-content p{
+        font-size: 20px !important;
+        margin-top: 20px !important;
+        margin-left: 10px !important;
+    }
+    .leftT{
+        width: 410px!important;   /* defina uma largura */
+        height: 300px!important;
+        background-color: #D2FE08;
+    }
+    .leftT a{
+        
+        width: 400px!important;   /* defina uma largura */
+        height: 300px!important;  /* defina uma altura */
+        
+    }
+    .leftT a h1{
+        
+        margin-top: auto !important;
+        
+        margin-right: 200px !important;
+        margin-left: 10px !important;
+        margin-bottom: 10px !important;
+    }
+    .leftT a span h1{
+        margin-left: auto !important;
+        margin-top: auto !important;
+
+    }
+    
+    .rightT{
+        width: 410px!important;   /* defina uma largura */
+        height: 300px!important;
+        background-color: #D2FE08;
+        margin-left: 0px!important;
+    }
+    .rightT a{
+        
+        width: 400px!important;   /* defina uma largura */
+        height: 300px!important;  /* defina uma altura */
+        
+    }
+    .rightT a h1{
+        
+        margin-top: auto !important;
+        
+        margin-right: 200px !important;
+        margin-left: 10px !important;
+        margin-bottom: 10px !important;
+    }
+    .rightT a span h1{
+        margin-left: auto !important;
+        margin-top: auto !important;
+
+    }
+    .leftT2{
+        width: 410px!important;   /* defina uma largura */
+        height: 300px!important;
+        background-color: #D2FE08;
+    }
+    .leftT2 a{
+        
+        width: 400px!important;   /* defina uma largura */
+        height: 300px!important;  /* defina uma altura */
+        
+    }
+    .leftT2 a h1{
+        
+        margin-top: auto !important;
+        margin-bottom: 10px !important;
+        margin-right: 200px !important;
+        margin-left: 10px !important;
+
+        
+    }
+    .leftT2 a span h1{
+        margin-left: auto !important;
+        margin-top: auto !important;
+
+    }
+    
+    .rightT2{
+        width: 410px!important;   /* defina uma largura */
+        height: 300px!important;
+        background-color: #D2FE08;
+        margin-left: 0px!important;
+    }
+    .rightT2 a{
+        
+        width: 400px!important;   /* defina uma largura */
+        height: 300px!important;  /* defina uma altura */
+        
+    }
+    .rightT2 a h1{
+        margin-bottom: 10px !important;
+        margin-top: auto !important;
+        
+        margin-right: 200px !important;
+        margin-left: 10px !important;
+        
+    }
+    .rightT2 a span h1{
+        margin-left: auto !important;
+        margin-top: auto !important;
+    }
+    .abar{
+        margin-left: 0px !important;
+    }
+    .floorMusc1{
+        margin-top: 0px !important;
+    }
+    .floorMusc1 a{
+        margin-top: 10px !important;
+    }
+    
+}
 .Biblioteca-content{
     margin-top: 150px;
     width: 100%;
@@ -976,7 +1141,7 @@ h2 span {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 50px;
     flex-direction: column;
 }
 .treinoTitulo h1{
@@ -1002,8 +1167,35 @@ h2 span {
     display: flex;
 
 }
-.repeticoes-container h1{
-
+.repeticoes-containerr{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.seriee{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.serienumeroo input{
+    background-color: #354966;
+    border: none;
+    width: 300px;
+    height: 40px;
+    margin-top: 10px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 700;
+    font-family: poppins;
+    border-radius: 5px;
+    font-size: 25px;
 }
 .serie{
     
@@ -1164,4 +1356,112 @@ input[type=number] {
     justify-content: center;
     margin-top: 10px;
     
+}
+
+.seriee select {
+    
+    border: none;
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 700;
+    font-family: poppins;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url("data:image/svg+xml;utf8,<svg fill='%23D2FE08' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>") no-repeat right 10px center;
+    background-color: #354966;
+    background-size: 30px;
+}
+.INCLINACAO, .DISTANCIA{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.INCLINACAO select {
+    
+    border: none;
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 700;
+    font-family: poppins;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url("data:image/svg+xml;utf8,<svg fill='%23D2FE08' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>") no-repeat right 10px center;
+    background-color: #354966;
+    background-size: 30px;
+}
+.DISTANCIA select {
+    
+    border: none;
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 700;
+    font-family: poppins;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url("data:image/svg+xml;utf8,<svg fill='%23D2FE08' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>") no-repeat right 10px center;
+    background-color: #354966;
+    background-size: 30px;
+}
+.DISTANCIAA select {
+    
+    border: none;
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 700;
+    font-family: poppins;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url("data:image/svg+xml;utf8,<svg fill='%23D2FE08' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>") no-repeat right 10px center;
+    background-color: #354966;
+    background-size: 30px;
+}
+.DISTANCIAA{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
 }

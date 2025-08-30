@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de treino</title>
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script>
+    // Contadores de séries separados para cada exercício
+    const seriesAtuais = {
+      peck: 3,
+      paralelas: 3,
+      flexao: 3
+    };
+    const maxSeries = 5;
+
+    function adicionarSerie(exercicioId) {
+      if (seriesAtuais[exercicioId] >= maxSeries) {
+        alert("Limite máximo de séries atingido!");
+        return;
+      }
+
+      const container = document.getElementById(exercicioId);
+
+      // Adiciona nova série
+      const serie = container.querySelector('.serie');
+      const novaSerie = document.createElement('div');
+      novaSerie.classList.add('serienumero');
+      novaSerie.innerHTML = '<input type="number" min="1" max="999" placeholder="0">';
+      serie.appendChild(novaSerie);
+
+      // Adiciona nova repetição
+      const repeticoes = container.querySelector('.repeticoes');
+      const novaRepeticao = document.createElement('div');
+      novaRepeticao.classList.add('repeticoesnumero');
+      novaRepeticao.innerHTML = '<input type="number" min="1" max="999" placeholder="0">';
+      repeticoes.appendChild(novaRepeticao);
+
+      // Adiciona nova carga
+      const carga = container.querySelector('.carga');
+      const novaCarga = document.createElement('div');
+      novaCarga.classList.add('cargaadicionada');
+      novaCarga.innerHTML = '<input type="number" placeholder="0">';
+      carga.appendChild(novaCarga);
+
+      seriesAtuais[exercicioId]++;
+    }
+  </script>
+
+  <!-- GOOGLE FONTS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_forward_ios" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
+</head>
+<body>
+  <header>
+    <!-- MENU -->
+    <nav class="navbar">
+      <a href="../index.html"><img src="../img/logo.png" alt="" class="navbar-logo"></a>
+      <ul class="navbar-items">
+        <li class="navbar-item"><a href="" class="navbar-link">Sobre</a></li>
+        <li class="navbar-item"><a href="" class="navbar-link">Blog</a></li>
+        <li class="navbar-item"><a href="" class="navbar-link navbar-link-treinos">Treinos</a></li>
+      </ul>
+      <button class="menu-toggle" id="menu_toggle">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </nav>
+
+    <!-- MENU MOBILE -->
+    <nav class="menu-mobile" id="menu_mobile">
+      <ul class="menu-mobile-items">
+        <li class="menu-mobile-item"><a href="" class="menu-mobile-link"><i class="fa-regular fa-house"></i>Home</a></li>
+        <li class="menu-mobile-item"><a href="" class="menu-mobile-link">Sobre</a></li>
+        <li class="menu-mobile-item"><a href="" class="menu-mobile-link">Blog</a></li>
+        <li class="menu-mobile-item"><a href="" class="menu-mobile-link menu-mobile-treinos"><i class="fa-solid fa-dumbbell"></i>Treinos</a></li>
+      </ul>
+    </nav>
+
+    <!-- MENU SCROLL -->
+    <nav class="navbar-scroll">
+      <img src="../img/logo2.png" alt="" class="navbar-scroll-image">
+      <ul class="navbar-scroll-list">
+        <li class="navbar-scroll-list-item"><a href="" class="navbar-scroll-list-link"><i class="fa-regular fa-house"></i></a></li>
+        <li class="navbar-scroll-list-item"><a href="" class="navbar-scroll-list-link">Sobre</a></li>
+        <li class="navbar-scroll-list-item"><a href="" class="navbar-scroll-list-link">Blog</a></li>
+        <li class="navbar-scroll-list-item"><a href="" class="navbar-scroll-list-link navbar-scroll-list-treinos">Treinos</a></li>
+      </ul>
+      <button class="menu-toggle" id="menu_toggle_scroll">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </nav>
+  </header>
+
+  <main class="peito">
+    <!-- ESTEIRA -->
+    <div class="treinoTitulo">
+      <h1>ESTEIRA</h1>
+    </div>
+    <div class="imagemdetalhe">
+      <img src="../img/esteira.gif" alt="esteira">
+    </div>
+    <div class="repeticoes-containerr">
+      <div class="seriee">
+        <h1>DURAÇÃO</h1>
+        <select class="tempo-cardio" name="tempo-cardio-esteira">
+          <option value="10">10 minutos</option>
+          <option value="20">20 minutos</option>
+          <option value="30">30 minutos</option>
+          <option value="40">40 minutos</option>
+        </select>
+      </div>
+
+      <div class="INCLINACAO">
+        <h1>INCLINAÇÃO</h1>
+        <select class="inclinacao" name="inclinacao-esteira">
+          <option value="1">+ 1</option>
+          <option value="2">+ 2</option>
+          <option value="3">+ 3</option>
+          <option value="4">+ 4</option>
+          <option value="5">+ 5</option>
+          <option value="6">+ 6</option>
+          <option value="7">+ 7</option>
+          <option value="8">+ 8</option>
+          <option value="9">+ 9</option>
+        </select>
+      </div>
+
+      <div class="DISTANCIA">
+        <h1>DISTÂNCIA MÁXIMA</h1>
+        <select class="distancia" name="distancia-esteira">
+          <option value="1">1 KM</option>
+          <option value="2">2 KM</option>
+          <option value="3">3 KM</option>
+          <option value="4">4 KM</option>
+          <option value="5">5 KM +</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- SIMULADOR DE ESCADAS -->
+    <div class="treinoTitulo">
+      <h1>SIMULADOR DE ESCADAS</h1>
+    </div>
+    <div class="imagemdetalhe">
+      <img src="../img/SIMULADOR DE ESCADAS.gif" alt="simulador de escadas">
+    </div>
+    <div class="repeticoes-containerr">
+      <div class="seriee">
+        <h1>DURAÇÃO</h1>
+        <select class="tempo-cardio" name="tempo-cardio-escadas">
+          <option value="10">10 minutos</option>
+          <option value="20">20 minutos</option>
+          <option value="30">30 minutos</option>
+          <option value="40">40 minutos</option>
+        </select>
+      </div>
+
+      <div class="DISTANCIA">
+        <h1>DISTÂNCIA MÁXIMA</h1>
+        <select class="distancia" name="distancia-escadas">
+          <option value="1">1 KM</option>
+          <option value="2">2 KM</option>
+          <option value="3">3 KM</option>
+          <option value="4">4 KM</option>
+          <option value="5">5 KM +</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- BICICLETA ERGOMÉTRICA -->
+    <div class="treinoTitulo">
+      <h1>BICICLETA ERGOMÉTRICA</h1>
+    </div>
+    <div class="imagemdetalhe">
+      <img src="../img/BICICLETA ERGOMÉTRICA.gif" alt="bicicleta ergométrica">
+    </div>
+    <div class="repeticoes-containerr">
+      <div class="seriee">
+        <h1>DURAÇÃO</h1>
+        <select class="tempo-cardio" name="tempo-cardio-bicicleta">
+          <option value="10">10 minutos</option>
+          <option value="20">20 minutos</option>
+          <option value="30">30 minutos</option>
+          <option value="40">40 minutos</option>
+        </select>
+      </div>
+
+      <div class="DISTANCIAA">
+        <h1>DISTÂNCIA MÁXIMA</h1>
+        <select class="distancia" name="distancia-bicicleta">
+          <option value="1">1 KM</option>
+          <option value="2">2 KM</option>
+          <option value="3">3 KM</option>
+          <option value="4">4 KM</option>
+          <option value="5">5 KM +</option>
+        </select>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <img src="../img/logo.png" alt="">
+    <p>Fortaleça seu corpo, um grupo <br> muscular por vez.</p>
+
+    <div class="redes-sociais" id="redes_sociais">
+      <ul>
+        <li><a href="" id="instagram"><i class="fa-brands fa-instagram"></i></a></li>
+        <li><a href="" id="linkedin"><i class="fa-brands fa-linkedin-in"></i></a></li>
+      </ul>
+
+      <div class="instagrams" id="instagrams">
+        <ul>
+          <li><a href=""><img src="../img/logo3D.png" alt="3D">3D</a></li>
+          <li><a href=""><img src="../img/logo_escola.png" alt="ABA">ABA</a></li>
+        </ul>
+      </div>
+
+      <div class="linkedins" id="linkedins">
+        <ul>
+          <li><a href=""><img src="../img/alunos/image 6.png" alt=""></a></li>
+          <li><a href=""><img src="../img/alunos/eduardo 4.png" alt=""></a></li>
+          <li><a href=""><img src="../img/alunos/ismael 5.png" alt=""></a></li>
+          <li><a href=""><img src="../img/alunos/Joao_foto.png" alt=""></a></li>
+          <li><a href=""><img src="../img/alunos/yuki 5.png" alt=""></a></li>
+          <li><a href=""><img src="../img/alunos/maria 5.png" alt=""></a></li>
+          <li><a href=""><img src="../img/alunos/Paulo 4.png" alt=""></a></li>
+          <li><a href=""><img src="../img/alunos/Pedro 4.png" alt=""></a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <div class="footer2"></div>
+
+  <script src="../script/script.js"></script>
+</body>
+</html>

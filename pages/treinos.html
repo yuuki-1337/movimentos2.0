@@ -1,127 +1,177 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina de treino
-    </title>
-    <link rel="stylesheet" href="../css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de treino</title>
+  <link rel="stylesheet" href="../css/style.css">
 
-    <!-- GOOGLE FONTS -->
-     
-     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_forward_ios" />
-     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
+  <!-- GOOGLE FONTS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_forward_ios" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
 </head>
 <body>
-    <header>
+  <header>
+    <!-- MENU -->
+    <nav class="navbar">
+      <a href="#"><img src="../img/logo.png" alt="" class="navbar-logo"></a>
+      <ul class="navbar-items">
+        <li class="navbar-item"><a href="" class="navbar-link">Sobre</a></li>
+        <li class="navbar-item"><a href="" class="navbar-link">Blog</a></li>
+        <li class="navbar-item"><a href="" class="navbar-link navbar-link-treinos">Treinos</a></li>
+      </ul>
+      <button class="menu-toggle" id="menu_toggle">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </nav>
 
-        <!-- MENU -->
-        <nav class="navbar">
-          <a href="#"><img src="../img/logo.png" alt="" class="navbar-logo"></a>
-          <ul class="navbar-items">
-            <li class="navbar-item"><a href="" class="navbar-link">Sobre</a></li>
-            <li class="navbar-item"><a href="" class="navbar-link">Blog</a></li>
-            <li class="navbar-item"><a href="" class="navbar-link navbar-link-treinos">Treinos</a></li>
-          </ul>
-          <button class="menu-toggle" id="menu_toggle">
-            <span class="material-symbols-outlined">menu</span>
-          </button>
-        </nav>
-    
-        <!-- MENU MOBILE -->
-        <nav class="menu-mobile" id="menu_mobile">
-          <ul class="menu-mobile-items">
-            <li class="menu-mobile-item">
-              <a href="" class="menu-mobile-link"><i class="fa-regular fa-house"></i>Home</a>
-            </li>
-            <li class="menu-mobile-item">
-              <a href="" class="menu-mobile-link">Sobre</a>
-            </li>
-            <li class="menu-mobile-item">
-              <a href="" class="menu-mobile-link">Blog</a>
-            </li>
-            <li class="menu-mobile-item"><a href="" class="menu-mobile-link menu-mobile-treinos"><i class="fa-solid fa-dumbbell"></i>Treinos</a>
-            </li>
-          </ul>
-        </nav>
-    
-        <!-- MENU SCROLL -->
-        <nav class="navbar-scroll">
-          <img src="./img/logo2.png" alt="" class="navbar-scroll-image">
-          <ul class="navbar-scroll-list">
-            <li class="navbar-scroll-list-item"><a href="" class="navbar-scroll-list-link"><i class="fa-regular fa-house"></i></a></li>
-            <li class="navbar-scroll-list-item"><a href="" class="navbar-scroll-list-link">Sobre</a></li>
-            <li class="navbar-scroll-list-item"><a href="" class="navbar-scroll-list-link">Blog</a></li>
-            <li class="navbar-scroll-list-item"><a href="" class="navbar-scroll-list-link navbar-scroll-list-treinos">Treinos</a></li>
-          </ul>
-          <button class="menu-toggle" id="menu_toggle_scroll">
-            <span class="material-symbols-outlined">menu</span>
-          </button>
-        </nav>
-    </header>
-    <main>
-        <div class="Biblioteca-content">
-            <h1>Biblioteca de <span class="colorido"> Exercícios</span></h1>
-            <p>A Movimentos é uma plataforma pensada para te ajudar se movimentar com mais consciência e variedade. Explore nossa biblioteca e encontre exercícios para  todos os níveis e objetivos.</p>
-            <h1>Por <span class="colorido">categoria:</span></h1>
-            <div class="cards">
-                <div class="div1">
-                    <div class="leftT">
-                        <a href="">
-                            <h1>Cardio </h1>
-                            <h1>></h1>
-                        </a>
-                        
-                    </div>
-                    <div class="rightT">
-                        <a href="">
-                            <h1>Corporal</h1>
-                            <h1>></h1>
-                        </a>
-                    </div>
-                    
-                </div>
-                <div class="div2">
-                    <div class="leftT2">
-                        <a href="">
-                            <h1>Cardio </h1>
-                            <h1>></h1>
-                        </a>
-                        
-                    </div>
-                    <div class="rightT2">
-                        <a href="">
-                            <h1>Corporal</h1>
-                            <h1>></h1>
-                        </a>
-                    </div>
-                    
-                </div>
-                <h1> Por <span class="colorido">músculo:</span></h1>
-                <div class="musculos">
-                    <div class="floorMusc1">
-                        <a href="./Peito.html" class="musculo1"><img class="musculosimg" src="../img/Peito.png" alt="Peito"><h1>Peito</h1></a>
-                        <a class="abar" href="" class="musculo1"><img class="musculosimg" src="../img/Ombros.png" alt="Ombros"><h1>Ombros</h1></a>
-                    </div>
-                    <div class="floorMusc1">
-                        <a href="." class="musculo1"><img class="musculosimg" src="../img/Costas.png" alt="Costas"><h1>Costas</h1></a>
-                        <a class="abar" href="" class="musculo1"><img class="musculosimg" src="../img/Biceps.png" alt="Biceps"><h1>Biceps</h1></a>
-                    </div>
-                    <div class="floorMusc1">
-                        <a href="" class="musculo1"><img class="musculosimg" src="../img/Abdomen.png" alt="Abdômen"><h1>Abdômen</h1></a>
-                        <a class="abar" href="" class="musculo1"><img class="musculosimg" src="../img/Quadriceps.png" alt="Quadríceps"><h1>Quadríceps</h1></a>
-                    </div>
-                    <div class="floorMusc1">
-                        <a href="" class="musculo1"><img class="musculosimg" src="../img/Gluteo.png" alt="Glúteos"><h1>Glúteos</h1></a>
-                        <a class="abar" href="" class="musculo1"><img class="musculosimg" src="../img/Posteriores.png" alt="Posteriores"><h1>Posteriores</h1></a>
-                    </div>
-                    <div class="floorMusc1">
-                        <a href="" class="musculo1"><img class="musculosimg" src="../img/Tricpes.png" alt="Tríceps"><h1>Tríceps</h1></a>
-                        <a class="abar" href="" class="musculo1"><img class="musculosimg" src="../img/Panturrilha.png" alt="Panturrilha"><h1>Panturrilha</h1></a>
-                    </div>
-                    
-                </div>
+    <!-- MENU MOBILE -->
+    <nav class="menu-mobile" id="menu_mobile">
+      <ul class="menu-mobile-items">
+        <li class="menu-mobile-item">
+          <a href="" class="menu-mobile-link"><i class="fa-regular fa-house"></i>Home</a>
+        </li>
+        <li class="menu-mobile-item">
+          <a href="" class="menu-mobile-link">Sobre</a>
+        </li>
+        <li class="menu-mobile-item">
+          <a href="" class="menu-mobile-link">Blog</a>
+        </li>
+        <li class="menu-mobile-item">
+          <a href="" class="menu-mobile-link menu-mobile-treinos"><i class="fa-solid fa-dumbbell"></i>Treinos</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- MENU SCROLL -->
+    <nav class="navbar-scroll">
+      <img src="../img/logo2.png" alt="" class="navbar-scroll-image">
+      <ul class="navbar-scroll-list">
+        <li class="navbar-scroll-list-item"><a href="" class="navbar-scroll-list-link"><i class="fa-regular fa-house"></i></a></li>
+        <li class="navbar-scroll-list-item"><a href="" class="navbar-scroll-list-link">Sobre</a></li>
+        <li class="navbar-scroll-list-item"><a href="" class="navbar-scroll-list-link">Blog</a></li>
+        <li class="navbar-scroll-list-item"><a href="" class="navbar-scroll-list-link navbar-scroll-list-treinos">Treinos</a></li>
+      </ul>
+      <button class="menu-toggle" id="menu_toggle_scroll">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- MENU SCROLL (duplicado, verifique se é necessário) -->
+  <nav class="navbar-scroll">
+    <img src="./img/logo2.png" alt="" class="navbar-scroll-image">
+    <ul class="navbar-scroll-list">
+      <li class="navbar-scroll-list-item"><a href="" class="navbar-scroll-list-link"><i class="fa-regular fa-house"></i></a></li>
+      <li class="navbar-scroll-list-item"><a href="" class="navbar-scroll-list-link">Sobre</a></li>
+      <li class="navbar-scroll-list-item"><a href="" class="navbar-scroll-list-link">Blog</a></li>
+      <li class="navbar-scroll-list-item"><a href="" class="navbar-scroll-list-link navbar-scroll-list-treinos">Treinos</a></li>
+    </ul>
+    <button class="menu-toggle" id="menu_toggle_scroll">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </nav>
+
+  <main>
+    <div class="Biblioteca-content">
+      <h1>Biblioteca de <span class="colorido">Exercícios</span></h1>
+      <p>A Movimentos é uma plataforma pensada para te ajudar se movimentar com mais consciência e variedade. Explore nossa biblioteca e encontre exercícios para todos os níveis e objetivos.</p>
+      
+      <h1>Por <span class="colorido">categoria:</span></h1>
+      <div class="cards">
+        <div class="div1">
+          <div class="leftT">
+            <a href="../pages/cardio.html">
+              <h1>Cardio</h1>
+              <h1>></h1>
+            </a>
+          </div>
+          <div class="rightT">
+            <a href="../pages/PesoCorporal.html">
+              <h1>Corporal</h1>
+              <h1>></h1>
+            </a>
+          </div>
+        </div>
+
+        <div class="div2">
+          <div class="leftT2">
+            <a href="../pages/Pesos.html">
+              <h1>Pesos</h1>
+              <h1>></h1>
+            </a>
+          </div>
+          <div class="rightT2">
+            <a href="../pages/equipamentos.html">
+              <h1>Equipamento</h1>
+              <h1>></h1>
+            </a>
+          </div>
+        </div>
+
+        <h1>Por <span class="colorido">músculo:</span></h1>
+        <div class="musculos">
+          <div class="floorMusc1">
+            <a href="./Peito.html" class="musculo1"><img class="musculosimg" src="../img/Peito.png" alt="Peito"><h1>Peito</h1></a>
+            <a href="../pages/Ombros.html" class="musculo1"><img class="musculosimg" src="../img/Ombros.png" alt="Ombros"><h1>Ombros</h1></a>
+          </div>
+          <div class="floorMusc1">
+            <a href="../pages/Costas.html" class="musculo1"><img class="musculosimg" src="../img/Costas.png" alt="Costas"><h1>Costas</h1></a>
+            <a href="../pages/Biceps.html" class="musculo1"><img class="musculosimg" src="../img/Biceps.png" alt="Bíceps"><h1>Bíceps</h1></a>
+          </div>
+          <div class="floorMusc1">
+            <a href="../pages/Abdômen.html" class="musculo1"><img class="musculosimg" src="../img/Abdomen.png" alt="Abdômen"><h1>Abdômen</h1></a>
+            <a href="../pages/Quadríceps.html" class="musculo1"><img class="musculosimg" src="../img/Quadriceps.png" alt="Quadríceps"><h1>Quadríceps</h1></a>
+          </div>
+          <div class="floorMusc1">
+            <a href="../pages/Glúteos.html" class="musculo1"><img class="musculosimg" src="../img/Gluteo.png" alt="Glúteos"><h1>Glúteos</h1></a>
+            <a href="../pages/Posteriores.htm" class="musculo1"><img class="musculosimg" src="../img/Posteriores.png" alt="Posteriores"><h1>Posteriores</h1></a>
+          </div>
+          <div class="floorMusc1">
+            <a href="../pages/Triceps.html" class="musculo1"><img class="musculosimg" src="../img/Tricpes.png" alt="Tríceps"><h1>Tríceps</h1></a>
+            <a href="../pages/Panturrilha.html" class="musculo1"><img class="musculosimg" src="../img/Panturrilha.png" alt="Panturrilha"><h1>Panturrilha</h1></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+        <img src="../img/logo.png" alt="">
+        <p>Fortaleça seu corpo, um grupo <br> muscular por vez.</p>
+        <div class="redes-sociais" id="redes_sociais">
+            <ul>
+                <li><a href="" id="instagram"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="" id="linkedin"><i class="fa-brands fa-linkedin-in"></i></a></li>
+            </ul>
+            <div class="instagrams" id="instagrams">
+                <ul>
+                    <li><a href=""><img src="../img/logo3D.png" alt="3D">3D</a></li>
+                    <li><a href=""><img src="../img/logo_escola.png" alt="ABA">ABA</a></li>
+                </ul>
+            </div>
+            <div class="linkedins" id="linkedins">
+                <ul>
+                    <li><a href=""><img src="../img/alunos/image 6.png" alt=""></a></li>
+                    <li><a href=""><img src="../img/alunos/eduardo 4.png" alt=""></a></li>
+                    <li><a href=""><img src="../img/alunos/ismael 5.png" alt=""></a></li>
+                    <li><a href=""><img src="../img/alunos/Joao_foto.png" alt=""></a></li>
+                    <li><a href=""><img src="../img/alunos/yuki 5.png" alt=""></a></li>
+                    <li><a href=""><img src="../img/alunos/maria 5.png" alt=""></a></li>
+                    <li><a href=""><img src="../img/alunos/Paulo 4.png" alt=""></a></li>
+                    <li><a href=""><img src="../img/alunos/Pedro 4.png" alt=""></a></li>
+                    <li><a href=""><img src="" alt=""></a></li>
+                    <li><a href=""><img src="" alt=""></a></li>
+                    <li><a href=""><img src="" alt=""></a></li>
+                    <li><a href=""><img src="" alt=""></a></li>
+                </ul>
+
             </div>
         </div>
-    </main>
-</body> 
+    </footer>
+    <div class="footer2">
+
+    </div>
+
+    <script src="../script/script.js"></script>
+</body>
+</html>
