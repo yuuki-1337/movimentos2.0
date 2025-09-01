@@ -46,6 +46,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
+
 const instagram = document.getElementById("instagram");
 const instagrams = document.getElementById("instagrams");
 const linkedin = document.getElementById("linkedin");
