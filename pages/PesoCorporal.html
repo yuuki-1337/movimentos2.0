@@ -49,18 +49,24 @@
   </script>
 
   <!-- GOOGLE FONTS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <!-- GOOGLE FONTS -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_forward_ios" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
 </head>
-<body>
+<body class="body1">
   <header>
     <!-- MENU -->
     <nav class="navbar">
-      <a href="../index.html"><img src="../img/logo.png" alt="" class="navbar-logo"></a>
+      <a href="../index.html">
+        <img src="https://i.postimg.cc/qvMDrqYw/logo.png" alt="" class="navbar-logo">
+      </a>
       <ul class="navbar-items">
-        <li class="navbar-item"><a href="" class="navbar-link">Sobre</a></li>
-        <li class="navbar-item"><a href="" class="navbar-link">Blog</a></li>
-        <li class="navbar-item"><a href="" class="navbar-link navbar-link-treinos">Treinos</a></li>
+        <li class="navbar-item"><a href="./sobre.html" class="navbar-link">Sobre</a></li>
+        <li class="navbar-item"><a href="./blog.html" class="navbar-link">Blog</a></li>
+        <li class="navbar-item"><a href="./imc.html" class="navbar-link">IMC</a></li>
+        <li class="navbar-item"><a href="./treinos.html" class="navbar-link navbar-link-treinos">Treinos</a></li>
       </ul>
       <button class="menu-toggle" id="menu_toggle">
         <span class="material-symbols-outlined">menu</span>
@@ -71,34 +77,45 @@
     <nav class="menu-mobile" id="menu_mobile">
       <ul class="menu-mobile-items">
         <li class="menu-mobile-item">
-          <a href="" class="menu-mobile-link"><i class="fa-regular fa-house"></i>Home</a>
+          <a href="./index.html" class="menu-mobile-link"><i class="fa-regular fa-house"></i>Home</a>
         </li>
-        <li class="menu-mobile-item"><a href="" class="menu-mobile-link">Sobre</a></li>
-        <li class="menu-mobile-item"><a href="" class="menu-mobile-link">Blog</a></li>
         <li class="menu-mobile-item">
-          <a href="" class="menu-mobile-link menu-mobile-treinos"><i class="fa-solid fa-dumbbell"></i>Treinos</a>
+          <a href="../pages/sobre.html" class="menu-mobile-link">Sobre</a>
+        </li>
+        <li class="menu-mobile-item">
+          <a href="../pages/blog.html" class="menu-mobile-link">Blog</a>
+        </li>
+        <li class="menu-mobile-item">
+          <a href="../pages/imc.html" class="menu-mobile-link"><i class="fa-solid fa-person"></i>IMC</a>
+        </li>
+        <li class="menu-mobile-item">
+          <a href="../pages/treinos.html" class="menu-mobile-link menu-mobile-treinos"><i class="fa-solid fa-dumbbell"></i>Treinos</a>
         </li>
       </ul>
     </nav>
 
     <!-- MENU SCROLL -->
     <nav class="navbar-scroll">
-      <img src="../img/logo2.png" alt="" class="navbar-scroll-image">
+      <a href="../index.html">
+        <img src="https://i.postimg.cc/PfYRzBYW/logo2.png" alt="" class="navbar-scroll-image">
+      </a>
       <ul class="navbar-scroll-list">
-        <li class="navbar-scroll-list-item"><a href="" class="navbar-scroll-list-link"><i class="fa-regular fa-house"></i></a></li>
-        <li class="navbar-scroll-list-item"><a href="" class="navbar-scroll-list-link">Sobre</a></li>
-        <li class="navbar-scroll-list-item"><a href="" class="navbar-scroll-list-link">Blog</a></li>
-        <li class="navbar-scroll-list-item"><a href="" class="navbar-scroll-list-link navbar-scroll-list-treinos">Treinos</a></li>
+        <li class="navbar-scroll-list-item"><a href="../index.html" class="navbar-scroll-list-link"><i class="fa-regular fa-house"></i></a></li>
+        <li class="navbar-scroll-list-item"><a href="./p" class="navbar-scroll-list-link">Sobre</a></li>
+        <li class="navbar-scroll-list-item"><a href="../pages/blog.html" class="navbar-scroll-list-link">Blog</a></li>
+        <li class="navbar-scroll-list-item"><a href="../pages/imc.html" class="navbar-scroll-list-link">IMC</a></li>
+        <li class="navbar-scroll-list-item"><a href="../pages/treinos.html" class="navbar-scroll-list-link navbar-scroll-list-treinos">Treinos</a></li>
       </ul>
       <button class="menu-toggle" id="menu_toggle_scroll">
         <span class="material-symbols-outlined">menu</span>
       </button>
     </nav>
   </header>
-
-  <!-- CONTEÚDO PRINCIPAL -->
   <main class="peito">
     <!-- PECK DECK / VOADOR -->
+    <div class="initial-content-btn" id="initial_content_btn">
+      <i class="fa-solid fa-angle-right"></i>
+    </div>
     <div class="treinoTitulo">
       <h1>Barra fixa supinada</h1>
     </div>
@@ -201,40 +218,54 @@
     </div>
   </main>
 
-  <footer>
-    <img src="../img/logo.png" alt="">
-    <p>Fortaleça seu corpo, um grupo <br> muscular por vez.</p>
+ <footer>
+    <img src="https://i.postimg.cc/qvMDrqYw/logo.png" alt="" class="footer-image">
+    <div class="footer-text">
+      <p>Fortaleça seu corpo, um grupo <br> muscular por vez.</p>
+    </div>
 
     <div class="redes-sociais" id="redes_sociais">
       <ul>
-        <li><a href="" id="instagram"><i class="fa-brands fa-instagram"></i></a></li>
-        <li><a href="" id="linkedin"><i class="fa-brands fa-linkedin-in"></i></a></li>
+        <li><a href="https://www.instagram.com/eeantonietaborgesalves/" id="instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+        <li><a href="#" id="linkedin" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
       </ul>
 
       <div class="instagrams" id="instagrams">
         <ul>
-          <li><a href=""><img src="../img/logo3D.png" alt="3D">3D</a></li>
-          <li><a href=""><img src="../img/logo_escola.png" alt="ABA">ABA</a></li>
+          <li><a href="https://www.instagram.com/3d.aba_/" target="_blank"><img src="https://i.postimg.cc/yYKrfvyw/logo3D.png" alt="3D">3D</a></li>
+          <li><a href="https://www.instagram.com/eeantonietaborgesalves/" target="_blank"><img src="https://i.postimg.cc/dt9NgrWD/logo-escola.png" alt="ABA">ABA</a></li>
         </ul>
       </div>
 
       <div class="linkedins" id="linkedins">
         <ul>
-          <li><a href=""><img src="../img/alunos/image 6.png" alt=""></a></li>
-          <li><a href=""><img src="../img/alunos/eduardo 4.png" alt=""></a></li>
-          <li><a href=""><img src="../img/alunos/ismael 5.png" alt=""></a></li>
-          <li><a href=""><img src="../img/alunos/Joao_foto.png" alt=""></a></li>
-          <li><a href=""><img src="../img/alunos/yuki 5.png" alt=""></a></li>
-          <li><a href=""><img src="../img/alunos/maria 5.png" alt=""></a></li>
-          <li><a href=""><img src="../img/alunos/Paulo 4.png" alt=""></a></li>
-          <li><a href=""><img src="../img/alunos/Pedro 4.png" alt=""></a></li>
+          <li title="Prof. Allan"><a href="https://www.linkedin.com/in/allanmarcellinus/" target="_blank"><img src="https://i.postimg.cc/FKT0r8V2/allan-marcelino.jpg" alt=""></a></li>
+          <li title="Eduardo Marques"><a href="https://www.linkedin.com/in/eduardo-marques-356558337/" target="_blank"><img src="https://i.postimg.cc/zvghkBYr/eduardo-marques.jpg" alt=""></a></li>
+          <li title="Filippi Denner"><a href="https://www.linkedin.com/in/filippi-denner-63a76932b/" target="_blank"><img src="https://i.postimg.cc/mgGNP91R/filippi-denner.png" alt=""></a></li>
+          <li title="Ismael Laurentino"><a href="https://www.linkedin.com/in/ismael-laurentino-25723b327/" target="_blank"><img src="https://i.postimg.cc/7YznP96m/ismael-laurentino.jpg" alt=""></a></li>
+          <li title="João Pedro"><a href="https://www.linkedin.com/in/pedro-andrade-a42727311/" target="_blank"><img src="https://i.postimg.cc/FF7x8NQt/joao-pedro.jpg" alt=""></a></li>
+          <li title="Kaue Yuuki"><a href="https://www.linkedin.com/in/kau%C3%AA-yamamoto-584933291/" target="_blank"><img src="https://i.postimg.cc/G29GHKM9/kaue-yuuki.jpg" alt=""></a></li>
+          <li title="Maria Clara"><a href="https://www.linkedin.com/in/maria-clara-fernandes-7588b9321/" target="_blank"><img src="https://i.postimg.cc/XJhFF5hL/maria-clara.jpg" alt=""></a></li>
+          <li title="Patrícia Dias"><a href="https://www.linkedin.com/in/patricia-dias-427637196/" target="_blank"><img src="https://i.postimg.cc/GmJPGpvD/patricia-dias.png" alt=""></a></li>
+          <li title="Paulo Ricardo"><a href="https://www.linkedin.com/in/paulo-ricardo-6a2559337/" target="_blank"><img src="https://i.postimg.cc/pdWfZtB6/paulo-ricardo.png" alt=""></a></li>
+          <li title="Pedro Henrique"><a href="https://www.linkedin.com/in/pedro-pascon/" target="_blank"><img src="https://i.postimg.cc/T2FcXFRK/pedro-henrique.jpg" alt=""></a></li>
+          <li title="Samuel Brito"><a href="https://www.linkedin.com/in/samuel-brito-melo-b8676832b/" target="_blank"><img src="https://i.postimg.cc/bdftVhq2/samuel-brito.jpg" alt=""></a></li>
+          <li title="Raul Lucena"><a href="https://www.linkedin.com/in/raul-lucena-7300a733b/" target="_blank"><img src="" alt=""></a></li>
         </ul>
       </div>
     </div>
   </footer>
 
-  <div class="footer2"></div>
+  <div class="footer-copyright">
+    ©Movimentos 2.0 - Todos os direitos reservados
+  </div>
+
+  <div id="overlay"></div>
 
   <script src="../script/script.js"></script>
+</body>
+</html>
+
+  
 </body>
 </html>
