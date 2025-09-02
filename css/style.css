@@ -14,7 +14,7 @@
   
   body{
     font-family: "Inter";
-    background-color: black;
+    background-color: var(--cor-de-fundo);
     color: white;
   }
   .body1{

@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Guias de Treino</title>
+  <link rel="stylesheet" href="stl.css">
+</head>
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #fff;
+    color: #111;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+  }
+  
+  h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .subtitulo {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .card {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    height: 160px;
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    padding: 15px;
+    overflow: hidden;
+  }
+  
+  .card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0));
+    border-radius: 12px;
+  }
+  
+  .card h2 {
+    position: relative;
+    margin: 0;
+    font-size: 18px;
+    z-index: 2;
+  }
+  
+  .tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: white;
+    color: black;
+    padding: 4px 10px;
+    font-size: 14px;
+    border-radius: 6px;
+    z-index: 2;
+  }
+  header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+}
+
+.navbar{
+  width: calc(100vw - 30px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.navbar-logo{
+  max-height: 50px;
+}
+
+.navbar-items{
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-link{
+  text-decoration: none;
+  padding: 10px 30px;
+  border-radius: 40px;
+  color: black;
+  transition: 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+  
+}
+.navbar-link:hover{
+  filter: brightness(0.7);
+}
+
+.navbar-link-treinos{
+  background-color: var(--cor-verde);
+  color: black;
+}
+
+.menu-toggle{
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+}
+.menu-toggle span{
+  font-size: 3rem;
+  color: var(--cor-verde);
+}
+
+.menu-mobile{
+  position: fixed;
+  width: 90vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cor-azul-escuro);
+  border-radius: 10px;
+  padding: 20px;
+  opacity: 0;
+  top: -500px;
+  transition: opacity 0.5s ease;
+  z-index: 1000;
+}
+
+.menu-mobile.active{
+  top: 90px;
+  opacity: 1;
+}
+
+.menu-mobile-items{
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.menu-mobile-item{
+  width: 100%;
+}
+
+.menu-mobile-link{
+  display: flex;
+  background-color: var(--cor-de-fundo);
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #d4d4d4;
+  padding: 15px;
+  border-radius: 10px;
+  transition: 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.menu-mobile-treinos{
+  background-color: var(--cor-verde);
+  color: black;
+}
+.menu-mobile-link:hover{
+  filter: brightness(0.7);
+}
+
+.navbar-scroll{
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #051129;
+  width: 90%;
+  border-radius: 100px;
+  padding: 5px 25px;
+  top: -200px;
+  z-index: 1000;
+  transition: top 0.4s ease;
+}
+.navbar-scroll.active{
+  top: 10px;
+}
+.navbar-scroll-list{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.navbar-scroll-list-link{
+  text-decoration: none;
+  color: #fff;
+  -webkit-tap-highlight-color: transparent;
+  transition: 0.3s ease;
+}
+.navbar-scroll-list-link:hover{
+  opacity: 0.5;
+}
+.navbar-scroll-list-treinos{
+  background-color: #D2FE08;
+  color: black;
+  border-radius: 40px;
+  padding: 10px 15px;
+
+}
+.navbar-scroll-list-link i{
+  font-size: 1.5rem;
+}
+
+#overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+#overlay.active{
+  opacity: 1;
+  pointer-events: all;
+}
+</style>
+<header>
+
+  <!-- MENU -->
+  <nav class="navbar">
+    <a href="./index.html"><img src="https://i.postimg.cc/qvMDrqYw/logo.png" alt="" class="navbar-logo"></a>
+    <ul class="navbar-items">
+      <li class="navbar-item"><a href="./pages/sobre.html" class="navbar-link">Sobre</a></li>
+      <li class="navbar-item"><a href="./pages/blog.html" class="navbar-link">Blog</a></li>
+      <li class="navbar-item"><a href="./pages/imc.html" class="navbar-link">IMC</a></li>
+      <li class="navbar-item"><a href="./pages/treinos.html" class="navbar-link navbar-link-treinos">Treinos</a></li>
+    </ul>
+    <button class="menu-toggle" id="menu_toggle">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </nav>
+
+  <!-- MENU MOBILE -->
+  <nav class="menu-mobile" id="menu_mobile">
+    <ul class="menu-mobile-items">
+      <li class="menu-mobile-item">
+        <a href="./index.html" class="menu-mobile-link"><i class="fa-regular fa-house"></i>Home</a>
+      </li>
+      <li class="menu-mobile-item">
+        <a href="./pages/sobre.html" class="menu-mobile-link">Sobre</a>
+      </li>
+      <li class="menu-mobile-item">
+        <a href="./pages/blog.html" class="menu-mobile-link">Blog</a>
+      </li>
+      <li class="menu-mobile-item"><a href="./pages/imc.html" class="menu-mobile-link"><i class="fa-solid fa-person"></i>IMC</a></li>
+      <li class="menu-mobile-item"><a href="./pages/treinos.html" class="menu-mobile-link menu-mobile-treinos"><i class="fa-solid fa-dumbbell"></i>Treinos</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- MENU SCROLL -->
+  <nav class="navbar-scroll">
+    <a href="./index.html"><img src="https://i.postimg.cc/PfYRzBYW/logo2.png" alt="" class="navbar-scroll-image"></a>
+    <ul class="navbar-scroll-list">
+      <li class="navbar-scroll-list-item"><a href="./index.html" class="navbar-scroll-list-link"><i class="fa-regular fa-house"></i></a></li>
+      <li class="navbar-scroll-list-item"><a href="./pages/sobre.html" class="navbar-scroll-list-link">Sobre</a></li>
+      <li class="navbar-scroll-list-item"><a href="./pages/blog.html" class="navbar-scroll-list-link">Blog</a></li>
+      <li class="navbar-scroll-list-item"><a href="./pages/imc.html" class="navbar-scroll-list-link">IMC</a></li>
+      <li class="navbar-scroll-list-item"><a href="./pages/treinos.html" class="navbar-scroll-list-link navbar-scroll-list-treinos">Treinos</a></li>
+    </ul>
+    <button class="menu-toggle" id="menu_toggle_scroll">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </nav>
+</header>
+<body>
+  <section class="container">
+    <h1>Guias</h1>
+    <p class="subtitulo">Confira os guias informativos para ajudar no seu treino!</p>
+
+    <div class="grid">
+      <div class="card" style="background-image: url('img/treino2.jpg')">
+        <span class="tag">Guia</span>
+        <h2>Treino para dois dias</h2>
+      </div>
+
+      <div class="card" style="background-image: url('img/treino3.jpg')">
+        <span class="tag">Guia</span>
+        <h2>Treino para três dias</h2>
+      </div>
+
+      <div class="card" style="background-image: url('img/treino4.jpg')">
+        <span class="tag">Guia</span>
+        <h2>Treino para quatro dias</h2>
+      </div>
+
+      <div class="card" style="background-image: url('img/treino5.jpg')">
+        <span class="tag">Guia</span>
+        <h2>Treino para cinco dias</h2>
+      </div>
+
+      <div class="card" style="background-image: url('img/brosplit.jpg')">
+        <span class="tag">Guia</span>
+        <h2>Cinco dias de Bro Split</h2>
+      </div>
+
+      <div class="card" style="background-image: url('img/superior-inferior.jpg')">
+        <span class="tag">Guia</span>
+        <h2>Divisão de Superior/Inferior</h2>
+      </div>
+
+      <div class="card" style="background-image: url('img/ppl.jpg')">
+        <span class="tag">Guia</span>
+        <h2>Push/Pull/Legs</h2>
+      </div>
+
+      <div class="card" style="background-image: url('img/5x5.jpg')">
+        <span class="tag">Guia</span>
+        <h2>5×5</h2>
+      </div>
+
+      <div class="card" style="background-image: url('img/superior.jpg')">
+        <span class="tag">Guia</span>
+        <h2>Treino para superior</h2>
+      </div>
+
+      <div class="card" style="background-image: url('img/mulheres.jpg')">
+        <span class="tag">Guia</span>
+        <h2>Exercícios para mulheres</h2>
+      </div>
+    </div>
+  </section>
+  <footer><!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Movimento 2.0</title>
+    
+      <!-- Font Awesome -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9U8N6N2Fv9Zgv4q4lCtmG8GSk6hZ8G8j7G3K3vZ9lS4r0QeV8xwLQYx04R3g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+      <style>
+        :root{
+          --cor-verde: #28c76f;
+          --cor-de-fundo: #0b1a3a;
+          --primaria: #1e88f5;
+          --texto: #000;
+          --texto-sec: #666;
+          --borda: #ddd;
+        }
+        *{ box-sizing: border-box; }
+        body {
+          font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+          margin: 0;
+          padding: 0;
+          background: #fff;
+          color: var(--texto);
+        }
+        header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 24px;
+          padding: 20px 40px;
+          border-bottom: 1px solid var(--borda);
+          background: #fff;
+          position: sticky;
+          top: 0;
+          z-index: 10;
+        }
+        #logo { height: 50px; display: block; }
+        nav a { margin: 0 12px; text-decoration: none; color: var(--texto); font-size: 16px; }
+        nav a:hover { text-decoration: underline; }
+        .auth-buttons { display: flex; gap: 12px; align-items: center; }
+        .auth-buttons .button {
+          background: var(--primaria);
+          color: #fff;
+          padding: 10px 18px;
+          border-radius: 12px;
+          text-decoration: none;
+          font-size: 15px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .auth-buttons .link { text-decoration: none; color: var(--primaria); padding: 10px 18px; font-size: 15px; }
+        main { padding: 50px 24px; max-width: 1400px; margin: 0 auto; }
+        h1 { font-size: 2.4rem; margin: 0 0 32px 0; line-height: 1.2; }
+        .cards {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 30px;
+        }
+        @media (max-width: 1024px){ .cards{ grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 640px){
+          header{ padding: 16px; }
+          .cards{ grid-template-columns: 1fr; gap: 20px; }
+          h1{ font-size: 2rem; }
+        }
+        .card {
+          border-radius: 16px;
+          box-shadow: 0 0 15px rgba(0,0,0,0.08);
+          overflow: hidden;
+          background: #fff;
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          transition: transform .2s ease, box-shadow .2s ease;
+        }
+        .card:hover{
+          transform: translateY(-2px);
+          box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+        }
+        .card .main-img { width: 100%; height: 220px; object-fit: cover; display: block; background: #f4f4f4; }
+        .card .tag {
+          position: absolute;
+          top: 12px;
+          right: 12px;
+          background: var(--primaria);
+          color: white;
+          font-size: 13px;
+          padding: 5px 10px;
+          border-radius: 15px;
+        }
+        .card .author { display: flex; align-items: center; padding: 12px 24px 0; gap: 12px; }
+        .card .author img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; display: block; }
+        .card h2 { font-size: 18px; padding: 10px 24px; line-height: 1.35; margin: 0; }
+        .card p { padding: 0 24px 20px; color: var(--texto-sec); font-size: 14px; line-height: 1.5; flex-grow: 1; margin: 0; }
+        .card a { padding: 0 24px 20px; text-decoration: none; color: var(--primaria); font-weight: 600; font-size: 14px; }
+        footer{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none;
+          color: white;
+          border-top: 2px solid var(--cor-verde);
+          background-color: var(--cor-de-fundo);
+          gap: 32px;
+          padding: 48px 24px;
+        }
+        .footer-image{ max-width: 240px; width: 100%; height: auto; display: block; }
+        .footer-text{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #051129;
+          border: 1px solid transparent;
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+          font-size: clamp(1rem, 0.8rem + 1vw, 1.2rem);
+          font-weight: 600;
+          width: 100%;
+          max-width: 900px;
+          padding: 28px;
+          color: white;
+          border-radius: 16px;
+          text-align: center;
+        }
+        .redes-sociais{ display: flex; align-self: center; flex-direction: column; width: 100%; max-width: 900px; gap: 12px; }
+        .redes-sociais ul{
+          list-style: none;
+          display: flex;
+          gap: 16px;
+          flex-wrap: wrap;
+          justify-content: center;
+          padding: 0;
+          margin: 0;
+        }
+        .redes-sociais ul li a{
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          background-color: #051129;
+          padding: 12px;
+          border-radius: 10px;
+          min-width: 56px;
+          min-height: 56px;
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+        }
+        .redes-sociais i{ font-size: 28px; }
+        .instagrams, .linkedins{
+          align-self: center;
+          display: none;
+          background-color: #000;
+          border-radius: 10px;
+          margin-top: 8px;
+          padding: 12px;
+          transition: all .3s ease;
+          width: 100%;
+          max-width: 900px;
+          color: #fff;
+        }
+        .instagrams.active, .linkedins.active{ display: flex; }
+        .instagrams ul{
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 16px;
+          width: 100%;
+          margin: 0; padding: 0;
+          list-style: none;
+        }
+        .instagrams ul li a{
+          font-size: 16px;
+          color: #fff;
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          background-color: rgba(255, 255, 255, 0.06);
+          border-radius: 10px;
+          padding: 10px 12px;
+        }
+        .instagrams img{ width: 35px; height: 35px; border-radius: 50%; object-fit: cover; }
+        .linkedins ul{
+          display: grid;
+          grid-template-columns: repeat(6, 1fr);
+          gap: 16px;
+          list-style: none;
+          margin: 0; padding: 0;
+        }
+        @media (max-width: 640px){ .linkedins ul{ grid-template-columns: repeat(3, 1fr); } }
+        .linkedins ul li a{ display: block; border-radius: 10px; background: none; }
+        .linkedins img{ width: 56px; height: 56px; border-radius: 50%; object-fit: cover; display: block; }
+        .footer-copyright{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: var(--cor-de-fundo);
+          border-top: 1px solid rgba(255,255,255,0.2);
+          font-size: 0.8rem;
+          font-weight: 400;
+          padding: 15px;
+          color: #eaeaea;
+          text-align: center;
+        }
+      </style>
+    </head>
+    <body>
+    
+    <header>
+      <img src="./ChatGPT%20Image%204%20de%20ago.%20de%202025,%2017_45_38%202.png" alt="Movimentos 2.0 Logo" id="logo" />
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Produto</a>
+        <a href="#">Artigos</a>
+        <a href="#">Sobre nós</a>
+      </nav>
+      <div class="auth-buttons">
+        <a href="#" class="link">Conecte-se</a>
+        <a href="#" class="button">Inscrever-se</a>
+      </div>
+    </header>
+    
+    <main>
+      <h1>Blog</h1>
+    
+      <section class="cards">
+        <!-- Seus cards aqui -->
+      </section>
+    </main>
+    
+    <footer>
+      <img src="https://i.postimg.cc/qvMDrqYw/logo.png" alt="Logo Movimentos" class="footer-image" />
+      <div class="footer-text">
+        <p>Fortaleça seu corpo, um grupo <br /> muscular por vez.</p>
+      </div>
+    
+      <div class="redes-sociais" id="redes_sociais">
+        <ul>
+          <li><a href="#" id="instagram"><i class="fa-brands fa-instagram"></i></a></li>
+          <li><a href="#" id="linkedin"><i class="fa-brands fa-linkedin-in"></i></a></li>
+        </ul>
+    
+        <div class="instagrams" id="instagrams">
+          <ul>
+            <li><a href="https://www.instagram.com/3d.aba_/" target="_blank"><img src="https://i.postimg.cc/yYKrfvyw/logo3D.png" alt="3D" />3D</a></li>
+            <li><a href="https://www.instagram.com/eeantonietaborgesalves/" target="_blank"><img src="https://i.postimg.cc/dt9NgrWD/logo-escola.png" alt="ABA" />ABA</a></li>
+          </ul>
+        </div>
+    
+        <div class="linkedins" id="linkedins">
+          <ul>
+            <li title="Prof. Allan"><a href="https://www.linkedin.com/in/allanmarcellinus/" target="_blank"><img src="https://i.postimg.cc/FKT0r8V2/allan-marcelino.jpg" alt="Prof. Allan" /></a></li>
+            <li title="Eduardo Marques"><a href="https://www.linkedin.com/in/eduardo-marques-356558337/" target="_blank"><img src="https://i.postimg.cc/zvghkBYr/eduardo-marques.jpg" alt=""></a></li>
+            <li title="Filippi Denner"><a href="https://www.linkedin.com/in/filippi-denner-63a76932b/" target="_blank"><img src="https://i.postimg.cc/mgGNP91R/filippi-denner.png" alt=""></a></li>
+            <li title="Ismael Laurentino"><a href="https://www.linkedin.com/in/ismael-laurentino-25723b327/" target="_blank"><img src="https://i.postimg.cc/7YznP96m/ismael-laurentino.jpg" alt=""></a></li>
+            <li title="João Pedro"><a href="https://www.linkedin.com/in/pedro-andrade-a42727311/" target="_blank"><img src="https://i.postimg.cc/FF7x8NQt/joao-pedro.jpg" alt=""></a></li>
+            <li title="Kaue Yuuki"><a href="https://www.linkedin.com/in/kau%C3%AA-yamamoto-584933291/" target="_blank"><img src="https://i.postimg.cc/G29GHKM9/kaue-yuuki.jpg" alt=""></a></li>
+            <li title="Maria Clara"><a href="https://www.linkedin.com/in/maria-clara-fernandes-7588b9321/" target="_blank"><img src="https://i.postimg.cc/XJhFF5hL/maria-clara.jpg" alt=""></a></li>
+            <li title="Patrícia Dias"><a href="https://www.linkedin.com/in/patricia-dias-427637196/" target="_blank"><img src="https://i.postimg.cc/GmJPGpvD/patricia-dias.png" alt=""></a></li>
+            <li title="Paulo Ricardo"><a href="https://www.linkedin.com/in/paulo-ricardo-6a2559337/" target="_blank"><img src="https://i.postimg.cc/pdWfZtB6/paulo-ricardo.png" alt=""></a></li>
+            <li title="Pedro Henrique"><a href="https://www.linkedin.com/in/pedro-pascon/" target="_blank"><img src="https://i.postimg.cc/T2FcXFRK/pedro-henrique.jpg" alt=""></a></li>
+            <li title="Samuel Brito"><a href="https://www.linkedin.com/in/samuel-brito-melo-b8676832b/" target="_blank"><img src="https://i.postimg.cc/bdftVhq2/samuel-brito.jpg" alt=""></a></li>
+            <li title="Raul Lucena"><a href="https://www.linkedin.com/in/raul-lucena-7300a733b/" target="_blank"><img src="" alt=""></a></li>
+          
+          </ul>
+        </div>
+      </div>
+    </footer>
+    
+    <div class="footer-copyright">
+      ©Movimentos 2.0 - Todos os direitos reservados
+    </div>
+    
+    <script>
+      const instagramBtn = document.getElementById('instagram');
+      const linkedinBtn = document.getElementById('linkedin');
+      const instagramsSection = document.getElementById('instagrams');
+      const linkedinsSection = document.getElementById('linkedins');
+    
+      function hideSections() {
+        instagramsSection.classList.remove('active');
+        linkedinsSection.classList.remove('active');
+      }
+    
+      instagramBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        instagramsSection.classList.toggle('active');
+        linkedinsSection.classList.remove('active');
+      });
+    
+      linkedinBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        linkedinsSection.classList.toggle('active');
+        instagramsSection.classList.remove('active');
+      });
+    
+      // Fecha as seções ao clicar fora
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('.redes-sociais')) {
+          hideSections();
+        }
+      });
+    </script>
+    
+    </body>
+    </html></footer>
+</body>
+</html>
