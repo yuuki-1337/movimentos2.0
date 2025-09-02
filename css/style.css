@@ -17,7 +17,9 @@
     background-color: black;
     color: white;
   }
-  
+  .body1{
+    background-color: var(--cor-de-fundo);
+  }
   header{
     display: flex;
     align-items: center;
@@ -1190,7 +1192,7 @@
     background-color: #354966;
     color: white;
     text-decoration: none;
-    
+    margin-left: 20px;
     width: 450px;
     height: 130px;
     align-items: center;
