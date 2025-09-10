@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explicação das séries de aquecimento</title>
+  <style>
+    /* ===== Reset ===== */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: #ffffff;
+      color: #111;
+      line-height: 1.6;
+    }
+
+    .page { max-width: 1200px; margin: 0 auto; padding: 20px; display: flex; flex-direction: column; }
+
+    /* ===== Header ===== */
+    .header h1 { font-size: 36px; margin-bottom: 8px; font-weight: 800; }
+    .header .author { color: #3b82f6; font-size: 14px; margin-bottom: 20px; }
+
+    /* ===== Layout ===== */
+    .main-layout { display: grid; grid-template-columns: 3fr 1fr; gap: 40px; }
+    .content img { max-width: 100%; border-radius: 6px; margin: 18px 0; }
+
+    .content h2 {
+      font-size: 24px;
+      margin: 28px 0 12px;
+      line-height: 1.25;
+      font-weight: 800;
+    }
+    .content h3 {
+      font-size: 20px;
+      margin: 20px 0 10px;
+      font-weight: 700;
+    }
+    .content p { margin: 12px 0; }
+    .content ul, .content ol { margin: 14px 0 20px 20px; }
+    .content li { margin: 6px 0; }
+
+    /* ===== TOC ===== */
+    .toc {
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      background: #f8fafc;
+      padding: 14px;
+      margin: 20px 0;
+    }
+    .toc-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .toc h3 { font-size: 18px; margin: 0; }
+    .toc ul, .toc ol { padding-left: 20px; }
+    .toc a { color: #0f62fe; text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+    .toc .hidden { display: none; }
+    .toc-toggle { cursor: pointer; border: 0; background: transparent; color: #6b7280; }
+
+    /* ===== Sidebar ===== */
+    .sidebar .share { margin-bottom: 28px; }
+    .share-title { margin: 0 0 8px; color: #555; font-weight: 600; }
+    .icons { display: flex; gap: 10px; }
+    .icons img { width: 32px; height: 32px; cursor: pointer; border-radius: 50%; }
+
+    .app-box {
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      background: #fff;
+      padding: 16px;
+      text-align: center;
+    }
+    .app-box img { width: 160px; height: 160px; object-fit: contain; border: 1px solid #eee; border-radius: 6px; margin: 14px 0; }
+    .app-box a {
+      display: block;
+      margin: 6px 0;
+      font-weight: 700;
+      text-decoration: none;
+      color: #0f62fe;
+    }
+
+    /* ===== Responsivo ===== */
+    @media (max-width: 900px) {
+      .main-layout { grid-template-columns: 1fr; }
+      .sidebar { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Cabeçalho -->
+    <header class="header">
+      <h1>O que são superconjuntos e como usá-los</h1>
+      <p class="author">Escrito por Pedro</p>
+    </header>
+
+    <div class="main-layout">
+      <!-- Conteúdo -->
+      <main class="content">
+        <img src="../img/img3.png" alt="Homem treinando musculação">
+
+        <p>Superconjuntos são uma técnica de intensidade popular e eficaz, universalmente elogiada e recomendada para que as pessoas economizem tempo em seus treinamentos.</p>
+        <p>Vamos ver como os superconjuntos funcionam, quais são os tipos comuns, seus benefícios e desvantagens, como programá-los na sua rotina e quais erros evitar.</p>
+
+        <h2>Principais conclusões</h2>
+        <ol>
+          <li><strong>Supersérie</strong> é quando você faz dois exercícios consecutivos com pouco ou nenhum descanso.</li>
+          <li>Os tipos comuns de superconjuntos incluem agonista/antagonista, composto/composto, parte superior/inferior do corpo, pré-exaustão e pós-exaustão.</li>
+          <li>Superconjuntos economizam tempo, oferecem benefícios cardiovasculares e introduzem variedade de exercícios para ajudar a manter seu plano de treinamento mais envolvente.</li>
+          <li>Erros comuns incluem combinar os exercícios errados, não descansar o suficiente, ignorar a forma correta e apressar as repetições para economizar tempo.</li>
+        </ol>
+
+        <!-- TOC -->
+        <div class="toc">
+          <div class="toc-header">
+            <h3>Conteúdo</h3>
+            <button class="toc-toggle">[ ocultar ]</button>
+          </div>
+          <ul>
+            <li><a href="#conclusoes">1 Principais conclusões</a></li>
+            <li><a href="#tipos">2 O que são superconjuntos e quais os seus tipos?</a></li>
+            <li><a href="#composto">2.1 Superconjuntos de músculos iguais (composto/composto)</a></li>
+            <li><a href="#superior-inferior">2.2 Parte superior e inferior do corpo</a></li>
+            <li><a href="#pre-exaustao">2.3 Pré-exaustão</a></li>
+            <li><a href="#pos-exaustao">2.4 Pós-exaustão</a></li>
+          </ul>
+        </div>
+
+        <h2 id="tipos">O que são superconjuntos?</h2>
+        <p>Superséries são uma técnica de treino em que você combina dois exercícios que normalmente trabalham músculos diferentes e os executa em sequência, com pouco ou nenhum descanso entre eles. Por exemplo, uma série de tríceps na barra, seguida por uma série de rosca direta com halteres, contaria como uma supersérie. Treinar dessa forma ajuda a economizar tempo.</p>
+
+        <h2>5 tipos de superconjuntos</h2>
+        <h3>1. Superconjuntos de músculos opostos (Agonista/Antagonista)</h3>
+        <p>Aqui, você faz dois exercícios que trabalham grupos musculares opostos, incluindo bíceps e tríceps, isquiotibiais e quadríceps, peito e costas, e glúteos e flexores do quadril.</p>
+        <p><strong>Exemplos incluem:</strong></p>
+        <ul>
+          <li>Flexão de barra com flexão de corda (bíceps e tríceps)</li>
+          <li>Extensão de perna com flexão de perna deitado (quadríceps e isquiotibiais)</li>
+          <li>Supino com barra e remada sentada com cabo (peito e costas)</li>
+          <li>Elevação do quadril com barra e elevação do joelho pendurado (glúteos e flexores do quadril)</li>
+        </ul>
+
+        <img src="../img/celular.png" alt="Exemplo aplicativo de treino no celular">
+
+        <h3 id="composto">2. Superconjuntos de músculos iguais (composto/composto)</h3>
+        <p>Este tipo de superconjunto combina dois exercícios que trabalham o mesmo grupo muscular. Por exemplo:</p>
+        <ul>
+          <li>Supino inclinado com halteres + crucifixo inclinado</li>
+          <li>Agachamento com barra + passada</li>
+        </ul>
+        <p>Esses superconjuntos aumentam a intensidade e ajudam a levar os músculos à exaustão rapidamente.</p>
+
+        <h3 id="superior-inferior">3. Parte superior e inferior do corpo</h3>
+        <p>Combina exercícios de membros superiores e inferiores. Por exemplo:</p>
+        <ul>
+          <li>Agachamento com barra + desenvolvimento militar</li>
+          <li>Levantamento terra + barra fixa</li>
+        </ul>
+        <p>Esse estilo é ótimo para quem busca eficiência em treinos curtos.</p>
+
+        <h3 id="pre-exaustao">4. Pré-exaustão</h3>
+        <p>Primeiro, um exercício isolador é feito para fadigar o músculo, seguido de um exercício composto. Exemplo:</p>
+        <ul>
+          <li>Cadeira extensora + agachamento com barra</li>
+          <li>Peck deck + supino reto</li>
+        </ul>
+
+        <h3 id="pos-exaustao">5. Pós-exaustão</h3>
+        <p>Aqui a ordem é invertida: o exercício composto vem primeiro e o isolador depois. Exemplo:</p>
+        <ul>
+          <li>Supino reto + crucifixo</li>
+          <li>Agachamento + cadeira extensora</li>
+        </ul>
+      </main>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="share">
+          <p class="share-title">Compartilhe esta publicação</p>
+          <div class="icons">
+            <img src="../img/pinterest.png" alt="Pinterest">
+            <img src="../img/facebook.png" alt="Facebook">
+            <img src="../img/twitter.png" alt="Twitter">
+            <img src="../img/reddit.png" alt="Reddit">
+          </div>
+        </div>
+
+        <div class="app-box">
+          <h3>Baixar Aplicativo</h3>
+          <img src="../img/Qr code.png" alt="QR Code">
+          <a href="#">Loja de aplicativos</a>
+          <a href="#">Google Play</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script>
+    // Mostrar/ocultar TOC
+    const btn = document.querySelector('.toc-toggle');
+    const toc = document.querySelector('.toc ul');
+    btn?.addEventListener('click', () => {
+      toc.classList.toggle('hidden');
+      btn.textContent = toc.classList.contains('hidden') ? '[ mostrar ]' : '[ ocultar ]';
+    });
+  </script>
+</body>
+</html>

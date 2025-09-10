@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Séries de aquecimento</title>
+  <style>
+    /* ===== Reset ===== */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: #ffffff;
+      color: #111;
+      line-height: 1.6;
+    }
+
+    .page { max-width: 1200px; margin: 0 auto; padding: 20px; display: flex; flex-direction: column; }
+
+    /* ===== Header ===== */
+    .header h1 { font-size: 36px; margin-bottom: 8px; font-weight: 800; }
+    .header .author { color: #3b82f6; font-size: 14px; margin-bottom: 20px; }
+
+    /* ===== Layout ===== */
+    .main-layout { display: grid; grid-template-columns: 3fr 1fr; gap: 40px; }
+    .content img { max-width: 100%; border-radius: 6px; margin: 18px 0; }
+
+    .content h2 { font-size: 24px; margin: 28px 0 12px; line-height: 1.25; font-weight: 800; }
+    .content h3 { font-size: 20px; margin: 20px 0 10px; font-weight: 700; }
+    .content h4 { font-size: 18px; margin: 16px 0 8px; font-weight: 600; }
+    .content p { margin: 12px 0; }
+    .content ul, .content ol { margin: 14px 0 20px 20px; }
+    .content li { margin: 6px 0; }
+
+    /* ===== TOC ===== */
+    .toc {
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      background: #f8fafc;
+      padding: 14px;
+      margin: 20px 0;
+    }
+    .toc-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .toc h3 { font-size: 18px; margin: 0; }
+    .toc ul, .toc ol { padding-left: 20px; }
+    .toc a { color: #0f62fe; text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+    .toc .hidden { display: none; }
+    .toc-toggle { cursor: pointer; border: 0; background: transparent; color: #6b7280; }
+
+    /* ===== Sidebar ===== */
+    .sidebar .share { margin-bottom: 28px; }
+    .share-title { margin: 0 0 8px; color: #555; font-weight: 600; }
+    .icons { display: flex; gap: 10px; }
+    .icons img { width: 32px; height: 32px; cursor: pointer; border-radius: 50%; }
+
+    .app-box {
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      background: #fff;
+      padding: 16px;
+      text-align: center;
+    }
+    .app-box img { width: 160px; height: 160px; object-fit: contain; border: 1px solid #eee; border-radius: 6px; margin: 14px 0; }
+    .app-box a {
+      display: block;
+      margin: 6px 0;
+      font-weight: 700;
+      text-decoration: none;
+      color: #0f62fe;
+    }
+
+    /* ===== Linha de imagens ===== */
+    .img-row { display: flex; gap: 10px; margin: 15px 0; }
+    .img-row img { flex: 1; border-radius: 6px; max-width: 100%; }
+
+    /* ===== Conclusão ===== */
+    .conclusion { border-left: 4px solid #22c55e; background: #f6fef8; padding: 10px 12px; border-radius: 6px; margin-top: 20px; }
+
+    /* ===== Responsivo ===== */
+    @media (max-width: 900px) {
+      .main-layout { grid-template-columns: 1fr; }
+      .sidebar { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Cabeçalho -->
+    <header class="header">
+      <h1>Explicação das séries de aquecimento: as melhores estratégias para levantadores de peso</h1>
+      <p class="author">Escrito por Pedro</p>
+    </header>
+
+    <div class="main-layout">
+      <!-- Conteúdo -->
+      <main class="content">
+        <img src="../img/img 2.png" alt="Levantamento de peso">
+
+        <p>Empurrar/puxar/pernas (PPL) e parte superior/inferior são divisões populares para organizar seu treino semanal. Ambas funcionam bem para frequências diferentes. Por exemplo, empurrar/puxar/pernas é simples de programar para três e seis treinos semanais, enquanto a parte superior/inferior é projetada para dois, quatro ou seis treinos.</p>
+
+        <p>Mas e se você estiver procurando algo intermediário, como cinco treinos semanais? É aqui que uma divisão empurrar/puxar/pernas/superior/inferior pode funcionar perfeitamente.</p>
+
+        <h2>Principais conclusões</h2>
+        <ul>
+          <li>Push pull legs upper lower é um treino dividido em 5 dias que consiste em cinco treinos distintos.</li>
+          <li>Ideal para quem quer treinar cinco dias sem que sua programação mude a cada semana.</li>
+          <li>Você pode começar sua semana com empurrar/puxar/pernas e terminar com superior/inferior ou vice-versa.</li>
+          <li>Permite treinar a parte superior do corpo três vezes por semana e as pernas duas vezes.</li>
+        </ul>
+
+        <!-- TOC -->
+        <div class="toc">
+          <div class="toc-header">
+            <h3>Conteúdo</h3>
+            <button class="toc-toggle">[ ocultar ]</button>
+          </div>
+          <ol>
+            <li><a href="#principais-conclusoes">Principais conclusões</a></li>
+            <li><a href="#o-que-e">O que são séries de aquecimento</a></li>
+            <li><a href="#rotina">Séries de aquecimento como parte da rotina</a></li>
+            <li><a href="#ajustar">Como ajustar a fórmula do conjunto de aquecimento</a></li>
+            <li><a href="#pplul">Divisão Push Pull Legs Upper Lower</a></li>
+            <li><a href="#faq">Perguntas frequentes</a></li>
+            <li><a href="#conclusao">Conclusão</a></li>
+          </ol>
+        </div>
+
+        <h2 id="o-que-e">O que são séries de aquecimento e qual a sua finalidade?</h2>
+        <p>As séries de aquecimento são séries mais leves feitas antes das séries de trabalho de um exercício. Elas preparam os músculos, as articulações e o sistema nervoso para lidar com cargas mais pesadas, além de reduzir o risco de lesões.</p>
+
+        <div class="../img/img-row">
+          <img src="../img/app1.png" alt="Exemplo App 1">
+          <img src="../img/app2.png" alt="Exemplo App 2">
+          <img src="../img/app3.png" alt="Exemplo App 3">
+        </div>
+
+        <h2 id="rotina">Séries de aquecimento como parte da rotina</h2>
+        <p>As séries de aquecimento são úteis, mas não substituem um aquecimento completo. Elas devem ser usadas em conjunto com mobilidade, alongamento dinâmico e movimentos preparatórios.</p>
+
+        <h2 id="ajustar">Como ajustar a fórmula do conjunto de aquecimento para você</h2>
+        <p>Cada pessoa deve adaptar o número de repetições, o peso e a progressão de acordo com seu nível de treino, experiência e condição física.</p>
+
+        <h2 id="pplul">Divisão Push Pull Legs Upper Lower de 5 dias</h2>
+        <p>Essa divisão combina a clássica divisão empurrar/puxar/pernas com a de superior/inferior, permitindo treinar 5 vezes por semana.</p>
+        <ul>
+          <li>Segunda-feira: Empurrar</li>
+          <li>Terça-feira: Puxar</li>
+          <li>Quarta-feira: Pernas</li>
+          <li>Quinta-feira: Superior</li>
+          <li>Sexta-feira: Inferior</li>
+          <li>Sábado/Domingo: Descanso</li>
+        </ul>
+        <img src="../img/app4.png" alt="Exemplo divisão treino">
+
+        <h2 id="faq">Perguntas frequentes</h2>
+        <ul>
+          <li>O PPLUL é bom para iniciantes?</li>
+          <li>Faz diferença se eu faço PPL/UL ou UL/PPL?</li>
+          <li>Quanto tempo descansar entre as séries?</li>
+          <li>Onde o treinamento de braços e abdominais se encaixaria em uma divisão PPLUL?</li>
+        </ul>
+
+        <h2 id="conclusao">Conclusão</h2>
+        <div class="conclusion">
+          <p>A divisão 5 PPLUL é excelente para intermediários e avançados, permitindo treinar todos os grupos musculares com frequência e intensidade adequadas.</p>
+        </div>
+      </main>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="share">
+          <p class="share-title">Compartilhe esta publicação</p>
+          <div class="icons">
+            <img src="../img/pinterest.png" alt="Pinterest">
+            <img src="../img/facebook.png" alt="Facebook">
+            <img src="../img/twitter.png" alt="Twitter">
+            <img src="../img/reddit.png" alt="Reddit">
+          </div>
+        </div>
+
+        <div class="app-box">
+          <h3>Baixar Aplicativo</h3>
+          <img src="../img/Qr code.png" alt="QR Code">
+          <a href="#">Loja de aplicativos</a>
+          <a href="#">Google Play</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script>
+    const btn = document.querySelector('.toc-toggle');
+    const toc = document.querySelector('.toc ol');
+    btn?.addEventListener('click', () => {
+      toc.classList.toggle('hidden');
+      btn.textContent = toc.classList.contains('hidden') ? '[ mostrar ]' : '[ ocultar ]';
+    });
+  </script>
+</body>
+</html>
