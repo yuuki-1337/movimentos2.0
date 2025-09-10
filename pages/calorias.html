@@ -24,12 +24,13 @@
         }
 
         input, select {
-            width: 100%;
+            width: 95%;
             padding: 8px;
             margin-top: 5px;
             margin-bottom: 15px;
             background-color: #fff;
             border: none;
+            border-radius: 10px;
         }
 
         .LogoTipo {
@@ -38,6 +39,19 @@
             height: 200px;
             width: auto;
         }
+
+        .PDF {
+            background-color: chartreuse;
+            color: #061736;
+            width: 396px;
+            margin-top: 20px;
+        }
+
+        .atividade {
+            width: 396px;
+        }
+
+
 
     </style>
 </head>
@@ -59,12 +73,12 @@
             <input type="number" name="tempo" required>
 
             <label>Tipo de atividade:</label>
-            <select name="tipo" required>
+            <select name="tipo" required class="atividade"
                 <option value="esteira">Correr na Esteira</option>
                 <option value="bicicleta">Andar de Bicicleta</option>
             </select>
 
-            <input type="submit" value="Calcular e Gerar PDF">
+            <input type="submit" value="Calcular e Gerar PDF" class="PDF">
         </form>
     </div>
 </body>
