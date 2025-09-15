@@ -13,18 +13,18 @@
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
-<body>
- 
+<body class="body1">
   <header>
-
     <!-- MENU -->
     <nav class="navbar">
-      <a href="../index.html"><img src="https://i.postimg.cc/qvMDrqYw/logo.png" alt="" class="navbar-logo"></a>
+      <a href="../index.html">
+        <img src="https://i.postimg.cc/qvMDrqYw/logo.png" alt="" class="navbar-logo">
+      </a>
       <ul class="navbar-items">
-        <li class="navbar-item"><a href="./pages/sobre.html" class="navbar-link">Sobre</a></li>
-        <li class="navbar-item"><a href="./pages/blog.html" class="navbar-link">Blog</a></li>
-        <li class="navbar-item"><a href="./pages/imc.html" class="navbar-link">IMC</a></li>
-        <li class="navbar-item"><a href="./pages/treinos.html" class="navbar-link navbar-link-treinos">Treinos</a></li>
+        <li class="navbar-item"><a href="./sobre.html" class="navbar-link">Sobre</a></li>
+        <li class="navbar-item"><a href="./blog.html" class="navbar-link">Blog</a></li>
+        <li class="navbar-item"><a href="./imc.html" class="navbar-link">IMC</a></li>
+        <li class="navbar-item"><a href="./treinos.html" class="navbar-link navbar-link-treinos">Treinos</a></li>
       </ul>
       <button class="menu-toggle" id="menu_toggle">
         <span class="material-symbols-outlined">menu</span>
@@ -35,29 +35,34 @@
     <nav class="menu-mobile" id="menu_mobile">
       <ul class="menu-mobile-items">
         <li class="menu-mobile-item">
-          <a href="../index.html" class="menu-mobile-link"><i class="fa-regular fa-house"></i>Home</a>
+          <a href="./index.html" class="menu-mobile-link"><i class="fa-regular fa-house"></i>Home</a>
         </li>
         <li class="menu-mobile-item">
-          <a href="./sobre.html" class="menu-mobile-link">Sobre</a>
+          <a href="../pages/sobre.html" class="menu-mobile-link">Sobre</a>
         </li>
         <li class="menu-mobile-item">
-          <a href="./blog.html" class="menu-mobile-link">Blog</a>
+          <a href="../pages/blog.html" class="menu-mobile-link">Blog</a>
         </li>
-        <li class="menu-mobile-item"><a href="./imc.html" class="menu-mobile-link"><i class="fa-solid fa-person"></i>IMC</a></li>
-        <li class="menu-mobile-item"><a href="./treinos.html" class="menu-mobile-link menu-mobile-treinos"><i class="fa-solid fa-dumbbell"></i>Treinos</a>
+        <li class="menu-mobile-item">
+          <a href="../pages/imc.html" class="menu-mobile-link"><i class="fa-solid fa-person"></i>IMC</a>
+        </li>
+        <li class="menu-mobile-item">
+          <a href="../pages/treinos.html" class="menu-mobile-link menu-mobile-treinos"><i class="fa-solid fa-dumbbell"></i>Treinos</a>
         </li>
       </ul>
     </nav>
 
     <!-- MENU SCROLL -->
     <nav class="navbar-scroll">
-      <a href="../index.html"><img src="https://i.postimg.cc/PfYRzBYW/logo2.png" alt="" class="navbar-scroll-image"></a>
+      <a href="../index.html">
+        <img src="https://i.postimg.cc/PfYRzBYW/logo2.png" alt="" class="navbar-scroll-image">
+      </a>
       <ul class="navbar-scroll-list">
         <li class="navbar-scroll-list-item"><a href="../index.html" class="navbar-scroll-list-link"><i class="fa-regular fa-house"></i></a></li>
-        <li class="navbar-scroll-list-item"><a href="./sobre.html" class="navbar-scroll-list-link">Sobre</a></li>
-        <li class="navbar-scroll-list-item"><a href="./blog.html" class="navbar-scroll-list-link">Blog</a></li>
-        <li class="navbar-scroll-list-item"><a href="./imc.html" class="navbar-scroll-list-link">IMC</a></li>
-        <li class="navbar-scroll-list-item"><a href="./treinos.html" class="navbar-scroll-list-link navbar-scroll-list-treinos">Treinos</a></li>
+        <li class="navbar-scroll-list-item"><a href="./p" class="navbar-scroll-list-link">Sobre</a></li>
+        <li class="navbar-scroll-list-item"><a href="../pages/blog.html" class="navbar-scroll-list-link">Blog</a></li>
+        <li class="navbar-scroll-list-item"><a href="../pages/imc.html" class="navbar-scroll-list-link">IMC</a></li>
+        <li class="navbar-scroll-list-item"><a href="../pages/treinos.html" class="navbar-scroll-list-link navbar-scroll-list-treinos">Treinos</a></li>
       </ul>
       <button class="menu-toggle" id="menu_toggle_scroll">
         <span class="material-symbols-outlined">menu</span>
@@ -65,6 +70,9 @@
     </nav>
   </header>
  
+  <div class="initial-content-btn" id="initial_content_btn">
+    <i class="fa-solid fa-angle-right"></i>
+  </div>
 <section class="sobre-nos">
   <h2>Sobre <span>Nós</span></h2>
   <img src="../img/foto_da_sala.jpeg" alt="Equipe Movimentos 2.0">
@@ -107,7 +115,7 @@
         <p>Desingner<br>Sou do Brasil. No Movimentos 2.0, atuo como Designer de Produto, garantindo que a experiência dos nossos usuários seja a melhor possível. Pessoalmente, sou entusiasta de academia e atividades ao ar livre.</p>
     </div>
     <div class="membro">
-        <img src="#" alt="Raul Lucena">
+        <img src="../img/alunos/Raul 4.png" alt="Raul Lucena">
         <h3>Raul Lucena</h3>
         <p>Contente<br>Sou personal trainer e coach de treinamento de força certificado pelo Movimentos 2.0. Adoro transformar minha experiência prática como coach em artigos úteis e bem pesquisados para leitores do mundo todo.</p>
     </div>
@@ -132,7 +140,7 @@
         <p>Marketing<br>Sou uma criativa brasileira que adora malhar. Uso o Movimentos 2.0 em todos os treinos, o que me ajuda a manter a consistência, a me esforçar mais e a acompanhar meu progresso. Meu objetivo é que todos treinem usando o aplicativo Movimentos 2.0 e sintam seus benefícios.</p>
     </div>
     <div class="membro">
-        <img src="https://i.postimg.cc/FF7x8NQt/joao-pedro.jpg" alt="João Pedro">
+        <img src="../img/alunos/joao 4.png" alt="João Pedro">
         <h3>João Pedro</h3>
         <p>Desenvolvedor<br>Sou do Brasil e sou desenvolvedor júnior na Movimentos 2.0. Sou apaixonado por usar minhas habilidades de programação e conhecimento  fitness para ajudar a construir um dos melhores aplicativos de fitness disponíveis, e pratico varios esportes.</p>
     </div>
