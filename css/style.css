@@ -1302,6 +1302,7 @@ h2 span {
     margin-bottom: 10px;
     width: 241px;
     height: 241px;
+    max-width: 100%;
 }
  
 .membro h3 {
