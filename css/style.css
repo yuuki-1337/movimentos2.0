@@ -1014,11 +1014,13 @@
     font-size: 60px;
     font-family: poppins;
     
-    
+    margin-bottom: 20px;
 }
 .Biblioteca-content p{
     font-size: 25px;
     font-family: poppins;
+    margin: 30px 100px 30px 100px;
+
 }
 .colorido{
     color: #D2FE08;
@@ -1028,6 +1030,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    margin-top: 30px;
 }
 .cards h1{
     font-size: 50px ;
@@ -1040,16 +1043,16 @@
 }
 .leftT{
     
-    width: 510px;   /* defina uma largura */
-    height: 400px;
+    width: 410px;   /* defina uma largura */
+    height: 300px;
     background-color: #D2FE08;
     display: flex;
     border-radius: 20px;
 }
 .rightT{
     margin-left:50px ;
-    width: 510px;   /* defina uma largura */
-    height: 400px;
+    width: 410px;   /* defina uma largura */
+    height: 300px;
     background-color: #D2FE08;
     display: flex;
     border-radius: 20px;
@@ -1061,8 +1064,8 @@
     background-size: cover;     /* ajusta a imagem para cobrir toda a área */
     background-position: center; /* centraliza a imagem */
     background-repeat: no-repeat; /* evita repetição */
-    width: 500px;   /* defina uma largura */
-    height: 400px;  /* defina uma altura */
+    width: 400px;   /* defina uma largura */
+    height: 300px;  /* defina uma altura */
     display: flex;
     text-decoration: none;
     border-radius: 20px;
@@ -1072,7 +1075,7 @@
 }
 
 .leftT a h1{
-    margin-top: 300px;
+    margin-top: 200px;
     margin-right: 250px;
     margin-left: 20px;
     color: white;
@@ -1085,8 +1088,8 @@
     background-size: cover;     /* ajusta a imagem para cobrir toda a área */
     background-position: center; /* centraliza a imagem */
     background-repeat: no-repeat; /* evita repetição */
-    width: 500px;   /* defina uma largura */
-    height: 400px;  /* defina uma altura */
+    width: 400px;   /* defina uma largura */
+    height: 300px;  /* defina uma altura */
     display: flex;
     text-decoration: none;
     
@@ -1094,7 +1097,7 @@
     border-radius: 20px;
 }
 .rightT a h1{
-    margin-top: 300px;
+    margin-top: 200px;
     margin-right: 190px;
     margin-left: 20px;
     color: white;
@@ -1108,16 +1111,16 @@
 }
 .leftT2{
     
-    width: 510px;   /* defina uma largura */
-    height: 400px;
+    width: 410px;   /* defina uma largura */
+    height: 300px;
     background-color: #D2FE08;
     display: flex;
     border-radius: 20px;
 }
 .rightT2{
     margin-left:50px ;
-    width: 510px;   /* defina uma largura */
-    height: 400px;
+    width: 410px;   /* defina uma largura */
+    height: 300px;
     background-color: #D2FE08;
     display: flex;
     border-radius: 20px;
@@ -1129,8 +1132,8 @@
     background-size: cover;     /* ajusta a imagem para cobrir toda a área */
     background-position: center; /* centraliza a imagem */
     background-repeat: no-repeat; /* evita repetição */
-    width: 500px;   /* defina uma largura */
-    height: 400px;  /* defina uma altura */
+    width: 400px;   /* defina uma largura */
+    height: 300px;  /* defina uma altura */
     display: flex;
     text-decoration: none;
     border-radius: 20px;
@@ -1140,7 +1143,7 @@
 }
 
 .leftT2 a h1{
-    margin-top: 300px;
+    margin-top: 200px;
     margin-right: 250px;
     margin-left: 20px;
     color: white;
@@ -1153,8 +1156,8 @@
     background-size: cover;     /* ajusta a imagem para cobrir toda a área */
     background-position: center; /* centraliza a imagem */
     background-repeat: no-repeat; /* evita repetição */
-    width: 500px;   /* defina uma largura */
-    height: 400px;  /* defina uma altura */
+    width: 400px;   /* defina uma largura */
+    height: 300px;  /* defina uma altura */
     display: flex;
     text-decoration: none;
     
@@ -1162,7 +1165,7 @@
     border-radius: 20px;
 }
 .rightT2 a h1{
-    margin-top: 300px;
+    margin-top: 200px;
     margin-right: 190px;
     margin-left: 20px;
     color: white;
@@ -1250,26 +1253,34 @@ h2 {
 h2 span {
     color: #dfff00;
 }
- 
+
+.sobre-nos{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .sobre-nos img {
     display: block;
     margin: 0 auto;
     width: 100%;
     max-width: 800px;
     border-radius: 12px;
+    margin-bottom: 50px;
+    z-index: 1;
 }
  
 .sobre-nos-text {
   display: flex;
     background: #000;
-    padding: 20px;
+    padding: 5%;
     border-radius: 10px;
-    height: 500px;
-    max-width: 800px;
+    height: 550px;
+    max-width: 900px;
     text-align: center;
     margin-top: -350px;
 }
 .sobre-nos-text p{
+  font-size: 1.6rem;
   margin-top: auto;
 }
  
@@ -1324,6 +1335,11 @@ h2 span {
         top: auto !important;
         border-radius: 20px !important; /* se quiser manter o arredondamento */
     }
+    .Biblioteca-content p{
+   
+    margin: 0px;
+
+    }
 }
 @media (max-width: 1000px) {
     .imagemdetalhe img {
@@ -1332,6 +1348,7 @@ h2 span {
         top: auto !important;
         border-radius: 20px !important; /* se quiser manter o arredondamento */
     }
+    
 }
 .peito{
     display: flex;
