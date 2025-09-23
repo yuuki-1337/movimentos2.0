@@ -49,6 +49,23 @@
       carga.appendChild(novaCarga);
 
       seriesAtuais[exercicioId]++;
+
+    window.onload = function() {
+    document.getElementById("btnCalcular").addEventListener("click", function() {
+      // Pega os valores dos selects
+      let minutos = parseInt(document.querySelector(".tempo-cardio").value);
+      let inclinacao = parseInt(document.querySelector(".inclinacao").value);
+      let distancia = parseInt(document.querySelector(".distancia").value);
+
+      // Fórmula simples de exemplo
+      let calorias = (minutos * 5) + (distancia * 60) + (inclinacao * 8);
+
+      // Atualiza o input
+      document.querySelector(".input-calorias").value = calorias + " kcal";
+    });
+  };
+  
+
     }
   </script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
@@ -157,7 +174,21 @@
         </select>
       </div>
     </div>
+    
 
+<div style="margin-top: 20px;">
+    <button id="btnCalcular" style="padding: 10px 20px; font-size: 16px; border-radius: 8px; border: none; background: #D2FE08; cursor: pointer;">
+      Calcular Calorias
+    </button>
+
+    <div id="resultado" style="margin-top: 15px; font-size: 18px; font-weight: bold;">
+      <input type="text" placeholder="Calorias Estimadas"
+        style="padding: 10px 20px; font-size: 16px; border-radius: 8px; border: none; text-align: center; width: 200px;"
+        readonly class="input-calorias">
+    </div>
+    </div>
+
+   
     <!-- SIMULADOR DE ESCADAS -->
     <div class="treinoTitulo">
       <h1>SIMULADOR DE ESCADAS</h1>
@@ -187,6 +218,20 @@
         </select>
       </div>
     </div>
+    <div style="margin-top: 20px;">
+  <button id="btnCalcularEscadas" 
+    style="padding: 10px 20px; font-size: 16px; border-radius: 8px; border: none; background: #D2FE08; cursor: pointer;">
+    Calcular Calorias
+  </button>
+
+  <div id="resultadoEscadas" style="margin-top: 15px; font-size: 18px; font-weight: bold;">
+    <input type="text" placeholder="Calorias Estimadas"
+      style="padding: 10px 20px; font-size: 16px; border-radius: 8px; border: none; text-align: center; width: 220px;"
+      readonly class="input-calorias-escadas">
+  </div>
+</div>
+
+
 
     <!-- BICICLETA ERGOMÉTRICA -->
     <div class="treinoTitulo">
@@ -217,6 +262,61 @@
         </select>
       </div>
     </div>
+
+    <div style="margin-top: 20px;">
+  <button id="btnCalcularBicicleta" 
+    style="padding: 10px 20px; font-size: 16px; border-radius: 8px; border: none; background: #D2FE08; cursor: pointer; display: flexbox; align-items: center; text-align: center;">
+    Calcular Calorias
+  </button>
+
+  <div id="resultadoBicicleta" style="margin-top: 15px; font-size: 18px; font-weight: bold;">
+    <input type="text" placeholder="Calorias Estimadas"
+      style="padding: 10px 20px; font-size: 16px; border-radius: 8px; border: none; text-align: center; width: 220px; margin-bottom: 40px;"
+      readonly class="input-calorias-bicicleta">
+  </div>
+</div>
+
+    <script>
+// ESTEIRA
+window.addEventListener("load", function() {
+  document.getElementById("btnCalcular").addEventListener("click", function() {
+    let minutos = parseInt(document.querySelector("select[name='tempo-cardio-esteira']").value);
+    let inclinacao = parseInt(document.querySelector("select[name='inclinacao-esteira']").value);
+    let distancia = parseInt(document.querySelector("select[name='distancia-esteira']").value);
+
+    // Fórmula exemplo para esteira
+    let calorias = (minutos * 5) + (distancia * 60) + (inclinacao * 8);
+
+    document.querySelector(".input-calorias").value = calorias + " kcal";
+  });
+});
+
+// ESCADAS
+window.addEventListener("load", function() {
+  document.getElementById("btnCalcularEscadas").addEventListener("click", function() {
+    let minutos = parseInt(document.querySelector("select[name='tempo-cardio-escadas']").value);
+    let distancia = parseInt(document.querySelector("select[name='distancia-escadas']").value);
+
+    // Fórmula exemplo para escadas
+    let calorias = (minutos * 7) + (distancia * 80);
+
+    document.querySelector(".input-calorias-escadas").value = calorias + " kcal";
+  });
+});
+
+// BICICLETA
+window.addEventListener("load", function() {
+  document.getElementById("btnCalcularBicicleta").addEventListener("click", function() {
+    let minutos = parseInt(document.querySelector("select[name='tempo-cardio-bicicleta']").value);
+    let distancia = parseInt(document.querySelector("select[name='distancia-bicicleta']").value);
+
+    // Fórmula exemplo para bicicleta
+    let calorias = (minutos * 6) + (distancia * 70);
+
+    document.querySelector(".input-calorias-bicicleta").value = calorias + " kcal";
+  });
+});
+</script>
 
   </main>
 
