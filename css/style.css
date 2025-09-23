@@ -600,6 +600,10 @@
     .navbar-logo{
       content: url("https://i.postimg.cc/PfYRzBYW/logo2.png");
     }
+    .Remover{
+     
+       margin-left:100px;
+    }
     .navbar-items{
       display: none;
     }
@@ -671,8 +675,18 @@
       font-size: 1.1rem;
     }
   }
+  @media (max-width:400px){
+    .Remover{
+     
+      margin-left:100px;
+    }
+
+  }
 @media (max-width: 768px) {
-    
+    .Remover{
+     
+      margin-left:100px;
+    }
     .navbar-logo{
         content: url("../img/logo2.png");
       }
@@ -837,7 +851,10 @@
     
 }
 @media (max-width: 1000px) {
-    
+    .Remover{
+     
+       margin-left:100px;
+    }
     .navbar-logo{
         content: url("../img/logo2.png");
       }
@@ -1290,7 +1307,7 @@ h2 span {
  
 .historia p {
     margin-bottom: 15px;
-    font-size: 1.1rem;
+    font-size: 1.6rem;
 }
  
 .equipe-grid {
@@ -1340,6 +1357,24 @@ h2 span {
     margin: 0px;
 
     }
+}
+@media (max-width: 1500px) {
+    .imagemdetalhe img {
+        position: static !important;
+        left: auto !important;
+        top: auto !important;
+        border-radius: 20px !important; /* se quiser manter o arredondamento */
+    }
+    
+}
+@media (max-width: 10000px) {
+    .imagemdetalhe img {
+        position: static !important;
+        left: auto !important;
+        top: auto !important;
+        border-radius: 20px !important; /* se quiser manter o arredondamento */
+    }
+    
 }
 @media (max-width: 1000px) {
     .imagemdetalhe img {
@@ -1393,6 +1428,7 @@ h2 span {
     align-items: center;
     justify-content: center;
 }
+
 .seriee{
     display: flex;
     flex-direction: column;
@@ -1416,6 +1452,9 @@ h2 span {
     font-family: poppins;
     border-radius: 5px;
     font-size: 25px;
+}
+.Remover{
+  background-color: #354966;
 }
 .serie{
     
@@ -1557,7 +1596,16 @@ input[type=number]::-webkit-outer-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
-
+.Remover{
+  border-radius: 34px;
+  border: none;
+  margin-left:230px;
+}
+.Remover img{
+  width: 40px;
+  cursor: pointer;
+  
+}
 .Criar{
     text-decoration: none;
     color: #D2FE08;
@@ -1574,8 +1622,7 @@ input[type=number] {
 .botoes{
     display: flex;
     justify-content: center;
-    margin-top: 10px;
-    
+    margin-top: 20px;
 }
 
 .seriee select {

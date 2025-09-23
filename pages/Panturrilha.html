@@ -5,47 +5,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Página de treino</title>
   <link rel="stylesheet" href="../css/style.css">
-
   <script>
-    // Contadores de séries separados para cada exercício
-    const seriesAtuais = {
-      peck: 3,
-      paralelas: 3,
-      flexao: 3
-    };
-    const maxSeries = 5;
+  // Contadores de séries separados para cada exercício
+  const seriesAtuais = {
+    peck: 3,
+    paralelas: 3,
+    flexao: 3
+  };
+  const maxSeries = 5;
 
-    function adicionarSerie(exercicioId) {
-      if (seriesAtuais[exercicioId] >= maxSeries) {
-        alert("Limite máximo de séries atingido!");
-        return;
-      }
-
-      const container = document.getElementById(exercicioId);
-
-      // Adiciona nova série
-      const serie = container.querySelector('.serie');
-      const novaSerie = document.createElement('div');
-      novaSerie.classList.add('serienumero');
-      novaSerie.innerHTML = '<input type="number" min="1" max="999" placeholder="0">';
-      serie.appendChild(novaSerie);
-
-      // Adiciona nova repetição
-      const repeticoes = container.querySelector('.repeticoes');
-      const novaRepeticao = document.createElement('div');
-      novaRepeticao.classList.add('repeticoesnumero');
-      novaRepeticao.innerHTML = '<input type="number" min="1" max="999" placeholder="0">';
-      repeticoes.appendChild(novaRepeticao);
-
-      // Adiciona nova carga
-      const carga = container.querySelector('.carga');
-      const novaCarga = document.createElement('div');
-      novaCarga.classList.add('cargaadicionada');
-      novaCarga.innerHTML = '<input type="number" placeholder="0">';
-      carga.appendChild(novaCarga);
-
-      seriesAtuais[exercicioId]++;
+  function adicionarSerie(exercicioId) {
+    if (seriesAtuais[exercicioId] >= maxSeries) {
+      
+      return;
     }
+
+    const container = document.getElementById(exercicioId);
+
+    // Adiciona nova série
+    const serie = container.querySelector('.serie');
+    const novaSerie = document.createElement('div');
+    novaSerie.classList.add('serienumero');
+    novaSerie.innerHTML = '<input type="number" min="1" max="999" placeholder="0">';
+    serie.appendChild(novaSerie);
+
+    // Adiciona nova repetição
+    const repeticoes = container.querySelector('.repeticoes');
+    const novaRepeticao = document.createElement('div');
+    novaRepeticao.classList.add('repeticoesnumero');
+    novaRepeticao.innerHTML = '<input type="number" min="1" max="999" placeholder="0">';
+    repeticoes.appendChild(novaRepeticao);
+
+    // Adiciona nova carga
+    const carga = container.querySelector('.carga');
+    const novaCarga = document.createElement('div');
+    novaCarga.classList.add('cargaadicionada');
+    novaCarga.innerHTML = '<input type="number" placeholder="0">';
+    carga.appendChild(novaCarga);
+
+    seriesAtuais[exercicioId]++;
+  }
+
+  function removerUltimaSerie(exercicioId) {
+    if (seriesAtuais[exercicioId] <= 3) {
+      
+      return;
+    }
+
+    const container = document.getElementById(exercicioId);
+
+    // Remove última série
+    const series = container.querySelectorAll('.serie .serienumero');
+    series[series.length - 1].remove();
+
+    // Remove última repetição
+    const repeticoes = container.querySelectorAll('.repeticoes .repeticoesnumero');
+    repeticoes[repeticoes.length - 1].remove();
+
+    // Remove última carga
+    const cargas = container.querySelectorAll('.carga .cargaadicionada');
+    cargas[cargas.length - 1].remove();
+
+    seriesAtuais[exercicioId]--;
+  }
+</script>
   </script>
   <!-- fontawesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -76,7 +99,7 @@
     <nav class="menu-mobile" id="menu_mobile">
       <ul class="menu-mobile-items">
         <li class="menu-mobile-item">
-          <a href="./index.html" class="menu-mobile-link"><i class="fa-regular fa-house"></i>Home</a>
+          <a href="../index.html" class="menu-mobile-link"><i class="fa-regular fa-house"></i>Home</a>
         </li>
         <li class="menu-mobile-item">
           <a href="../pages/sobre.html" class="menu-mobile-link">Sobre</a>
@@ -99,7 +122,7 @@
         <img src="https://i.postimg.cc/PfYRzBYW/logo2.png" alt="" class="navbar-scroll-image">
       </a>
       <ul class="navbar-scroll-list">
-        <li class="navbar-scroll-list-item"><a href="../index.html" class="navbar-scroll-list-link"><i class="fa-regular fa-house"></i></a></li>
+        <li class="navbar-scroll-list-item"><a href="../index.html" class="navbar-scroll-list-link">Home</a></li>
         <li class="navbar-scroll-list-item"><a href="./p" class="navbar-scroll-list-link">Sobre</a></li>
         <li class="navbar-scroll-list-item"><a href="../pages/blog.html" class="navbar-scroll-list-link">Blog</a></li>
         <li class="navbar-scroll-list-item"><a href="../pages/imc.html" class="navbar-scroll-list-link">IMC</a></li>
@@ -118,7 +141,7 @@
     </div>
     <!-- PECK DECK / VOADOR -->
     <div class="treinoTitulo">
-      <h1>Elevação no leg press</h1>
+      <h1>ELEVAÇÃO NO LEG PRESS</h1>
     </div>
     <div class="imagemdetalhe">
       <img src="../img/sled-calf-press-on-leg-press.gif" alt="voador">
@@ -148,11 +171,12 @@
         <img src="../img/AdicionarIcon.png" alt="">
       </a>
       <button class="Criar" type="button" onclick="adicionarSerie('peck')">Adicionar série</button>
+      <button class="Remover" type="button" onclick="removerUltimaSerie('peck')"><img src="../img/Lixeira.png" alt=""></button>
     </div>
 
     <!-- PARALELAS -->
     <div class="treinoTitulo">
-      <h1>Elevação com barra</h1>
+      <h1>ELEVAÇÃO COM BARRA</h1>
     </div>
     <div class="imagemdetalhe">
       <img src="../img/barbell-standing-calf-raise.gif" alt="paralelas">
@@ -182,11 +206,12 @@
         <img src="../img/AdicionarIcon.png" alt="">
       </a>
       <button class="Criar" type="button" onclick="adicionarSerie('paralelas')">Adicionar série</button>
+      <button class="Remover" type="button" onclick="removerUltimaSerie('paralelas')"><img src="../img/Lixeira.png" alt=""></button>
     </div>
 
     <!-- FLEXÃO DE BRAÇO -->
     <div class="treinoTitulo">
-      <h1>panturrilhas máquina</h1>
+      <h1>PANTURRILHAS NA MÁQUINA</h1>
     </div>
     <div class="imagemdetalhe">
       <img src="../img/lever-seated-calf-raise-.gif" alt="flexao">
@@ -216,12 +241,13 @@
         <img src="../img/AdicionarIcon.png" alt="">
       </a>
       <button class="Criar" type="button" onclick="adicionarSerie('flexao')">Adicionar série</button>
+      <button class="Remover" type="button" onclick="removerUltimaSerie('flexao')"><img src="../img/Lixeira.png" alt=""></button>
     </div>
   </main>
    <footer>
     <img src="https://i.postimg.cc/qvMDrqYw/logo.png" alt="" class="footer-image">
     <div class="footer-text">
-      <p>Fortaleça seu corpo, um grupo <br> muscular por vez.</p>
+      <p>Fortaleça seu corpo, um grupo muscular por vez.</p>
     </div>
 
     <div class="redes-sociais" id="redes_sociais">
