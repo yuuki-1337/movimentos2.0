@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora IMC</title>
+  <link rel="stylesheet" href="../css/style.css">
+    <!-- fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- GOOGLE FONTS -->
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body{
+      width: 100%;
+      min-height: 100vh;
+      font-family: poppins;
+    }
+    main{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      min-height: 800px;
+      background: url("../img/background-imc.png") no-repeat center;
+      background-size: cover;
+      padding: 50px 8%;
+    }
+    .container{
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%);
+    }
+    .box{
+      min-width: 400px;
+      background: #FAFAFA;
+      border-radius: 20px;
+      text-align: center;
+      position: relative;
+
+    }
+    .box::before{
+      content: '';
+      position: absolute;
+      height: 110%;
+      width: 110%;
+      left: -5%;
+      top: -5%;
+      backdrop-filter: blur(10px); /* O efeito principal */
+       -webkit-backdrop-filter: blur(10px); /* Suporte Safari */
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0px 0px 166px -31px rgba(0, 0, 0, 0.15);
+      border-radius: 20px;
+      z-index: -1;
+    }
+    .title{
+      color: #000;
+      font-weight: bold;
+      font-size: clamp(1rem, calc(5vw + 2rem), 2rem);
+      padding: 30px;
+
+    }
+    .content{
+      padding: 0 40px;
+
+    }
+    .input{
+      background: #fff;
+      box-shadow: 0px 0px 95px -30px rgba(0,0,0,0.15);
+      border-radius: 28px;
+      padding: 20px;
+      margin-bottom: 20px;
+
+    }
+    .input label{
+      display: block;
+      font-size: 18px;
+      font-weight: 600;
+      color: #000;
+      margin-bottom: 20px;
+
+    }
+    .input input{
+      outline: none;
+      border: none;
+      border-bottom: 1px solid #1245A3;
+      width: 60%;
+      text-align: center;
+      font-size: 20px;
+
+    }
+    button#calculate{
+      font-family: poppins;
+      color: #fff;
+      background: #1245A3;
+      font-size: 16px;
+      border-radius: 12px;
+      padding: 12px 0;
+      width: 100%;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s ease-in;
+    }
+    button#calculate:hover{
+      filter: opacity(0.9);
+    }
+    .result{
+      padding: 30px 20px;
+    }
+    .result p{
+      font-weight: 600;
+      font-size: 22px;
+      color: #000;
+      margin-bottom: 15px;
+
+    }
+    .result #result{
+      font-size: 36px;
+      font-weight: 900;
+      color: #1245A3;
+      background-color: #eaeaea;
+      display: inline-block;
+      padding: 7px 20px;
+      border-radius: 55px;
+      margin-bottom: 25px;
+    }
+    #comment{
+      color: #4f4df9;
+      font-weight: 800;
+    }
+
+    @media (max-width: 768px){
+      main{
+        min-height: 1000px;
+        justify-content: center;
+      }
+      .box{
+        min-width: 300px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+   <header>
+    <!-- MENU -->
+    <nav class="navbar">
+      <a href="../index.html">
+        <img src="https://i.postimg.cc/qvMDrqYw/logo.png" alt="" class="navbar-logo">
+      </a>
+      <ul class="navbar-items">
+        <li class="navbar-item"><a href="./sobre.html" class="navbar-link">Sobre</a></li>
+        <li class="navbar-item"><a href="./blog.html" class="navbar-link">Blog</a></li>
+        <li class="navbar-item"><a href="./imc.html" class="navbar-link">IMC</a></li>
+        <li class="navbar-item"><a href="./treinos.html" class="navbar-link navbar-link-treinos">Treinos</a></li>
+      </ul>
+      <button class="menu-toggle" id="menu_toggle">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </nav>
+
+    <!-- MENU MOBILE -->
+    <nav class="menu-mobile" id="menu_mobile">
+      <ul class="menu-mobile-items">
+        <li class="menu-mobile-item">
+          <a href="./index.html" class="menu-mobile-link"><i class="fa-regular fa-house"></i>Home</a>
+        </li>
+        <li class="menu-mobile-item">
+          <a href="../pages/sobre.html" class="menu-mobile-link">Sobre</a>
+        </li>
+        <li class="menu-mobile-item">
+          <a href="../pages/blog.html" class="menu-mobile-link">Blog</a>
+        </li>
+        <li class="menu-mobile-item">
+          <a href="../pages/imc.html" class="menu-mobile-link"><i class="fa-solid fa-person"></i>IMC</a>
+        </li>
+        <li class="menu-mobile-item">
+          <a href="../pages/treinos.html" class="menu-mobile-link menu-mobile-treinos"><i class="fa-solid fa-dumbbell"></i>Treinos</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- MENU SCROLL -->
+    <nav class="navbar-scroll">
+      <a href="../index.html">
+        <img src="https://i.postimg.cc/PfYRzBYW/logo2.png" alt="" class="navbar-scroll-image">
+      </a>
+      <ul class="navbar-scroll-list">
+        <li class="navbar-scroll-list-item"><a href="../index.html" class="navbar-scroll-list-link"><i class="fa-regular fa-house"></i></a></li>
+        <li class="navbar-scroll-list-item"><a href="./p" class="navbar-scroll-list-link">Sobre</a></li>
+        <li class="navbar-scroll-list-item"><a href="../pages/blog.html" class="navbar-scroll-list-link">Blog</a></li>
+        <li class="navbar-scroll-list-item"><a href="../pages/imc.html" class="navbar-scroll-list-link">IMC</a></li>
+        <li class="navbar-scroll-list-item"><a href="../pages/treinos.html" class="navbar-scroll-list-link navbar-scroll-list-treinos">Treinos</a></li>
+      </ul>
+      <button class="menu-toggle" id="menu_toggle_scroll">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </nav>
+  </header>
+  <main>
+    <div class="initial-content-btn" id="initial_content_btn">
+    </div>
+    <div class="container">
+      <div class="box">
+        <h1 class="title">Calculadora IMC</h1>
+        <div class="content">
+          <div class="input">
+            <label for="height">Altura(cm)</label>
+            <input type="number" id="height">
+          </div>
+          <div class="input">
+            <label for="weight">Peso(kg)</label>
+            <input type="number" id="weight">
+          </div>
+          <button id="calculate">Calcular IMC</button>
+        </div>
+        <div class="result">
+          <p>Seu IMC é</p>
+          <div id="result">00.00</div>
+          <p class="comment"></p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <img src="https://i.postimg.cc/qvMDrqYw/logo.png" alt="" class="footer-image">
+    <div class="footer-text">
+      <p>Fortaleça seu corpo, um grupo <br> muscular por vez.</p>
+    </div>
+
+    <div class="redes-sociais" id="redes_sociais">
+      <ul>
+        <li><a href="https://www.instagram.com/eeantonietaborgesalves/" id="instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+        <li><a href="#" id="linkedin" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
+      </ul>
+
+      <div class="instagrams" id="instagrams">
+        <ul>
+          <li><a href="https://www.instagram.com/3d.aba_/" target="_blank"><img src="https://i.postimg.cc/yYKrfvyw/logo3D.png" alt="3D">3D</a></li>
+          <li><a href="https://www.instagram.com/eeantonietaborgesalves/" target="_blank"><img src="https://i.postimg.cc/dt9NgrWD/logo-escola.png" alt="ABA">ABA</a></li>
+        </ul>
+      </div>
+
+      <div class="linkedins" id="linkedins">
+        <ul>
+          <li title="Prof. Allan"><a href="https://www.linkedin.com/in/allanmarcellinus/" target="_blank"><img src="https://i.postimg.cc/FKT0r8V2/allan-marcelino.jpg" alt=""></a></li>
+          <li title="Eduardo Marques"><a href="https://www.linkedin.com/in/eduardo-marques-356558337/" target="_blank"><img src="https://i.postimg.cc/zvghkBYr/eduardo-marques.jpg" alt=""></a></li>
+          <li title="Filippi Denner"><a href="https://www.linkedin.com/in/filippi-denner-63a76932b/" target="_blank"><img src="https://i.postimg.cc/mgGNP91R/filippi-denner.png" alt=""></a></li>
+          <li title="Ismael Laurentino"><a href="https://www.linkedin.com/in/ismael-laurentino-25723b327/" target="_blank"><img src="https://i.postimg.cc/7YznP96m/ismael-laurentino.jpg" alt=""></a></li>
+          <li title="João Pedro"><a href="https://www.linkedin.com/in/pedro-andrade-a42727311/" target="_blank"><img src="https://i.postimg.cc/FF7x8NQt/joao-pedro.jpg" alt=""></a></li>
+          <li title="Kaue Yuuki"><a href="https://www.linkedin.com/in/kau%C3%AA-yamamoto-584933291/" target="_blank"><img src="https://i.postimg.cc/G29GHKM9/kaue-yuuki.jpg" alt=""></a></li>
+          <li title="Maria Clara"><a href="https://www.linkedin.com/in/maria-clara-fernandes-7588b9321/" target="_blank"><img src="https://i.postimg.cc/XJhFF5hL/maria-clara.jpg" alt=""></a></li>
+          <li title="Patrícia Dias"><a href="https://www.linkedin.com/in/patricia-dias-427637196/" target="_blank"><img src="https://i.postimg.cc/GmJPGpvD/patricia-dias.png" alt=""></a></li>
+          <li title="Paulo Ricardo"><a href="https://www.linkedin.com/in/paulo-ricardo-6a2559337/" target="_blank"><img src="https://i.postimg.cc/pdWfZtB6/paulo-ricardo.png" alt=""></a></li>
+          <li title="Pedro Henrique"><a href="https://www.linkedin.com/in/pedro-pascon/" target="_blank"><img src="https://i.postimg.cc/T2FcXFRK/pedro-henrique.jpg" alt=""></a></li>
+          <li title="Samuel Brito"><a href="https://www.linkedin.com/in/samuel-brito-melo-b8676832b/" target="_blank"><img src="https://i.postimg.cc/bdftVhq2/samuel-brito.jpg" alt=""></a></li>
+          <li title="Raul Lucena"><a href="https://www.linkedin.com/in/raul-lucena-7300a733b/" target="_blank"><img src="" alt=""></a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <div class="footer-copyright">
+    ©Movimentos 2.0 - Todos os direitos reservados
+  </div>
+
+  <div id="overlay"></div>
+  
+  <script src="../script/script.js"></script>
+</body>
+</html>
