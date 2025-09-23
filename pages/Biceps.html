@@ -10,47 +10,70 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- GOOGLE FONTS -->
-    <script>
-    // Contadores de séries separados para cada exercício
-    const seriesAtuais = {
-      peck: 3,
-      paralelas: 3,
-      flexao: 3
-    };
-    const maxSeries = 5;
+      <script>
+  // Contadores de séries separados para cada exercício
+  const seriesAtuais = {
+    peck: 3,
+    paralelas: 3,
+    flexao: 3
+  };
+  const maxSeries = 5;
 
-    function adicionarSerie(exercicioId) {
-      if (seriesAtuais[exercicioId] >= maxSeries) {
-        alert("Limite máximo de séries atingido!");
-        return;
-      }
-
-      const container = document.getElementById(exercicioId);
-
-      // Adiciona nova série
-      const serie = container.querySelector('.serie');
-      const novaSerie = document.createElement('div');
-      novaSerie.classList.add('serienumero');
-      novaSerie.innerHTML = '<input type="number" min="1" max="999" placeholder="0">';
-      serie.appendChild(novaSerie);
-
-      // Adiciona nova repetição
-      const repeticoes = container.querySelector('.repeticoes');
-      const novaRepeticao = document.createElement('div');
-      novaRepeticao.classList.add('repeticoesnumero');
-      novaRepeticao.innerHTML = '<input type="number" min="1" max="999" placeholder="0">';
-      repeticoes.appendChild(novaRepeticao);
-
-      // Adiciona nova carga
-      const carga = container.querySelector('.carga');
-      const novaCarga = document.createElement('div');
-      novaCarga.classList.add('cargaadicionada');
-      novaCarga.innerHTML = '<input type="number" placeholder="0">';
-      carga.appendChild(novaCarga);
-
-      seriesAtuais[exercicioId]++;
+  function adicionarSerie(exercicioId) {
+    if (seriesAtuais[exercicioId] >= maxSeries) {
+      
+      return;
     }
-  </script>
+
+    const container = document.getElementById(exercicioId);
+
+    // Adiciona nova série
+    const serie = container.querySelector('.serie');
+    const novaSerie = document.createElement('div');
+    novaSerie.classList.add('serienumero');
+    novaSerie.innerHTML = '<input type="number" min="1" max="999" placeholder="0">';
+    serie.appendChild(novaSerie);
+
+    // Adiciona nova repetição
+    const repeticoes = container.querySelector('.repeticoes');
+    const novaRepeticao = document.createElement('div');
+    novaRepeticao.classList.add('repeticoesnumero');
+    novaRepeticao.innerHTML = '<input type="number" min="1" max="999" placeholder="0">';
+    repeticoes.appendChild(novaRepeticao);
+
+    // Adiciona nova carga
+    const carga = container.querySelector('.carga');
+    const novaCarga = document.createElement('div');
+    novaCarga.classList.add('cargaadicionada');
+    novaCarga.innerHTML = '<input type="number" placeholder="0">';
+    carga.appendChild(novaCarga);
+
+    seriesAtuais[exercicioId]++;
+  }
+
+  function removerUltimaSerie(exercicioId) {
+    if (seriesAtuais[exercicioId] <= 3) {
+      
+      return;
+    }
+
+    const container = document.getElementById(exercicioId);
+
+    // Remove última série
+    const series = container.querySelectorAll('.serie .serienumero');
+    series[series.length - 1].remove();
+
+    // Remove última repetição
+    const repeticoes = container.querySelectorAll('.repeticoes .repeticoesnumero');
+    repeticoes[repeticoes.length - 1].remove();
+
+    // Remove última carga
+    const cargas = container.querySelectorAll('.carga .cargaadicionada');
+    cargas[cargas.length - 1].remove();
+
+    seriesAtuais[exercicioId]--;
+  }
+</script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
 <body class="body1">
@@ -148,6 +171,7 @@
         <img src="../img/AdicionarIcon.png" alt="">
       </a>
       <button class="Criar" type="button" onclick="adicionarSerie('peck')">Adicionar série</button>
+      <button class="Remover" type="button" onclick="removerUltimaSerie('peck')"><img src="../img/Lixeira.png" alt=""></button>
     </div>
 
     <!-- PARALELAS -->
@@ -182,6 +206,7 @@
         <img src="../img/AdicionarIcon.png" alt="">
       </a>
       <button class="Criar" type="button" onclick="adicionarSerie('paralelas')">Adicionar série</button>
+      <button class="Remover" type="button" onclick="removerUltimaSerie('paralelas')"><img src="../img/Lixeira.png" alt=""></button>
     </div>
 
     <!-- FLEXÃO DE BRAÇO -->
@@ -216,6 +241,7 @@
         <img src="../img/AdicionarIcon.png" alt="">
       </a>
       <button class="Criar" type="button" onclick="adicionarSerie('flexao')">Adicionar série</button>
+      <button class="Remover" type="button" onclick="removerUltimaSerie('flexao')"><img src="../img/Lixeira.png" alt=""></button>
     </div>
   </main>
 
