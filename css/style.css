@@ -1599,7 +1599,8 @@ input[type=number] {
 .Remover{
   border-radius: 34px;
   border: none;
-  margin-left:230px;
+  margin-left:230px
+  ;
 }
 .Remover img{
   width: 40px;
