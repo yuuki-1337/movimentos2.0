@@ -20,16 +20,17 @@
     body{
       width: 100%;
       min-height: 100vh;
-      font-family: poppins;
+      font-family: inter;
     }
     main{
       display: flex;
       flex-direction: column;
       align-items: center;
+
       width: 100%;
       min-height: 800px;
-      background: url("../img/background-imc.png") no-repeat center;
-      background-size: cover;
+      
+    background: linear-gradient(to bottom, #000 , #061736, #061736);
       padding: 50px 8%;
     }
     .container{
@@ -43,22 +44,8 @@
       border-radius: 20px;
       text-align: center;
       position: relative;
+      border: 4px solid #dfe1e5;
 
-    }
-    .box::before{
-      content: '';
-      position: absolute;
-      height: 110%;
-      width: 110%;
-      left: -5%;
-      top: -5%;
-      backdrop-filter: blur(10px); /* O efeito principal */
-       -webkit-backdrop-filter: blur(10px); /* Suporte Safari */
-      background: rgba(255, 255, 255, 0.2);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      box-shadow: 0px 0px 166px -31px rgba(0, 0, 0, 0.15);
-      border-radius: 20px;
-      z-index: -1;
     }
     .title{
       color: #000;
@@ -207,7 +194,7 @@
   <main>
     <div class="initial-content-btn" id="initial_content_btn">
     </div>
-    <div class="container">
+    <div class="container" id="container">
       <div class="box">
         <h1 class="title">Calculadora IMC</h1>
         <div class="content">
@@ -274,5 +261,50 @@
   <div id="overlay"></div>
   
   <script src="../script/script.js"></script>
+  <script>
+    //CALCULADORA IMC
+const btn = document.getElementById('calculate');
+
+btn.addEventListener('click', ()=>{
+  let height = document.querySelector('#height').value;
+  let weight = document.querySelector('#weight').value;
+
+  if(height == '' || weight == ''){
+    alert('Por favor preencha os dados!');
+    return;
+  }
+
+  height = height / 100;
+  let IMC = (weight / (height * height));
+  IMC = IMC.toFixed(2);
+  console.log(IMC);
+
+  document.querySelector('#result').innerHTML = IMC;
+  let status = '';
+  let color = '';
+
+  if(IMC < 18.5){
+    status = "Abaixo do peso";
+    color = '#6CA6D9';
+
+  }
+  if(IMC >= 18.5 && IMC < 25){
+    status = "Normal";
+    color = '#1FB259';
+  }
+  if(IMC >= 25 && IMC < 30){
+    status = "Acima do peso";
+    color = '#FFC145';
+  }
+  if(IMC >= 30){
+    status = "Obeso";
+    color = '#F20732';
+  }
+  if(IMC )
+  document.getElementById('result').style.color = color;
+  document.querySelector('.comment').innerHTML = `Você está <span id="comment" style="color: ${color}">${status}</span>`;
+  
+});
+  </script>
 </body>
 </html>
