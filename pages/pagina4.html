@@ -4,11 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Explicação das séries de aquecimento</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
+    :root {
+      --cor-verde: #D2FE08;
+      --cor-de-fundo: #061736;
+      --cor-azul-escuro: #051129;
+    }
+
     /* ===== Reset ===== */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       background: #ffffff;
       color: #111;
       line-height: 1.6;
@@ -17,8 +29,191 @@
     .page { max-width: 1200px; margin: 0 auto; padding: 20px; display: flex; flex-direction: column; }
 
     /* ===== Header ===== */
-    .header h1 { font-size: 36px; margin-bottom: 8px; font-weight: 800; }
-    .header .author { color: #3b82f6; font-size: 14px; margin-bottom: 20px; }
+    header:not(.content-header) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 80px;
+      background: #000;
+    }
+
+    .navbar {
+      width: calc(100vw - 30px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 1000;
+      padding: 20px;
+    }
+
+    .navbar-logo {
+      max-height: 50px;
+    }
+
+    .navbar-items {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar-link {
+      text-decoration: none;
+      padding: 10px 30px;
+      border-radius: 40px;
+      color: white;
+      transition: 0.3s ease;
+    }
+
+    .navbar-link:hover {
+      filter: brightness(0.7);
+    }
+
+    .navbar-link-treinos {
+      background-color: var(--cor-verde);
+      color: black;
+    }
+
+    /* BOTÃO MOBILE */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      font-size: 3rem;
+      color: var(--cor-verde);
+    }
+
+    /* MENU MOBILE */
+    .menu-mobile {
+      position: fixed;
+      width: 90vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--cor-azul-escuro);
+      border-radius: 10px;
+      padding: 20px;
+      opacity: 0;
+      top: -500px;
+      transition: opacity 0.5s ease, top 0.5s ease;
+      z-index: 1000;
+    }
+
+    .menu-mobile.active {
+      top: 90px;
+      opacity: 1;
+    }
+
+    .menu-mobile-items {
+      width: 100%;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .menu-mobile-item {
+      width: 100%;
+    }
+
+    .menu-mobile-link {
+      display: flex;
+      background-color: var(--cor-de-fundo);
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #d4d4d4;
+      padding: 15px;
+      border-radius: 10px;
+      transition: 0.3s ease;
+    }
+
+    .menu-mobile-link:hover {
+      filter: brightness(0.7);
+    }
+
+    .menu-mobile-treinos {
+      background-color: var(--cor-verde);
+      color: black;
+    }
+
+    /* NAVBAR SCROLL */
+    .navbar-scroll {
+      position: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #051129;
+      width: 90%;
+      border-radius: 100px;
+      padding: 5px 25px;
+      top: -200px;
+      z-index: 1000;
+      transition: top 0.4s ease;
+    }
+
+    .navbar-scroll.active {
+      top: 10px;
+    }
+
+    .navbar-scroll-image {
+      max-height: 40px;
+    }
+
+    .navbar-scroll-list {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .navbar-scroll-list-link {
+      text-decoration: none;
+      color: #fff;
+      transition: 0.3s ease;
+    }
+
+    .navbar-scroll-list-link:hover {
+      opacity: 0.5;
+    }
+
+    .navbar-scroll-list-treinos {
+      background-color: var(--cor-verde);
+      color: black;
+      border-radius: 40px;
+      padding: 10px 15px;
+    }
+
+    /* OVERLAY (quando menu mobile abre) */
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 999;
+    }
+
+    #overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    /* ===== Content Header ===== */
+    .content-header {
+      background: transparent;
+    }
+    .content-header h1 { font-size: 36px; margin-bottom: 8px; font-weight: 800; }
+    .content-header .author { color: #3b82f6; font-size: 14px; margin-bottom: 20px; }
 
     /* ===== Layout ===== */
     .main-layout { display: grid; grid-template-columns: 3fr 1fr; gap: 40px; }
@@ -77,17 +272,153 @@
       color: #0f62fe;
     }
 
+    /* ===== Footer ===== */
+    footer {
+      background-color: #000;
+      padding: 40px 20px;
+      text-align: center;
+      color: #fff;
+    }
+
+    footer .footer-image {
+      max-width: 150px;
+      margin-bottom: 15px;
+    }
+
+    footer .footer-text p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    footer .redes-sociais ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    footer .redes-sociais ul li a {
+      color: #fff;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+
+    footer .redes-sociais ul li a:hover {
+      color: #D2FE08;
+    }
+
+    footer .instagrams ul,
+    footer .linkedins ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+      list-style: none;
+    }
+
+    footer .instagrams ul li a,
+    footer .linkedins ul li a {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: 0.3s;
+    }
+
+    footer .instagrams ul li a:hover,
+    footer .linkedins ul li a:hover {
+      color: #D2FE08;
+    }
+
+    footer .instagrams ul li img,
+    footer .linkedins ul li img {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .footer-copyright {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 10px;
+      font-size: 0.85rem;
+    }
+
     /* ===== Responsivo ===== */
     @media (max-width: 900px) {
       .main-layout { grid-template-columns: 1fr; }
       .sidebar { max-width: 100%; }
     }
+
+    @media (max-width: 768px) {
+      .navbar-items {
+        display: none;
+      }
+
+      .navbar-scroll-list {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
   </style>
 </head>
 <body>
+  <header>
+    <!-- MENU DESKTOP -->
+    <nav class="navbar">
+      <a href="./index.html"><img src="https://i.postimg.cc/qvMDrqYw/logo.png" alt="" class="navbar-logo"></a>
+      <ul class="navbar-items">
+        <li class="navbar-item"><a href="./pages/sobre.html" class="navbar-link">Sobre</a></li>
+        <li class="navbar-item"><a href="./pages/blog.html" class="navbar-link">Blog</a></li>
+        <li class="navbar-item"><a href="./pages/imc.html" class="navbar-link">IMC</a></li>
+        <li class="navbar-item"><a href="./pages/treinos.html" class="navbar-link navbar-link-treinos">Treinos</a></li>
+      </ul>
+      <button class="menu-toggle" id="menu_toggle">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </nav>
+
+    <!-- MENU MOBILE -->
+    <nav class="menu-mobile" id="menu_mobile">
+      <ul class="menu-mobile-items">
+        <li class="menu-mobile-item"><a href="./index.html" class="menu-mobile-link"><i class="fa-regular fa-house"></i>Home</a></li>
+        <li class="menu-mobile-item"><a href="./pages/sobre.html" class="menu-mobile-link">Sobre</a></li>
+        <li class="menu-mobile-item"><a href="./pages/blog.html" class="menu-mobile-link">Blog</a></li>
+        <li class="menu-mobile-item"><a href="./pages/imc.html" class="menu-mobile-link"><i class="fa-solid fa-person"></i>IMC</a></li>
+        <li class="menu-mobile-item"><a href="./pages/treinos.html" class="menu-mobile-link menu-mobile-treinos"><i class="fa-solid fa-dumbbell"></i>Treinos</a></li>
+      </ul>
+    </nav>
+
+    <!-- MENU SCROLL -->
+    <nav class="navbar-scroll" id="navbar_scroll">
+      <a href="./index.html"><img src="https://i.postimg.cc/PfYRzBYW/logo2.png" alt="" class="navbar-scroll-image"></a>
+      <ul class="navbar-scroll-list">
+        <li class="navbar-scroll-list-item"><a href="./index.html" class="navbar-scroll-list-link">Home</a></li>
+        <li class="navbar-scroll-list-item"><a href="./pages/sobre.html" class="navbar-scroll-list-link">Sobre</a></li>
+        <li class="navbar-scroll-list-item"><a href="./pages/blog.html" class="navbar-scroll-list-link">Blog</a></li>
+        <li class="navbar-scroll-list-item"><a href="./pages/imc.html" class="navbar-scroll-list-link">IMC</a></li>
+        <li class="navbar-scroll-list-item"><a href="./pages/treinos.html" class="navbar-scroll-list-link navbar-scroll-list-treinos">Treinos</a></li>
+      </ul>
+      <button class="menu-toggle" id="menu_toggle_scroll">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </nav>
+  </header>
+
+  <div id="overlay"></div>
+
   <div class="page">
     <!-- Cabeçalho -->
-    <header class="header">
+    <header class="content-header">
       <h1>O que são superconjuntos e como usá-los</h1>
       <p class="author">Escrito por Pedro</p>
     </header>
@@ -95,7 +426,7 @@
     <div class="main-layout">
       <!-- Conteúdo -->
       <main class="content">
-        <img src="../img/img3.png" alt="Homem treinando musculação">
+        <img src="img3.png" alt="Homem treinando musculação">
 
         <p>Superconjuntos são uma técnica de intensidade popular e eficaz, universalmente elogiada e recomendada para que as pessoas economizem tempo em seus treinamentos.</p>
         <p>Vamos ver como os superconjuntos funcionam, quais são os tipos comuns, seus benefícios e desvantagens, como programá-los na sua rotina e quais erros evitar.</p>
@@ -138,8 +469,6 @@
           <li>Elevação do quadril com barra e elevação do joelho pendurado (glúteos e flexores do quadril)</li>
         </ul>
 
-        <img src="../img/celular.png" alt="Exemplo aplicativo de treino no celular">
-
         <h3 id="composto">2. Superconjuntos de músculos iguais (composto/composto)</h3>
         <p>Este tipo de superconjunto combina dois exercícios que trabalham o mesmo grupo muscular. Por exemplo:</p>
         <ul>
@@ -176,22 +505,60 @@
         <div class="share">
           <p class="share-title">Compartilhe esta publicação</p>
           <div class="icons">
-            <img src="../img/pinterest.png" alt="Pinterest">
-            <img src="../img/facebook.png" alt="Facebook">
-            <img src="../img/twitter.png" alt="Twitter">
-            <img src="../img/reddit.png" alt="Reddit">
+            <img src="pinterest.png" alt="Pinterest">
+            <img src="facebook.png" alt="Facebook">
+            <img src="twitter.png" alt="Twitter">
+            <img src="reddit.png" alt="Reddit">
           </div>
         </div>
 
         <div class="app-box">
           <h3>Baixar Aplicativo</h3>
-          <img src="../img/Qr code.png" alt="QR Code">
+          <img src="Qr code.png" alt="QR Code">
           <a href="#">Loja de aplicativos</a>
           <a href="#">Google Play</a>
         </div>
       </aside>
     </div>
   </div>
+
+  <footer>
+    <img src="https://i.postimg.cc/qvMDrqYw/logo.png" alt="" class="footer-image">
+    <div class="footer-text">
+      <p>Fortaleça seu corpo, um grupo muscular por vez.</p>
+    </div>
+    <div class="redes-sociais" id="redes_sociais">
+      <ul>
+        <li><a href="https://www.instagram.com/eeantonietaborgesalves/" id="instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+        <li><a href="#" id="linkedin" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
+      </ul>
+      <div class="instagrams" id="instagrams">
+        <ul>
+          <li><a href="https://www.instagram.com/3d.aba_/" target="_blank"><img src="https://i.postimg.cc/yYKrfvyw/logo3D.png" alt="3D">3D</a></li>
+          <li><a href="https://www.instagram.com/eeantonietaborgesalves/" target="_blank"><img src="https://i.postimg.cc/dt9NgrWD/logo-escola.png" alt="ABA">ABA</a></li>
+        </ul>
+      </div>
+      <div class="linkedins" id="linkedins">
+        <ul>
+          <li title="Prof. Allan"><a href="https://www.linkedin.com/in/allanmarcellinus/" target="_blank"><img src="https://i.postimg.cc/7hnJvpJS/allan-marcelino.jpg" alt=""></a></li>
+          <li title="Eduardo Marques"><a href="https://www.linkedin.com/in/eduardo-marques-356558337/" target="_blank"><img src="https://i.postimg.cc/zvghkBYr/eduardo-marques.jpg" alt=""></a></li>
+          <li title="Filippi Denner"><a href="https://www.linkedin.com/in/filippi-denner-63a76932b/" target="_blank"><img src="https://i.postimg.cc/mgGNP91R/filippi-denner.png" alt=""></a></li>
+          <li title="Ismael Laurentino"><a href="https://www.linkedin.com/in/ismael-laurentino-25723b327/" target="_blank"><img src="https://i.postimg.cc/7YznP96m/ismael-laurentino.jpg" alt=""></a></li>
+          <li title="João Pedro"><a href="https://www.linkedin.com/in/pedro-andrade-a42727311/" target="_blank"><img src="./img/alunos/joao 4.png" alt=""></a></li>
+          <li title="Kaue Yuuki"><a href="https://www.linkedin.com/in/kau%C3%AA-yamamoto-584933291/" target="_blank"><img src="https://i.postimg.cc/G29GHKM9/kaue-yuuki.jpg" alt=""></a></li>
+          <li title="Maria Clara"><a href="https://www.linkedin.com/in/maria-clara-fernandes-7588b9321/" target="_blank"><img src="https://i.postimg.cc/XJhFF5hL/maria-clara.jpg" alt=""></a></li>
+          <li title="Patrícia Dias"><a href="https://www.linkedin.com/in/patricia-dias-427637196/" target="_blank"><img src="https://i.postimg.cc/GmJPGpvD/patricia-dias.png" alt=""></a></li>
+          <li title="Paulo Ricardo"><a href="https://www.linkedin.com/in/paulo-ricardo-6a2559337/" target="_blank"><img src="https://i.postimg.cc/pdWfZtB6/paulo-ricardo.png" alt=""></a></li>
+          <li title="Pedro Henrique"><a href="https://www.linkedin.com/in/pedro-pascon/" target="_blank"><img src="https://i.postimg.cc/T2FcXFRK/pedro-henrique.jpg" alt=""></a></li>
+          <li title="Samuel Brito"><a href="https://www.linkedin.com/in/samuel-brito-melo-b8676832b/" target="_blank"><img src="https://i.postimg.cc/bdftVhq2/samuel-brito.jpg" alt=""></a></li>
+          <li title="Raul Lucena"><a href="https://www.linkedin.com/in/raul-lucena-7300a733b/" target="_blank"><img src="./img/alunos/Raul 4.png" alt=""></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      ©Movimentos 2.0 - Todos os direitos reservados
+    </div>
+  </footer>
 
   <script>
     // Mostrar/ocultar TOC
@@ -200,6 +567,55 @@
     btn?.addEventListener('click', () => {
       toc.classList.toggle('hidden');
       btn.textContent = toc.classList.contains('hidden') ? '[ mostrar ]' : '[ ocultar ]';
+    });
+
+    const instagram = document.getElementById("instagram");
+    const instagrams = document.getElementById("instagrams");
+    const linkedin = document.getElementById("linkedin");
+    const linkedins = document.getElementById("linkedins");
+    const redes_sociais = document.getElementById("redes_sociais");
+
+    instagram.addEventListener("mouseover", () => {
+      linkedins.classList.remove("active");
+      instagrams.classList.add("active");
+      instagrams.style.display = "flex";
+    });
+
+    linkedin.addEventListener("mouseover", () => {
+      instagrams.classList.remove("active");
+      linkedins.classList.add("active");
+      linkedins.style.display = "flex";
+    });
+
+    redes_sociais.addEventListener("mouseleave", () => {
+      instagrams.classList.remove("active");
+      linkedins.classList.remove("active");
+      instagrams.style.display = "none";
+      linkedins.style.display = "none";
+    });
+
+    const menuToggle = document.getElementById("menu_toggle");
+    const menuToggleScroll = document.getElementById("menu_toggle_scroll");
+    const menuMobile = document.getElementById("menu_mobile");
+    const overlay = document.getElementById("overlay");
+    const navbarScroll = document.getElementById("navbar_scroll");
+
+    menuToggle.addEventListener("click", () => {
+      menuMobile.classList.toggle("active");
+      overlay.classList.toggle("active");
+    });
+
+    menuToggleScroll.addEventListener("click", () => {
+      menuMobile.classList.toggle("active");
+      overlay.classList.toggle("active");
+    });
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
+        navbarScroll.classList.add("active");
+      } else {
+        navbarScroll.classList.remove("active");
+      }
     });
   </script>
 </body>
