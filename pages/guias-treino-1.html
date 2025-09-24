@@ -8,210 +8,204 @@
     <link rel="stylesheet" href="style.css">
     <style>
         body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #fff;
-    color: #111;
-}
-
-.container {
-    display: flex;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    gap: 20px;
-}
-
-main {
-    flex: 3;
-}
-
-h1 {
-    font-size: 2rem;
-    margin-bottom: 5px;
-}
-
-.author {
-    font-size: 0.9rem;
-    color: #007bff;
-    margin-bottom: 20px;
-}
-
-img.main-img {
-    display: block;
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    margin: 20px auto;
-    border-radius: 6px;
-}
-
-p {
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-.share-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.share-icons img {
-    width: 37px;
-    height: 37px;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-    border-radius: 30px;
-}
-
-.share-icons img:hover {
-    transform: scale(1.1);
-}
-
-
-/* ===== QR Code + Botões ===== */
-
-.qr-code {
-    text-align: center;
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 6px;
-    background: #fff;
-}
-
-aside {
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 0%;
-    gap: 25px;
-}
-
-.qr-code p {
-    margin: 10px 0;
-    font-size: 0.95rem;
-}
-
-.qr-code img {
-    width: 120px;
-    height: 120px;
-    margin: 10px 0;
-}
-
-.app-buttons {
-    margin: 15px 0;
-}
-
-.app-buttons button {
-    display: block;
-    width: 100%;
-    margin: 8px 0;
-    padding: 12px;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 0.9rem;
-    border-radius: 6px;
-    transition: 0.3s;
-}
-
-.app-buttons button:first-child {
-    background-color: #007aff;
-    /* Azul iOS */
-    color: #fff;
-}
-
-.app-buttons button:last-child {
-    background-color: #34a853;
-    /* Verde Google */
-    color: #fff;
-}
-
-.app-buttons button:hover {
-    opacity: 0.85;
-}
-
-.qr-code .rating {
-    font-size: 0.85rem;
-    color: #666;
-    margin-top: 10px;
-}
-
-.app-buttons button {
-    display: block;
-    width: 100%;
-    margin: 5px 0;
-    padding: 10px;
-    border: none;
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
-    font-size: 0.9rem;
-    border-radius: 5px;
-}
-
-.related-posts {
-    border-top: 1px solid #ccc;
-    padding-top: 10px;
-}
-
-.related-posts h3 {
-    margin-bottom: 10px;
-    font-size: 1rem;
-}
-
-.related-posts a {
-    display: block;
-    margin-bottom: 5px;
-    text-decoration: none;
-    color: #007bff;
-}
-
-.promo-img {
-    padding-left: 350px;
-}
-
-.pros-contras {
-    margin: -40px;
-    max-width: 500px;
-    /* largura parecida com o texto principal */
-    padding: 20px;
-    background-color: #fff;
-    color: #111;
-}
-
-.pros-contras h2 {
-    margin-bottom: 15px;
-    font-size: 1.8rem;
-    text-align: left;
-}
-
-.pros-contras h3 {
-    margin-bottom: 15px;
-    font-size: 1.8rem;
-    text-align: left;
-}
-
-.pros-contras p {
-    margin-bottom: 15px;
-    line-height: 1.6;
-    text-align: left;
-}
-
-@media (max-width: 900px) {
-    .container {
-        flex-direction: column;
-    }
-    aside {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-    img.main-img {
-        max-width: 100%;
-    }
-}
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #111;
+        }
+        
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            gap: 20px;
+        }
+        
+        main {
+            flex: 3;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+        
+        .author {
+            font-size: 0.9rem;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        
+        img.main-img {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            margin: 20px auto;
+            border-radius: 6px;
+        }
+        
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .share-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .share-icons img {
+            width: 37px;
+            height: 37px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            border-radius: 30px;
+        }
+        
+        .share-icons img:hover {
+            transform: scale(1.1);
+        }
+        
+        .qr-code {
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 6px;
+            background: #fff;
+        }
+        
+        aside {
+            display: flex;
+            flex-direction: column;
+            flex: 1 1 0%;
+            gap: 25px;
+        }
+        
+        .qr-code p {
+            margin: 10px 0;
+            font-size: 0.95rem;
+        }
+        
+        .qr-code img {
+            width: 120px;
+            height: 120px;
+            margin: 10px 0;
+        }
+        
+        .app-buttons {
+            margin: 15px 0;
+        }
+        
+        .app-buttons button {
+            display: block;
+            width: 100%;
+            margin: 8px 0;
+            padding: 12px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 0.9rem;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+        
+        .app-buttons button:first-child {
+            background-color: #007aff;
+            color: #fff;
+        }
+        
+        .app-buttons button:last-child {
+            background-color: #34a853;
+            color: #fff;
+        }
+        
+        .app-buttons button:hover {
+            opacity: 0.85;
+        }
+        
+        .qr-code .rating {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 10px;
+        }
+        
+        .app-buttons button {
+            display: block;
+            width: 100%;
+            margin: 5px 0;
+            padding: 10px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            font-size: 0.9rem;
+            border-radius: 5px;
+        }
+        
+        .related-posts {
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+        }
+        
+        .related-posts h3 {
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+        
+        .related-posts a {
+            display: block;
+            margin-bottom: 5px;
+            text-decoration: none;
+            color: #007bff;
+        }
+        
+        .promo-img {
+            padding-left: 350px;
+        }
+        
+        .pros-contras {
+            margin: -40px;
+            max-width: 500px;
+            padding: 20px;
+            background-color: #fff;
+            color: #111;
+        }
+        
+        .pros-contras h2 {
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+            text-align: left;
+        }
+        
+        .pros-contras h3 {
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+            text-align: left;
+        }
+        
+        .pros-contras p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            text-align: left;
+        }
+        
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+            }
+            aside {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            img.main-img {
+                max-width: 100%;
+            }
+        }
     </style>
 </head>
 
@@ -219,8 +213,8 @@ aside {
     <div class="container">
         <main>
             <h1>Treino de 2 dias divididos - O guia completo (2025)</h1>
-            <div class="author">Escrito por João</div>
-            <img src="./primeiraimagem.png" alt="Treino de musculação" class="main-img">
+            <div class="author">Escrito por Maria</div>
+            <img src="../img/primeiraimagem.png" alt="Treino de musculação" class="main-img">
             <h2>O Que é a divisão de dois dias?</h2>
 
             <p></p>Treinar apenas duas vezes por semana pode parecer pouco, mas se for bem planejado, ainda é possível ter bons resultados, principalmente para iniciantes. A ideia é organizar esses dois dias de forma que você trabalhe os principais músculos
@@ -241,7 +235,7 @@ aside {
                 que a pessoa se mantenha ativa, estimule o progresso e preserve a saúde e o condicionamento físico até que consiga aumentar a frequência caso seja conveniente. Mesmo sem tanta frequência, o importante é manter o foco nos treinos e evitar
                 longos períodos de sedentarismo.</p>
 
-            <img src="./segundaimagem.png" alt="Mulher treinando agachamento" class="main-img">
+            <img src="../segundaimagem.png" alt="Mulher treinando agachamento" class="main-img">
 
             <p>Além disso, treinar duas vezes por semana ajuda a manter o hábito sem exigir grandes mudanças na rotina. É uma forma realista e sustentável de incluir a atividade física na vida, especialmente para quem está recomeçando ou tem outras prioridades
                 no dia a dia. O importante é a consistência e a qualidade dos treinos, não apenas a quantidade.</p>
@@ -262,15 +256,15 @@ aside {
 
             <p style="text-align:center; font-weight:bold;">Compartilhe esta publicação</p>
             <div class="share-icons">
-                <img src="./pinterest.png" alt="Pinterest">
-                <img src="./facebook.png" alt="Facebook">
-                <img src="./X Logo.png" alt="Twitter">
-                <img src="./reddit.png" alt="Reddit">
+                <img src="../img/pinterest.png" alt="Pinterest">
+                <img src="../img/facebook.png" alt="Facebook">
+                <img src="../img/twitter.png" alt="Twitter">
+                <img src="../img/reddit.png" alt="Reddit">
             </div>
 
             <div class="qr-code">
                 <p><strong>Baixar Aplicativo</strong></p>
-                <img src="./qrcode.png" alt="QR Code">
+                <img src="../img/Qr code.png" alt="QR Code">
                 <p>Leia o código QR ou obtenha em:</p>
 
                 <div class="app-buttons">
@@ -292,7 +286,7 @@ aside {
     </div>
 
     <section class="promo-section">
-        <img src="./treino.png" alt="Rastreador de treino pesado" class="promo-img">
+        <img src="../treino.png" alt="Rastreador de treino pesado" class="promo-img">
 
     </section>
 
