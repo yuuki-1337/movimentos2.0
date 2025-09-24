@@ -31,7 +31,7 @@
     .page { max-width: 1200px; margin: 0 auto; padding: 20px; display: flex; flex-direction: column; }
 
     /* ===== Header ===== */
-    header {
+    header:not(.content-header) {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -315,7 +315,7 @@
 
     footer .instagrams ul,
     footer .linkedins ul {
-      display: flex;
+      display: none;
       flex-wrap: wrap;
       justify-content: center;
       gap: 15px;
@@ -381,9 +381,8 @@
   <header>
     <!-- MENU DESKTOP -->
     <nav class="navbar">
-      <a href="./index.html"><img src="https://i.postimg.cc/qvMDrqYw/logo.png" alt="" class="navbar-logo"></a>
+      <a href="../index.html"><img src="https://i.postimg.cc/qvMDrqYw/logo.png" alt="" class="navbar-logo"></a>
       <ul class="navbar-items">
-        <li class="navbar-scroll-list-item"><a href="../index.html" class="navbar-scroll-list-link">Home</a></li>
         <li class="navbar-item"><a href="../pages/sobre.html" class="navbar-link">Sobre</a></li>
         <li class="navbar-item"><a href="../pages/guias-de-treino.html" class="navbar-link">Guia</a></li>
         <li class="navbar-item"><a href="../pages/imc.html" class="navbar-link">IMC</a></li>
@@ -397,25 +396,23 @@
     <!-- MENU MOBILE -->
     <nav class="menu-mobile" id="menu_mobile">
       <ul class="menu-mobile-items">
-        <li class="navbar-scroll-list-item"><a href="../index.html" class="navbar-scroll-list-link">Home</a></li>
-        <li class="navbar-item"><a href="../pages/sobre.html" class="navbar-link">Sobre</a></li>
-        <li class="navbar-item"><a href="../pages/guias-de-treino.html" class="navbar-link">Guia</a></li>
-        <li class="navbar-item"><a href="../pages/imc.html" class="navbar-link">IMC</a></li>
-        <li class="navbar-item"><a href="../pages/treinos.html" class="navbar-link navbar-link-treinos">Treinos</a></li>
-        <li class="menu-mobile-item"><a href="./pages/treinos.html" class="menu-mobile-link menu-mobile-treinos"><i class="fa-solid fa-dumbbell"></i>Treinos</a></li>
+        <li class="menu-mobile-item"><a href="../index.html" class="menu-mobile-link"><i class="fa-regular fa-house"></i>Home</a></li>
+        <li class="menu-mobile-item"><a href="../pages/sobre.html" class="menu-mobile-link">Sobre</a></li>
+        <li class="menu-mobile-item"><a href="../pages/guias-de-treino.html" class="menu-mobile-link">Guia</a></li>
+        <li class="menu-mobile-item"><a href="../pages/imc.html" class="menu-mobile-link"><i class="fa-solid fa-person"></i>IMC</a></li>
+        <li class="menu-mobile-item"><a href="../pages/treinos.html" class="menu-mobile-link menu-mobile-treinos"><i class="fa-solid fa-dumbbell"></i>Treinos</a></li>
       </ul>
     </nav>
 
     <!-- MENU SCROLL -->
     <nav class="navbar-scroll" id="navbar_scroll">
-      <a href="./index.html"><img src="https://i.postimg.cc/PfYRzBYW/logo2.png" alt="" class="navbar-scroll-image"></a>
+      <a href="../index.html"><img src="https://i.postimg.cc/PfYRzBYW/logo2.png" alt="" class="navbar-scroll-image"></a>
       <ul class="navbar-scroll-list">
         <li class="navbar-scroll-list-item"><a href="../index.html" class="navbar-scroll-list-link">Home</a></li>
-        <li class="navbar-item"><a href="../pages/sobre.html" class="navbar-link">Sobre</a></li>
-        <li class="navbar-item"><a href="../pages/guias-de-treino.html" class="navbar-link">Guia</a></li>
-        <li class="navbar-item"><a href="../pages/imc.html" class="navbar-link">IMC</a></li>
-        <li class="navbar-item"><a href="../pages/treinos.html" class="navbar-link navbar-link-treinos">Treinos</a></li>
-        <li class="navbar-scroll-list-item"><a href="./pages/treinos.html" class="navbar-scroll-list-link navbar-scroll-list-treinos">Treinos</a></li>
+        <li class="navbar-scroll-list-item"><a href="../pages/sobre.html" class="navbar-scroll-list-link">Sobre</a></li>
+        <li class="navbar-scroll-list-item"><a href="../pages/guias-de-treino.html" class="navbar-scroll-list-link">Guia</a></li>
+        <li class="navbar-scroll-list-item"><a href="../pages/imc.html" class="navbar-scroll-list-link">IMC</a></li>
+        <li class="navbar-scroll-list-item"><a href="../pages/treinos.html" class="navbar-scroll-list-link navbar-scroll-list-treinos">Treinos</a></li>
       </ul>
       <button class="menu-toggle" id="menu_toggle_scroll">
         <span class="material-symbols-outlined">menu</span>
@@ -617,11 +614,10 @@
         </ul>
       </div>
     </div>
+    <div class="footer-copyright">
+      ©Movimentos 2.0 - Todos os direitos reservados
+    </div>
   </footer>
-
-  <div class="footer-copyright">
-    ©Movimentos 2.0 - Todos os direitos reservados
-  </div>
 
   <script>
     const btn = document.querySelector('.toc-toggle');
@@ -637,16 +633,22 @@
     const linkedins = document.getElementById("linkedins");
     const redes_sociais = document.getElementById("redes_sociais");
 
+    // Ensure social media lists are hidden on page load
+    instagrams.style.display = "none";
+    linkedins.style.display = "none";
+
     instagram.addEventListener("mouseover", () => {
       linkedins.classList.remove("active");
       instagrams.classList.add("active");
       instagrams.style.display = "flex";
+      linkedins.style.display = "none";
     });
 
     linkedin.addEventListener("mouseover", () => {
       instagrams.classList.remove("active");
       linkedins.classList.add("active");
       linkedins.style.display = "flex";
+      instagrams.style.display = "none";
     });
 
     redes_sociais.addEventListener("mouseleave", () => {
