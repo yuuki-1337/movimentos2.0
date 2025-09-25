@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Empurrar/Puxar/Pernas/Superior/Inferior (PPLUL) Divisão (5x/semana)</title>
+  <link rel="stylesheet" href="../css/style2.css">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -23,193 +24,21 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background: #fff;
+      background: #f4f4f4f4;
       color: #111;
       line-height: 1.6;
     }
 
-    .page { max-width: 1200px; margin: 0 auto; padding: 20px; display: flex; flex-direction: column; }
-
-    /* ===== Header ===== */
-    header:not(.content-header) {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 80px;
+    header{
       background: var(--cor-de-fundo);
     }
 
-    .navbar {
-      width: calc(100vw - 30px);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      z-index: 1000;
-      padding: 20px;
-    }
+    .page { max-width: 1200px; margin: 0 auto; padding: 20px; display: flex; flex-direction: column; }
 
-    .navbar-logo {
-      max-height: 50px;
+    
+    .content{
+      background: #f4f4f4;
     }
-
-    .navbar-items {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    .navbar-link {
-      text-decoration: none;
-      padding: 10px 30px;
-      border-radius: 40px;
-      color: white;
-      transition: 0.3s ease;
-    }
-
-    .navbar-link:hover {
-      filter: brightness(0.7);
-    }
-
-    .navbar-link-treinos {
-      background-color: var(--cor-verde);
-      color: black;
-    }
-
-    /* BOTÃO MOBILE */
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    .menu-toggle span {
-      font-size: 3rem;
-      color: var(--cor-verde);
-    }
-
-    /* MENU MOBILE */
-    .menu-mobile {
-      position: fixed;
-      width: 90vw;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: var(--cor-azul-escuro);
-      border-radius: 10px;
-      padding: 20px;
-      opacity: 0;
-      top: -500px;
-      transition: opacity 0.5s ease, top 0.5s ease;
-      z-index: 1000;
-    }
-
-    .menu-mobile.active {
-      top: 90px;
-      opacity: 1;
-    }
-
-    .menu-mobile-items {
-      width: 100%;
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .menu-mobile-item {
-      width: 100%;
-    }
-
-    .menu-mobile-link {
-      display: flex;
-      background-color: var(--cor-de-fundo);
-      width: 100%;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      color: #d4d4d4;
-      padding: 15px;
-      border-radius: 10px;
-      transition: 0.3s ease;
-    }
-
-    .menu-mobile-link:hover {
-      filter: brightness(0.7);
-    }
-
-    .menu-mobile-treinos {
-      background-color: var(--cor-verde);
-      color: black;
-    }
-
-    /* NAVBAR SCROLL */
-    .navbar-scroll {
-      position: fixed;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background-color: #051129;
-      width: 90%;
-      border-radius: 100px;
-      padding: 5px 25px;
-      top: -200px;
-      z-index: 1000;
-      transition: top 0.4s ease;
-    }
-
-    .navbar-scroll.active {
-      top: 10px;
-    }
-
-    .navbar-scroll-image {
-      max-height: 40px;
-    }
-
-    .navbar-scroll-list {
-      list-style: none;
-      display: flex;
-      align-items: center;
-      gap: 30px;
-    }
-
-    .navbar-scroll-list-link {
-      text-decoration: none;
-      color: #fff;
-      transition: 0.3s ease;
-    }
-
-    .navbar-scroll-list-link:hover {
-      opacity: 0.5;
-    }
-
-    .navbar-scroll-list-treinos {
-      background-color: var(--cor-verde);
-      color: black;
-      border-radius: 40px;
-      padding: 10px 15px;
-    }
-
-    /* OVERLAY (quando menu mobile abre) */
-    #overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-      z-index: 999;
-    }
-
-    #overlay.active {
-      opacity: 1;
-      pointer-events: all;
-    }
-
     /* ===== Content Header ===== */
     .content-header {
       background: transparent;
@@ -475,11 +304,13 @@
   <div id="overlay"></div>
 
   <div class="page">
+    <div class="initial-content-btn" id="initial_content_btn">
+    </div>
     <!-- Conteúdo Header -->
-    <header class="content-header">
+    <div class="content-header">
       <h1>Empurrar/Puxar/Pernas/Superior/Inferior (PPLUL) Divisão (5x/semana)</h1>
       <p class="author">Escrito por Maria Clara Fernandes</p>
-    </header>
+    </div>
 
     <div class="main-layout">
       <!-- Conteúdo -->
@@ -676,68 +507,6 @@
 
     <div id="overlay"></div>
 
-  <script>
-    const btn = document.querySelector('.toc-toggle');
-    const toc = document.querySelector('.toc ol');
-    btn?.addEventListener('click', () => {
-      toc.classList.toggle('hidden');
-      btn.textContent = toc.classList.contains('hidden') ? '[ mostrar ]' : '[ ocultar ]';
-    });
-
-    const instagram = document.getElementById("instagram");
-    const instagrams = document.getElementById("instagrams");
-    const linkedin = document.getElementById("linkedin");
-    const linkedins = document.getElementById("linkedins");
-    const redes_sociais = document.getElementById("redes_sociais");
-
-    // Ensure social media lists are hidden on page load
-    instagrams.style.display = "none";
-    linkedins.style.display = "none";
-
-    instagram.addEventListener("mouseover", () => {
-      linkedins.classList.remove("active");
-      instagrams.classList.add("active");
-      instagrams.style.display = "flex";
-      linkedins.style.display = "none";
-    });
-
-    linkedin.addEventListener("mouseover", () => {
-      instagrams.classList.remove("active");
-      linkedins.classList.add("active");
-      linkedins.style.display = "flex";
-      instagrams.style.display = "none";
-    });
-
-    redes_sociais.addEventListener("mouseleave", () => {
-      instagrams.classList.remove("active");
-      linkedins.classList.remove("active");
-      instagrams.style.display = "none";
-      linkedins.style.display = "none";
-    });
-
-    const menuToggle = document.getElementById("menu_toggle");
-    const menuToggleScroll = document.getElementById("menu_toggle_scroll");
-    const menuMobile = document.getElementById("menu_mobile");
-    const overlay = document.getElementById("overlay");
-    const navbarScroll = document.getElementById("navbar_scroll");
-
-    menuToggle.addEventListener("click", () => {
-      menuMobile.classList.toggle("active");
-      overlay.classList.toggle("active");
-    });
-
-    menuToggleScroll.addEventListener("click", () => {
-      menuMobile.classList.toggle("active");
-      overlay.classList.toggle("active");
-    });
-
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 100) {
-        navbarScroll.classList.add("active");
-      } else {
-        navbarScroll.classList.remove("active");
-      }
-    });
-  </script>
+  <script src="../script/script.js"></script>
 </body>
 </html>
