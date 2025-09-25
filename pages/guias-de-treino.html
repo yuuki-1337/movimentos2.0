@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guias de Treino</title>
-  <link rel="stylesheet" href="style.css">
   <!-- fontawesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -25,20 +24,20 @@
   }
   
     body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: var(--cor-de-fundo);
-    color: #111;
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: var(--cor-de-fundo);
+      color: #111;
   }
   header{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
 }
   main{
-    background-color: var(--cor-de-fundo);
+    background: linear-gradient(to bottom, #000 , #061736, #061736);
   }
 
 
@@ -348,8 +347,8 @@
    
   .guides {
     max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
+    padding: 30px 20px;
+    margin: 0 auto;
   }
    
   .guides h1 {
@@ -466,13 +465,15 @@
     </nav>
   </header>
   <main>
+    <div class="initial-content-btn" id="initial_content_btn">
+      </div>
     <section class="guides">
       <h1 style="color: white;">Guias</h1>
       <p>Confira os guias informativos para ajudar no seu treino!</p>
   
       <div class="grid">
 
-        <a href="./guias-treino-1.html" target="_blank">
+        <a href="./guias-treino-1.html">
           <div class="card">
             <img src="../img/primeiraimagem.png" alt="Treino para dois dias">
             <div class="overlay">
@@ -481,7 +482,7 @@
             </div>
           </div>
         </a>
-        <a href="./guias-treino-2.html" target="_blank">
+        <a href="./guias-treino-2.html">
           <div class="card">
             <img src="../img/segundaimagem.png" alt="Treino para três dias">
             <div class="overlay">
@@ -490,7 +491,7 @@
             </div>
           </div>
         </a>
-        <a href="./guias-treino-3.html" target="_blank">
+        <a href="./guias-treino-3.html">
           <div class="card">
             <img src="../img/terceiraimagem.png" alt="Treino para quatro dias">
             <div class="overlay">
@@ -558,6 +559,7 @@
   
       </div>
     </section>
+  </main>
     <footer>
       <img src="https://i.postimg.cc/qvMDrqYw/logo.png" alt="" class="footer-image">
       <div class="footer-text">
@@ -598,9 +600,7 @@
     <div class="footer-copyright" style="color: white;">
           ©Movimentos 2.0 - Todos os direitos reservados
     </div>
-  
-  </main>
   <div id="overlay"></div>
   <script src="../script/script.js"></script>
-  </body>
+</body>
 </html>

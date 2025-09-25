@@ -5,13 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Treino de 2 dias divididos</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- GOOGLE FONTS -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <style>
+        :root{
+        --cor-verde: #D2FE08;
+        --cor-de-fundo: #061736;
+        --cor-azul-escuro: #051129;
+        }
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #fff;
+            background-color: #f4f4f4;
             color: #111;
         }
         
@@ -19,17 +29,193 @@
             display: flex;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 50px 0;
             gap: 20px;
+        }
+
+        header{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 80px;
+        background-color: var(--cor-de-fundo);
+        }
+
+        .navbar{
+        width: calc(100vw - 30px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 1000;
+        padding: 20px;
+        }
+
+        .navbar-logo{
+        max-height: 50px;
+        }
+
+        .navbar-items{
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        }
+
+        .navbar-link{
+        text-decoration: none;
+        padding: 10px 30px;
+        border-radius: 40px;
+        color: white;
+        transition: 0.3s ease;
+        -webkit-tap-highlight-color: transparent;
+        
+        }
+        .navbar-link:hover{
+        filter: brightness(0.7);
+        }
+
+        .navbar-link-treinos{
+        background-color: var(--cor-verde);
+        color: black;
+        }
+
+        .menu-toggle{
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+        }
+        .menu-toggle span{
+        font-size: 3rem;
+        color: var(--cor-verde);
+        }
+
+        .menu-mobile{
+        position: fixed;
+        width: 90vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--cor-azul-escuro);
+        border-radius: 10px;
+        padding: 20px;
+        opacity: 0;
+        top: -500px;
+        transition: opacity 0.5s ease;
+        z-index: 1000;
+        }
+
+        .menu-mobile.active{
+        top: 90px;
+        opacity: 1;
+        }
+
+        .menu-mobile-items{
+        width: 100%;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        }
+        .menu-mobile-item{
+        width: 100%;
+        }
+
+        .menu-mobile-link{
+        display: flex;
+        background-color: var(--cor-de-fundo);
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: #d4d4d4;
+        padding: 15px;
+        border-radius: 10px;
+        transition: 0.3s ease;
+        -webkit-tap-highlight-color: transparent;
+        }
+        .menu-mobile-treinos{
+        background-color: var(--cor-verde);
+        color: black;
+        }
+        .menu-mobile-link:hover{
+        filter: brightness(0.7);
+        }
+
+        .navbar-scroll{
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #051129;
+        width: 90%;
+        border-radius: 100px;
+        padding: 5px 25px;
+        top: -200px;
+        z-index: 1000;
+        transition: top 0.4s ease;
+        }
+        .navbar-scroll.active{
+        top: 10px;
+        }
+        .navbar-scroll-list{
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        }
+        .navbar-scroll-list-link{
+        text-decoration: none;
+        color: #fff;
+        -webkit-tap-highlight-color: transparent;
+        transition: 0.3s ease;
+        }
+        .navbar-scroll-list-link:hover{
+        opacity: 0.5;
+        }
+        .navbar-scroll-list-treinos{
+        background-color: #D2FE08;
+        color: black;
+        border-radius: 40px;
+        padding: 10px 15px;
+
+        }
+        .navbar-scroll-list-link i{
+        font-size: 1.5rem;
+        }
+
+        #overlay{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        z-index: 999;
+        }
+        #overlay.active{
+        opacity: 1;
+        pointer-events: all;
         }
         
         main {
             flex: 3;
+            background: #f4f4f4;
         }
         
         h1 {
             font-size: 2rem;
-            margin-bottom: 5px;
+            margin-bottom: 20px;
+        }
+
+        h2{
+            margin-bottom: 20px;
+            margin-top: 50px;
         }
         
         .author {
@@ -168,11 +354,9 @@
         }
         
         .pros-contras {
-            margin: -40px;
             max-width: 500px;
-            padding: 20px;
-            background-color: #fff;
             color: #111;
+            margin-bottom: 50px;
         }
         
         .pros-contras h2 {
@@ -192,6 +376,149 @@
             line-height: 1.6;
             text-align: left;
         }
+        footer{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            text-decoration: none;
+            height: auto;
+            color: white;
+            border-top: 2px solid var(--cor-verde);
+            background-color: var(--cor-de-fundo);
+            gap: 50px;
+            padding: 8%;
+        }
+
+        .footer-image{
+        max-width: 50%;
+        }
+
+        .footer-text{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #051129;
+            border: 1px solid transparent;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+            font-size: clamp(1.6rem, calc(5vw + 1rem), 1rem);
+            font-weight: 600;
+            width: 100%;
+            padding: 40px;
+            color: white;
+            border-radius: 20px;
+        }
+        .redes-sociais{
+            display: flex;
+            align-self: start;
+            flex-direction: column;
+            width: 100%;
+            
+        }
+        .redes-sociais ul{
+        list-style: none;
+            display: flex;
+            gap: 50px;
+            flex-direction: row;
+        }
+        .redes-sociais ul li a{
+            text-decoration: none;
+            display: flex;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+            align-items: center;
+            justify-content: center;
+            color: white;
+            background-color: #051129;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .redes-sociais i{
+            font-size: 50px;
+        }
+        .instagrams{
+            align-self: start;
+            display: none;
+            background-color: black;
+            border-radius: 10px;
+            margin-top: 5px;
+            transition: 5.3s ease;
+        }
+        .instagrams ul{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            transition: 5.3s ease;
+        }
+        .instagrams ul li a{
+            font-size: 20px;
+            background-color: rgba(0, 0, 0, 0.018);
+            border-radius: 10px;
+        }
+        .instagrams img{
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .instagrams.active{
+            display: flex;
+        }
+
+        .linkedins{
+            align-self: start;
+            display: none;
+            background-color: black;
+            border-radius: 10px;
+            margin-top: 5px;
+            transition: all 0.3s ease;
+        }
+        .linkedins ul{
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 20px;
+            transition: all 0.3s ease;
+        }
+        .linkedins ul li a{
+            font-size: 20px;
+            border-radius: 10px;
+            background: none;
+        }
+        .linkedins img{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .linkedins.active{
+            display: flex;
+        }
+
+        .footer-copyright{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--cor-de-fundo);
+            border-top: 1px solid white;
+            font-size: 0.6rem;
+            color: white;
+            font-weight: 400;
+            padding: 15px;
+        }
+
+        @media (max-width: 768px){
+            .navbar-logo{
+                content: url("https://i.postimg.cc/PfYRzBYW/logo2.png");
+            }
+            .navbar-items{
+                display: none;
+            }
+            .navbar-scroll-list{
+                display: none;
+            }
+            .menu-toggle{
+                display: flex;
+            }
+        }
         
         @media (max-width: 900px) {
             .container {
@@ -210,14 +537,71 @@
 </head>
 
 <body>
+     <header>
+        <!-- MENU -->
+        <nav class="navbar">
+        <a href="../index.html">
+            <img src="https://i.postimg.cc/qvMDrqYw/logo.png" alt="" class="navbar-logo">
+        </a>
+        <ul class="navbar-items">
+            <li class="navbar-item"><a href="./sobre.html" class="navbar-link">Sobre</a></li>
+            <li class="navbar-item"><a href="./blog.html" class="navbar-link">Blog</a></li>
+            <li class="navbar-item"><a href="./imc.html" class="navbar-link">IMC</a></li>
+            <li class="navbar-item"><a href="./treinos.html" class="navbar-link navbar-link-treinos">Treinos</a></li>
+        </ul>
+        <button class="menu-toggle" id="menu_toggle">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+        </nav>
+
+        <!-- MENU MOBILE -->
+        <nav class="menu-mobile" id="menu_mobile">
+        <ul class="menu-mobile-items">
+            <li class="menu-mobile-item">
+            <a href="../index.html" class="menu-mobile-link"><i class="fa-regular fa-house"></i>Home</a>
+            </li>
+            <li class="menu-mobile-item">
+            <a href="../pages/sobre.html" class="menu-mobile-link">Sobre</a>
+            </li>
+            <li class="menu-mobile-item">
+            <a href="../pages/blog.html" class="menu-mobile-link">Blog</a>
+            </li>
+            <li class="menu-mobile-item">
+            <a href="../pages/imc.html" class="menu-mobile-link"><i class="fa-solid fa-person"></i>IMC</a>
+            </li>
+            <li class="menu-mobile-item">
+            <a href="../pages/treinos.html" class="menu-mobile-link menu-mobile-treinos"><i class="fa-solid fa-dumbbell"></i>Treinos</a>
+            </li>
+        </ul>
+        </nav>
+
+        <!-- MENU SCROLL -->
+        <nav class="navbar-scroll">
+        <a href="../index.html">
+            <img src="https://i.postimg.cc/PfYRzBYW/logo2.png" alt="" class="navbar-scroll-image">
+        </a>
+        <ul class="navbar-scroll-list">
+            <li class="navbar-scroll-list-item"><a href="../index.html" class="navbar-scroll-list-link">Home</a></li>
+            <li class="navbar-scroll-list-item"><a href="./p" class="navbar-scroll-list-link">Sobre</a></li>
+            <li class="navbar-scroll-list-item"><a href="../pages/blog.html" class="navbar-scroll-list-link">Blog</a></li>
+            <li class="navbar-scroll-list-item"><a href="../pages/imc.html" class="navbar-scroll-list-link">IMC</a></li>
+            <li class="navbar-scroll-list-item"><a href="../pages/treinos.html" class="navbar-scroll-list-link navbar-scroll-list-treinos">Treinos</a></li>
+        </ul>
+        <button class="menu-toggle" id="menu_toggle_scroll">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+        </nav>
+    </header>
     <div class="container">
+        <div class="initial-content-btn" id="initial_content_btn">
+    </div>
         <main>
             <h1>Treino de 2 dias divididos - O guia completo (2025)</h1>
             <div class="author">Escrito por Maria</div>
             <img src="../img/primeiraimagem.png" alt="Treino de musculação" class="main-img">
             <h2>O Que é a divisão de dois dias?</h2>
 
-            <p></p>Treinar apenas duas vezes por semana pode parecer pouco, mas se for bem planejado, ainda é possível ter bons resultados, principalmente para iniciantes. A ideia é organizar esses dois dias de forma que você trabalhe os principais músculos
+            <p>Treinar apenas duas vezes por semana pode parecer pouco, mas se for bem planejado, ainda é possível ter bons resultados, principalmente para iniciantes. A ideia é organizar esses dois dias de forma que você trabalhe os principais músculos
             do corpo de maneira eficiente e com esforço suficiente. Uma das formas mais simples e eficazes é usar a divisão chamada “corpo inteiro”. Nessa divisão, você treina todos os grupos musculares principais (pernas, costas, peito, ombros, braços
             e abdômen) nos dois dias. Isso garante uma boa frequência por músculo e ajuda a manter o corpo em movimento completo, mesmo com poucos treinos na semana.
             </p>
@@ -235,7 +619,7 @@
                 que a pessoa se mantenha ativa, estimule o progresso e preserve a saúde e o condicionamento físico até que consiga aumentar a frequência caso seja conveniente. Mesmo sem tanta frequência, o importante é manter o foco nos treinos e evitar
                 longos períodos de sedentarismo.</p>
 
-            <img src="../segundaimagem.png" alt="Mulher treinando agachamento" class="main-img">
+            <img src="../img/segundaimagem.png" alt="Mulher treinando agachamento" class="main-img">
 
             <p>Além disso, treinar duas vezes por semana ajuda a manter o hábito sem exigir grandes mudanças na rotina. É uma forma realista e sustentável de incluir a atividade física na vida, especialmente para quem está recomeçando ou tem outras prioridades
                 no dia a dia. O importante é a consistência e a qualidade dos treinos, não apenas a quantidade.</p>
@@ -286,7 +670,7 @@
     </div>
 
     <section class="promo-section">
-        <img src="../treino.png" alt="Rastreador de treino pesado" class="promo-img">
+        <img src="../img/treino.png" alt="Rastreador de treino pesado" class="promo-img">
 
     </section>
 
@@ -307,6 +691,50 @@
             </section>
         </main>
     </div>
+     <footer>
+    <img src="https://i.postimg.cc/qvMDrqYw/logo.png" alt="" class="footer-image">
+    <div class="footer-text">
+      <p>Fortaleça seu corpo, um grupo muscular por vez.</p>
+    </div>
+
+    <div class="redes-sociais" id="redes_sociais">
+      <ul>
+        <li><a href="https://www.instagram.com/eeantonietaborgesalves/" id="instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+        <li><a href="#" id="linkedin" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
+      </ul>
+
+      <div class="instagrams" id="instagrams">
+        <ul>
+          <li><a href="https://www.instagram.com/3d.aba_/" target="_blank"><img src="https://i.postimg.cc/yYKrfvyw/logo3D.png" alt="3D">3D</a></li>
+          <li><a href="https://www.instagram.com/eeantonietaborgesalves/" target="_blank"><img src="https://i.postimg.cc/dt9NgrWD/logo-escola.png" alt="ABA">ABA</a></li>
+        </ul>
+      </div>
+
+      <div class="linkedins" id="linkedins">
+        <ul>
+          <li title="Prof. Allan"><a href="https://www.linkedin.com/in/allanmarcellinus/" target="_blank"><img src="https://i.postimg.cc/7hnJvpJS/allan-marcelino.jpg" alt=""></a></li>
+          <li title="Eduardo Marques"><a href="https://www.linkedin.com/in/eduardo-marques-356558337/" target="_blank"><img src="https://i.postimg.cc/zvghkBYr/eduardo-marques.jpg" alt=""></a></li>
+          <li title="Filippi Denner"><a href="https://www.linkedin.com/in/filippi-denner-63a76932b/" target="_blank"><img src="https://i.postimg.cc/mgGNP91R/filippi-denner.png" alt=""></a></li>
+          <li title="Ismael Laurentino"><a href="https://www.linkedin.com/in/ismael-laurentino-25723b327/" target="_blank"><img src="https://i.postimg.cc/7YznP96m/ismael-laurentino.jpg" alt=""></a></li>
+          <li title="João Pedro"><a href="https://www.linkedin.com/in/pedro-andrade-a42727311/" target="_blank"><img src="../img/alunos/joao 4.png" alt=""></a></li>
+          <li title="Kaue Yuuki"><a href="https://www.linkedin.com/in/kau%C3%AA-yamamoto-584933291/" target="_blank"><img src="https://i.postimg.cc/G29GHKM9/kaue-yuuki.jpg" alt=""></a></li>
+          <li title="Maria Clara"><a href="https://www.linkedin.com/in/maria-clara-fernandes-7588b9321/" target="_blank"><img src="https://i.postimg.cc/XJhFF5hL/maria-clara.jpg" alt=""></a></li>
+          <li title="Patrícia Dias"><a href="https://www.linkedin.com/in/patricia-dias-427637196/" target="_blank"><img src="https://i.postimg.cc/GmJPGpvD/patricia-dias.png" alt=""></a></li>
+          <li title="Paulo Ricardo"><a href="https://www.linkedin.com/in/paulo-ricardo-6a2559337/" target="_blank"><img src="https://i.postimg.cc/pdWfZtB6/paulo-ricardo.png" alt=""></a></li>
+          <li title="Pedro Henrique"><a href="https://www.linkedin.com/in/pedro-pascon/" target="_blank"><img src="https://i.postimg.cc/T2FcXFRK/pedro-henrique.jpg" alt=""></a></li>
+          <li title="Samuel Brito"><a href="https://www.linkedin.com/in/samuel-brito-melo-b8676832b/" target="_blank"><img src="https://i.postimg.cc/bdftVhq2/samuel-brito.jpg" alt=""></a></li>
+          <li title="Raul Lucena"><a href="https://www.linkedin.com/in/raul-lucena-7300a733b/" target="_blank"><img src="../img/alunos/Raul 4.png" alt=""></a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <div class="footer-copyright">
+    ©Movimentos 2.0 - Todos os direitos reservados
+  </div>
+
+  <div id="overlay"></div>
+  <script src="../script/script.js"></script>
 
 </body>
 

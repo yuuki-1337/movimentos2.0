@@ -36,7 +36,7 @@
       align-items: center;
       justify-content: center;
       height: 80px;
-      background: #000;
+      background: var(--cor-de-fundo);
     }
 
     .navbar {
@@ -278,88 +278,134 @@
     .conclusion { border-left: 4px solid #22c55e; background: #f6fef8; padding: 10px 12px; border-radius: 6px; }
 
     /* ===== Footer ===== */
-    footer {
-      background-color: #000;
-      padding: 40px 20px;
-      text-align: center;
-      color: #fff;
-    }
-
-    footer .footer-image {
-      max-width: 150px;
-      margin-bottom: 15px;
-    }
-
-    footer .footer-text p {
-      font-size: 1rem;
-      margin-bottom: 20px;
-    }
-
-    footer .redes-sociais ul {
-      list-style: none;
+    footer{
       display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-bottom: 20px;
-    }
-
-    footer .redes-sociais ul li a {
-      color: #fff;
-      font-size: 1.5rem;
-      transition: color 0.3s;
-    }
-
-    footer .redes-sociais ul li a:hover {
-      color: #D2FE08;
-    }
-
-    footer .instagrams ul,
-    footer .linkedins ul {
-      display: none;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 15px;
-      list-style: none;
-      pointer-events: auto;
-    }
-
-    footer .instagrams ul.active,
-    footer .linkedins ul.active {
-      display: flex;
-    }
-
-    footer .instagrams ul li a,
-    footer .linkedins ul li a {
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      text-decoration: none;
+      height: auto;
+      color: white;
+      border-top: 2px solid var(--cor-verde);
+      background-color: var(--cor-de-fundo);
+      gap: 50px;
+      padding: 8%;
+  }
+  
+  .footer-image{
+      max-width: 50%;
+  }
+  
+  .footer-text{
       display: flex;
       align-items: center;
-      gap: 5px;
-      color: #fff;
+      justify-content: center;
+      background-color: #051129;
+      border: 1px solid transparent;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+      font-size: clamp(1.6rem, calc(5vw + 1rem), 1rem);
+      font-weight: 600;
+      width: 100%;
+      padding: 40px;
+      color: white;
+      border-radius: 20px;
+  }
+  .redes-sociais{
+      display: flex;
+      align-self: start;
+      flex-direction: column;
+      width: 100%;
+      
+  }
+  .redes-sociais ul{
+    list-style: none;
+      display: flex;
+      gap: 50px;
+      flex-direction: row;
+  }
+  .redes-sociais ul li a{
       text-decoration: none;
-      font-size: 0.9rem;
-      transition: color 0.3s;
-    }
-
-    footer .instagrams ul li a:hover,
-    footer .linkedins ul li a:hover {
-      color: #D2FE08;
-    }
-
-    footer .instagrams ul li img,
-    footer .linkedins ul li img {
+      display: flex;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+      align-items: center;
+      justify-content: center;
+      color: white;
+      background-color: #051129;
+      padding: 15px;
+      border-radius: 10px;
+  }
+  .redes-sociais i{
+      font-size: 50px;
+  }
+  .instagrams{
+      align-self: start;
+      display: none;
+      background-color: black;
+      border-radius: 10px;
+      margin-top: 5px;
+      transition: 5.3s ease;
+  }
+  .instagrams ul{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      transition: 5.3s ease;
+  }
+  .instagrams ul li a{
+      font-size: 20px;
+      background-color: rgba(0, 0, 0, 0.018);
+      border-radius: 10px;
+  }
+  .instagrams img{
       width: 35px;
       height: 35px;
       border-radius: 50%;
+      margin-right: 10px;
+  }
+  .instagrams.active{
+      display: flex;
+  }
+  
+  .linkedins{
+      align-self: start;
+      display: none;
+      background-color: black;
+      border-radius: 10px;
+      margin-top: 5px;
+      transition: all 0.3s ease;
+  }
+  .linkedins ul{
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+      transition: all 0.3s ease;
+  }
+  .linkedins ul li a{
+      font-size: 20px;
+      border-radius: 10px;
+      background: none;
+  }
+  .linkedins img{
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
       object-fit: cover;
-    }
-
-    .footer-copyright {
-      background: #111;
-      color: #aaa;
-      text-align: center;
-      padding: 10px;
-      font-size: 0.85rem;
-    }
+  }
+  .linkedins.active{
+      display: flex;
+  }
+  
+  .footer-copyright{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cor-de-fundo);
+    border-top: 1px solid white;
+    color: white;
+    font-size: 0.6rem;
+    font-weight: 400;
+    padding: 15px;
+  }
 
     /* ===== Responsivo ===== */
     @media (max-width: 900px) {
@@ -389,7 +435,6 @@
     <nav class="navbar">
       <a href="../index.html"><img src="https://i.postimg.cc/qvMDrqYw/logo.png" alt="" class="navbar-logo"></a>
       <ul class="navbar-items">
-        <li class="navbar-scroll-list-item"><a href="../index.html" class="navbar-scroll-list-link">Home</a></li>
         <li class="navbar-item"><a href="../pages/sobre.html" class="navbar-link">Sobre</a></li>
         <li class="navbar-item"><a href="../pages/guias-de-treino.html" class="navbar-link">Guia</a></li>
         <li class="navbar-item"><a href="../pages/imc.html" class="navbar-link">IMC</a></li>
@@ -589,42 +634,47 @@
 
   <!-- FOOTER -->
   <footer>
-    <img src="https://i.postimg.cc/qvMDrqYw/logo.png" alt="" class="footer-image">
-    <div class="footer-text">
-      <p>Fortaleça seu corpo, um grupo muscular por vez.</p>
-    </div>
-    <div class="redes-sociais" id="redes_sociais">
-      <ul>
-        <li><a href="https://www.instagram.com/eeantonietaborgesalves/" id="instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-        <li><a href="#" id="linkedin" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
-      </ul>
-      <div class="instagrams" id="instagrams">
-        <ul>
-          <li><a href="https://www.instagram.com/3d.aba_/" target="_blank"><img src="https://i.postimg.cc/yYKrfvyw/logo3D.png" alt="3D">3D</a></li>
-          <li><a href="https://www.instagram.com/eeantonietaborgesalves/" target="_blank"><img src="https://i.postimg.cc/dt9NgrWD/logo-escola.png" alt="ABA">ABA</a></li>
-        </ul>
-      </div>
-      <div class="linkedins" id="linkedins">
-        <ul>
-          <li title="Prof. Allan"><a href="https://www.linkedin.com/in/allanmarcellinus/" target="_blank"><img src="https://i.postimg.cc/7hnJvpJS/allan-marcelino.jpg" alt="">Prof. Allan</a></li>
-          <li title="Eduardo Marques"><a href="https://www.linkedin.com/in/eduardo-marques-356558337/" target="_blank"><img src="https://i.postimg.cc/zvghkBYr/eduardo-marques.jpg" alt="">Eduardo Marques</a></li>
-          <li title="Filippi Denner"><a href="https://www.linkedin.com/in/filippi-denner-63a76932b/" target="_blank"><img src="https://i.postimg.cc/mgGNP91R/filippi-denner.png" alt="">Filippi Denner</a></li>
-          <li title="Ismael Laurentino"><a href="https://www.linkedin.com/in/ismael-laurentino-25723b327/" target="_blank"><img src="https://i.postimg.cc/7YznP96m/ismael-laurentino.jpg" alt="">Ismael Laurentino</a></li>
-          <li title="João Pedro"><a href="https://www.linkedin.com/in/pedro-andrade-a42727311/" target="_blank"><img src="./img/alunos/joao 4.png" alt="">João Pedro</a></li>
-          <li title="Kaue Yuuki"><a href="https://www.linkedin.com/in/kau%C3%AA-yamamoto-584933291/" target="_blank"><img src="https://i.postimg.cc/G29GHKM9/kaue-yuuki.jpg" alt="">Kaue Yuuki</a></li>
-          <li title="Maria Clara"><a href="https://www.linkedin.com/in/maria-clara-fernandes-7588b9321/" target="_blank"><img src="https://i.postimg.cc/XJhFF5hL/maria-clara.jpg" alt="">Maria Clara</a></li>
-          <li title="Patrícia Dias"><a href="https://www.linkedin.com/in/patricia-dias-427637196/" target="_blank"><img src="https://i.postimg.cc/GmJPGpvD/patricia-dias.png" alt="">Patrícia Dias</a></li>
-          <li title="Paulo Ricardo"><a href="https://www.linkedin.com/in/paulo-ricardo-6a2559337/" target="_blank"><img src="https://i.postimg.cc/pdWfZtB6/paulo-ricardo.png" alt="">Paulo Ricardo</a></li>
-          <li title="Pedro Henrique"><a href="https://www.linkedin.com/in/pedro-pascon/" target="_blank"><img src="https://i.postimg.cc/T2FcXFRK/pedro-henrique.jpg" alt="">Pedro Henrique</a></li>
-          <li title="Samuel Brito"><a href="https://www.linkedin.com/in/samuel-brito-melo-b8676832b/" target="_blank"><img src="https://i.postimg.cc/bdftVhq2/samuel-brito.jpg" alt="">Samuel Brito</a></li>
-          <li title="Raul Lucena"><a href="https://www.linkedin.com/in/raul-lucena-7300a733b/" target="_blank"><img src="./img/alunos/Raul 4.png" alt="">Raul Lucena</a></li>
-        </ul>
-      </div>
-    </div>
+        <img src="https://i.postimg.cc/qvMDrqYw/logo.png" alt="" class="footer-image">
+        <div class="footer-text">
+            <p>Fortaleça seu corpo, um grupo muscular por vez.</p>
+        </div>
+
+        <div class="redes-sociais" id="redes_sociais">
+            <ul>
+                <li><a href="https://www.instagram.com/eeantonietaborgesalves/" id="instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#" id="linkedin" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
+            </ul>
+
+            <div class="instagrams" id="instagrams">
+                <ul>
+                    <li><a href="https://www.instagram.com/3d.aba_/" target="_blank"><img src="https://i.postimg.cc/yYKrfvyw/logo3D.png" alt="3D">3D</a></li>
+                    <li><a href="https://www.instagram.com/eeantonietaborgesalves/" target="_blank"><img src="https://i.postimg.cc/dt9NgrWD/logo-escola.png" alt="ABA">ABA</a></li>
+                </ul>
+            </div>
+
+            <div class="linkedins" id="linkedins">
+                <ul>
+                    <li title="Prof. Allan"><a href="https://www.linkedin.com/in/allanmarcellinus/" target="_blank"><img src="https://i.postimg.cc/7hnJvpJS/allan-marcelino.jpg" alt=""></a></li>
+                    <li title="Eduardo Marques"><a href="https://www.linkedin.com/in/eduardo-marques-356558337/" target="_blank"><img src="https://i.postimg.cc/zvghkBYr/eduardo-marques.jpg" alt=""></a></li>
+                    <li title="Filippi Denner"><a href="https://www.linkedin.com/in/filippi-denner-63a76932b/" target="_blank"><img src="https://i.postimg.cc/mgGNP91R/filippi-denner.png" alt=""></a></li>
+                    <li title="Ismael Laurentino"><a href="https://www.linkedin.com/in/ismael-laurentino-25723b327/" target="_blank"><img src="https://i.postimg.cc/7YznP96m/ismael-laurentino.jpg" alt=""></a></li>
+                    <li title="João Pedro"><a href="https://www.linkedin.com/in/pedro-andrade-a42727311/" target="_blank"><img src="../img/alunos/joao 4.png" alt=""></a></li>
+                    <li title="Kaue Yuuki"><a href="https://www.linkedin.com/in/kau%C3%AA-yamamoto-584933291/" target="_blank"><img src="https://i.postimg.cc/G29GHKM9/kaue-yuuki.jpg" alt=""></a></li>
+                    <li title="Maria Clara"><a href="https://www.linkedin.com/in/maria-clara-fernandes-7588b9321/" target="_blank"><img src="https://i.postimg.cc/XJhFF5hL/maria-clara.jpg" alt=""></a></li>
+                    <li title="Patrícia Dias"><a href="https://www.linkedin.com/in/patricia-dias-427637196/" target="_blank"><img src="https://i.postimg.cc/GmJPGpvD/patricia-dias.png" alt=""></a></li>
+                    <li title="Paulo Ricardo"><a href="../img/alunos/Paulo 4.png" target="_blank"><img src="../img/alunos/Paulo 4.png" alt=""></a></li>
+                    <li title="Pedro Henrique"><a href="https://www.linkedin.com/in/pedro-pascon/" target="_blank"><img src="https://i.postimg.cc/T2FcXFRK/pedro-henrique.jpg" alt=""></a></li>
+                    <li title="Samuel Brito"><a href="https://www.linkedin.com/in/samuel-brito-melo-b8676832b/" target="_blank"><img src="https://i.postimg.cc/bdftVhq2/samuel-brito.jpg" alt=""></a></li>
+                    <li title="Raul Lucena"><a href="https://www.linkedin.com/in/raul-lucena-7300a733b/" target="_blank"><img src="../img/alunos/Raul 4.png" alt=""></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
     <div class="footer-copyright">
-      ©Movimentos 2.0 - Todos os direitos reservados
+        ©Movimentos 2.0 - Todos os direitos reservados
     </div>
-  </footer>
+
+    <div id="overlay"></div>
 
   <script>
     const btn = document.querySelector('.toc-toggle');

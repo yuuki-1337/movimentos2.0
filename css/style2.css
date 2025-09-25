@@ -592,6 +592,7 @@ footer{
   font-size: 0.6rem;
   font-weight: 400;
   padding: 15px;
+  color: white;
 }
 
 @media (max-width: 768px){
