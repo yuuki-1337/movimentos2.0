@@ -5,13 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Empurrar/Puxar/Pernas/Superior/Inferior (PPLUL) Divisão (5x/semana)</title>
   <link rel="stylesheet" href="../css/style2.css">
+ <!-- fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <!-- Material Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-  <!-- FontAwesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- GOOGLE FONTS -->
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 
   <style>
     :root {
@@ -33,7 +32,7 @@
       background: var(--cor-de-fundo);
     }
 
-    .page { max-width: 1200px; margin: 0 auto; padding: 20px; display: flex; flex-direction: column; }
+    .page { max-width:f 1200px; margin: 0 auto; padding: 20px; display: flex; flex-direction: column; }
 
     
     .content{
@@ -107,167 +106,27 @@
     .conclusion { border-left: 4px solid #22c55e; background: #f6fef8; padding: 10px 12px; border-radius: 6px; }
 
     /* ===== Footer ===== */
-    footer{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-around;
-      text-decoration: none;
-      height: auto;
-      color: white;
-      border-top: 2px solid var(--cor-verde);
-      background-color: var(--cor-de-fundo);
-      gap: 50px;
-      padding: 8%;
-  }
-  
-  .footer-image{
-      max-width: 50%;
-  }
-  
-  .footer-text{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #051129;
-      border: 1px solid transparent;
-      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-      font-size: clamp(1.6rem, calc(5vw + 1rem), 1rem);
-      font-weight: 600;
-      width: 100%;
-      padding: 40px;
-      color: white;
-      border-radius: 20px;
-  }
-  .redes-sociais{
-      display: flex;
-      align-self: start;
-      flex-direction: column;
-      width: 100%;
-      
-  }
-  .redes-sociais ul{
-    list-style: none;
-      display: flex;
-      gap: 50px;
-      flex-direction: row;
-  }
-  .redes-sociais ul li a{
-      text-decoration: none;
-      display: flex;
-      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-      align-items: center;
-      justify-content: center;
-      color: white;
-      background-color: #051129;
-      padding: 15px;
-      border-radius: 10px;
-  }
-  .redes-sociais i{
-      font-size: 50px;
-  }
-  .instagrams{
-      align-self: start;
-      display: none;
-      background-color: black;
-      border-radius: 10px;
-      margin-top: 5px;
-      transition: 5.3s ease;
-  }
-  .instagrams ul{
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      transition: 5.3s ease;
-  }
-  .instagrams ul li a{
-      font-size: 20px;
-      background-color: rgba(0, 0, 0, 0.018);
-      border-radius: 10px;
-  }
-  .instagrams img{
-      width: 35px;
-      height: 35px;
-      border-radius: 50%;
-      margin-right: 10px;
-  }
-  .instagrams.active{
-      display: flex;
-  }
-  
-  .linkedins{
-      align-self: start;
-      display: none;
-      background-color: black;
-      border-radius: 10px;
-      margin-top: 5px;
-      transition: all 0.3s ease;
-  }
-  .linkedins ul{
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 20px;
-      transition: all 0.3s ease;
-  }
-  .linkedins ul li a{
-      font-size: 20px;
-      border-radius: 10px;
-      background: none;
-  }
-  .linkedins img{
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      object-fit: cover;
-  }
-  .linkedins.active{
-      display: flex;
-  }
-  
-  .footer-copyright{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--cor-de-fundo);
-    border-top: 1px solid white;
-    color: white;
-    font-size: 0.6rem;
-    font-weight: 400;
-    padding: 15px;
-  }
-
+    
     /* ===== Responsivo ===== */
     @media (max-width: 900px) {
       .main-layout { grid-template-columns: 1fr; }
       .sidebar { max-width: 100%; }
       .days-grid, .compare { grid-template-columns: 1fr; }
     }
-
-    @media (max-width: 768px) {
-      .navbar-items {
-        display: none;
-      }
-
-      .navbar-scroll-list {
-        display: none;
-      }
-
-      .menu-toggle {
-        display: flex;
-      }
-    }
   </style>
 </head>
 <body>
   <header>
-    <!-- MENU DESKTOP -->
+    <!-- MENU -->
     <nav class="navbar">
-      <a href="../index.html"><img src="https://i.postimg.cc/qvMDrqYw/logo.png" alt="" class="navbar-logo"></a>
+      <a href="../index.html">
+        <img src="https://i.postimg.cc/qvMDrqYw/logo.png" alt="" class="navbar-logo">
+      </a>
       <ul class="navbar-items">
-        <li class="navbar-item"><a href="../pages/sobre.html" class="navbar-link">Sobre</a></li>
-        <li class="navbar-item"><a href="../pages/guias-de-treino.html" class="navbar-link">Guia</a></li>
-        <li class="navbar-item"><a href="../pages/imc.html" class="navbar-link">IMC</a></li>
-        <li class="navbar-item"><a href="../pages/treinos.html" class="navbar-link navbar-link-treinos">Treinos</a></li>
+        <li class="navbar-item"><a href="./sobre.html" class="navbar-link">Sobre</a></li>
+        <li class="navbar-item"><a href="./blog.html" class="navbar-link">Blog</a></li>
+        <li class="navbar-item"><a href="./imc.html" class="navbar-link">IMC</a></li>
+        <li class="navbar-item"><a href="./treinos.html" class="navbar-link navbar-link-treinos">Treinos</a></li>
       </ul>
       <button class="menu-toggle" id="menu_toggle">
         <span class="material-symbols-outlined">menu</span>
@@ -277,21 +136,33 @@
     <!-- MENU MOBILE -->
     <nav class="menu-mobile" id="menu_mobile">
       <ul class="menu-mobile-items">
-        <li class="navbar-scroll-list-item"><a href="../index.html" class="navbar-scroll-list-link">Home</a></li>
-        <li class="menu-mobile-item"><a href="../pages/sobre.html" class="menu-mobile-link">Sobre</a></li>
-        <li class="menu-mobile-item"><a href="../pages/guias-de-treino.html" class="menu-mobile-link">Guia</a></li>
-        <li class="menu-mobile-item"><a href="../pages/imc.html" class="menu-mobile-link"><i class="fa-solid fa-person"></i>IMC</a></li>
-        <li class="menu-mobile-item"><a href="../pages/treinos.html" class="menu-mobile-link menu-mobile-treinos"><i class="fa-solid fa-dumbbell"></i>Treinos</a></li>
+        <li class="menu-mobile-item">
+          <a href="../index.html" class="menu-mobile-link"><i class="fa-regular fa-house"></i>Home</a>
+        </li>
+        <li class="menu-mobile-item">
+          <a href="../pages/sobre.html" class="menu-mobile-link">Sobre</a>
+        </li>
+        <li class="menu-mobile-item">
+          <a href="../pages/blog.html" class="menu-mobile-link">Blog</a>
+        </li>
+        <li class="menu-mobile-item">
+          <a href="../pages/imc.html" class="menu-mobile-link"><i class="fa-solid fa-person"></i>IMC</a>
+        </li>
+        <li class="menu-mobile-item">
+          <a href="../pages/treinos.html" class="menu-mobile-link menu-mobile-treinos"><i class="fa-solid fa-dumbbell"></i>Treinos</a>
+        </li>
       </ul>
     </nav>
 
     <!-- MENU SCROLL -->
-    <nav class="navbar-scroll" id="navbar_scroll">
-      <a href="../index.html"><img src="https://i.postimg.cc/PfYRzBYW/logo2.png" alt="" class="navbar-scroll-image"></a>
+    <nav class="navbar-scroll">
+      <a href="../index.html">
+        <img src="https://i.postimg.cc/PfYRzBYW/logo2.png" alt="" class="navbar-scroll-image">
+      </a>
       <ul class="navbar-scroll-list">
         <li class="navbar-scroll-list-item"><a href="../index.html" class="navbar-scroll-list-link">Home</a></li>
         <li class="navbar-scroll-list-item"><a href="../pages/sobre.html" class="navbar-scroll-list-link">Sobre</a></li>
-        <li class="navbar-scroll-list-item"><a href="../pages/guias-de-treino.html" class="navbar-scroll-list-link">Guia</a></li>
+        <li class="navbar-scroll-list-item"><a href="../pages/blog.html" class="navbar-scroll-list-link">Blog</a></li>
         <li class="navbar-scroll-list-item"><a href="../pages/imc.html" class="navbar-scroll-list-link">IMC</a></li>
         <li class="navbar-scroll-list-item"><a href="../pages/treinos.html" class="navbar-scroll-list-link navbar-scroll-list-treinos">Treinos</a></li>
       </ul>
