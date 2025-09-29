@@ -6,18 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Treino de 3 dias divididos</title>
     <link rel="stylesheet" href="../css/style2.css">
-      <!-- fontawesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
 
-  <!-- GOOGLE FONTS -->
+    <!-- GOOGLE FONTS -->
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <style>
-        :root{
+         :root {
             --cor-verde: #D2FE08;
             --cor-de-fundo: #061736;
             --cor-azul-escuro: #051129;
         }
+        
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -25,58 +27,59 @@
             background-color: #f4f4f4;
             color: #111;
         }
-
+        
         .container {
             display: flex;
             max-width: 1200px;
             margin: 0 auto;
             padding: 50px 0;
             gap: 20px;
-
         }
-        header{
+        
+        header {
             background: var(--cor-de-fundo);
         }
-
+        
         main {
             flex: 3;
             background: #f4f4f4;
             padding: 20px;
         }
-        h1:nth-child(1){
+        
+        h1:nth-child(1) {
             margin-bottom: 20px;
         }
-
+        
         h1:not(:nth-child(1)) {
             font-size: 2rem;
             margin-bottom: 20px;
             margin-top: 50px;
         }
-
-        h2{
+        
+        h2 {
             margin-bottom: 20px;
             margin-top: 50px;
         }
-
-        h3{
+        
+        h3 {
             margin-top: 20px;
             margin-bottom: 10px;
-
         }
-
-        .container ul{
+        
+        .container ul {
             margin: 20px 30px;
         }
-        .container li{
+        
+        .container li {
             margin: 5px 0;
         }
-
+        
         .author {
             font-size: 0.9rem;
             color: #007bff;
             margin-bottom: 20px;
         }
-
+        
         img.main-img {
             display: block;
             width: 100%;
@@ -85,25 +88,25 @@
             border-radius: 6px;
             object-fit: contain;
         }
-
+        
         p {
             line-height: 1.6;
             margin-bottom: 15px;
         }
-
+        
         aside {
             flex: 1;
             display: flex;
             flex-direction: column;
             gap: 25px;
         }
-
+        
         .share-icons {
             display: flex;
             justify-content: center;
             gap: 20px;
         }
-
+        
         .share-icons img {
             width: 37px;
             height: 37px;
@@ -111,11 +114,11 @@
             transition: transform 0.2s ease;
             border-radius: 30px;
         }
-
+        
         .share-icons img:hover {
             transform: scale(1.1);
         }
-
+        
         .qr-code {
             text-align: center;
             border: 1px solid #ccc;
@@ -123,22 +126,22 @@
             border-radius: 6px;
             background: #fff;
         }
-
+        
         .qr-code p {
             margin: 10px 0;
             font-size: 0.95rem;
         }
-
+        
         .qr-code img {
             width: 120px;
             height: 120px;
             margin: 10px 0;
         }
-
+        
         .app-buttons {
             margin: 15px 0;
         }
-
+        
         .app-buttons button {
             display: block;
             width: 100%;
@@ -151,49 +154,49 @@
             border-radius: 6px;
             transition: 0.3s;
         }
-
+        
         .app-buttons button:first-child {
             background-color: #007aff;
             color: #fff;
         }
-
+        
         .app-buttons button:last-child {
             background-color: #34a853;
             color: #fff;
         }
-
+        
         .app-buttons button:hover {
             opacity: 0.85;
         }
-
+        
         .qr-code .rating {
             font-size: 0.85rem;
             color: #666;
             margin-top: 10px;
         }
-
+        
         .related-posts {
             border-top: 1px solid #ccc;
             padding-top: 15px;
             font-size: 0.9rem;
         }
-
+        
         .related-posts h3 {
             margin-bottom: 10px;
             font-size: 1rem;
         }
-
+        
         .related-posts a {
             display: block;
             margin-bottom: 8px;
             text-decoration: none;
             color: #007bff;
         }
-
+        
         .related-posts a:hover {
             text-decoration: underline;
         }
-
+        
         @media (max-width: 900px) {
             .container {
                 flex-direction: column;
@@ -210,64 +213,64 @@
 
 <body>
     <header>
-    <!-- MENU -->
-    <nav class="navbar">
-      <a href="../index.html">
-        <img src="https://i.postimg.cc/qvMDrqYw/logo.png" alt="" class="navbar-logo">
-      </a>
-      <ul class="navbar-items">
-        <li class="navbar-item"><a href="./sobre.html" class="navbar-link">Sobre</a></li>
-        <li class="navbar-item"><a href="./blog.html" class="navbar-link">Blog</a></li>
-        <li class="navbar-item"><a href="./imc.html" class="navbar-link">IMC</a></li>
-        <li class="navbar-item"><a href="./treinos.html" class="navbar-link navbar-link-treinos">Treinos</a></li>
-      </ul>
-      <button class="menu-toggle" id="menu_toggle">
+        <!-- MENU -->
+        <nav class="navbar">
+            <a href="../index.html">
+                <img src="https://i.postimg.cc/qvMDrqYw/logo.png" alt="" class="navbar-logo">
+            </a>
+            <ul class="navbar-items">
+                <li class="navbar-item"><a href="./sobre.html" class="navbar-link">Sobre</a></li>
+                <li class="navbar-item"><a href="./blog.html" class="navbar-link">Blog</a></li>
+                <li class="navbar-item"><a href="./imc.html" class="navbar-link">IMC</a></li>
+                <li class="navbar-item"><a href="./treinos.html" class="navbar-link navbar-link-treinos">Treinos</a></li>
+            </ul>
+            <button class="menu-toggle" id="menu_toggle">
         <span class="material-symbols-outlined">menu</span>
       </button>
-    </nav>
+        </nav>
 
-    <!-- MENU MOBILE -->
-    <nav class="menu-mobile" id="menu_mobile">
-      <ul class="menu-mobile-items">
-        <li class="menu-mobile-item">
-          <a href="../index.html" class="menu-mobile-link"><i class="fa-regular fa-house"></i>Home</a>
-        </li>
-        <li class="menu-mobile-item">
-          <a href="../pages/sobre.html" class="menu-mobile-link">Sobre</a>
-        </li>
-        <li class="menu-mobile-item">
-          <a href="../pages/blog.html" class="menu-mobile-link">Blog</a>
-        </li>
-        <li class="menu-mobile-item">
-          <a href="../pages/imc.html" class="menu-mobile-link"><i class="fa-solid fa-person"></i>IMC</a>
-        </li>
-        <li class="menu-mobile-item">
-          <a href="../pages/treinos.html" class="menu-mobile-link menu-mobile-treinos"><i class="fa-solid fa-dumbbell"></i>Treinos</a>
-        </li>
-      </ul>
-    </nav>
+        <!-- MENU MOBILE -->
+        <nav class="menu-mobile" id="menu_mobile">
+            <ul class="menu-mobile-items">
+                <li class="menu-mobile-item">
+                    <a href="../index.html" class="menu-mobile-link"><i class="fa-regular fa-house"></i>Home</a>
+                </li>
+                <li class="menu-mobile-item">
+                    <a href="../pages/sobre.html" class="menu-mobile-link">Sobre</a>
+                </li>
+                <li class="menu-mobile-item">
+                    <a href="../pages/blog.html" class="menu-mobile-link">Blog</a>
+                </li>
+                <li class="menu-mobile-item">
+                    <a href="../pages/imc.html" class="menu-mobile-link"><i class="fa-solid fa-person"></i>IMC</a>
+                </li>
+                <li class="menu-mobile-item">
+                    <a href="../pages/treinos.html" class="menu-mobile-link menu-mobile-treinos"><i class="fa-solid fa-dumbbell"></i>Treinos</a>
+                </li>
+            </ul>
+        </nav>
 
-    <!-- MENU SCROLL -->
-    <nav class="navbar-scroll">
-      <a href="../index.html">
-        <img src="https://i.postimg.cc/PfYRzBYW/logo2.png" alt="" class="navbar-scroll-image">
-      </a>
-      <ul class="navbar-scroll-list">
-        <li class="navbar-scroll-list-item"><a href="../index.html" class="navbar-scroll-list-link">Home</a></li>
-        <li class="navbar-scroll-list-item"><a href="../pages/sobre.html" class="navbar-scroll-list-link">Sobre</a></li>
-        <li class="navbar-scroll-list-item"><a href="../pages/blog.html" class="navbar-scroll-list-link">Blog</a></li>
-        <li class="navbar-scroll-list-item"><a href="../pages/imc.html" class="navbar-scroll-list-link">IMC</a></li>
-        <li class="navbar-scroll-list-item"><a href="../pages/treinos.html" class="navbar-scroll-list-link navbar-scroll-list-treinos">Treinos</a></li>
-      </ul>
-      <button class="menu-toggle" id="menu_toggle_scroll">
+        <!-- MENU SCROLL -->
+        <nav class="navbar-scroll">
+            <a href="../index.html">
+                <img src="https://i.postimg.cc/PfYRzBYW/logo2.png" alt="" class="navbar-scroll-image">
+            </a>
+            <ul class="navbar-scroll-list">
+                <li class="navbar-scroll-list-item"><a href="../index.html" class="navbar-scroll-list-link">Home</a></li>
+                <li class="navbar-scroll-list-item"><a href="../pages/sobre.html" class="navbar-scroll-list-link">Sobre</a></li>
+                <li class="navbar-scroll-list-item"><a href="../pages/blog.html" class="navbar-scroll-list-link">Blog</a></li>
+                <li class="navbar-scroll-list-item"><a href="../pages/imc.html" class="navbar-scroll-list-link">IMC</a></li>
+                <li class="navbar-scroll-list-item"><a href="../pages/treinos.html" class="navbar-scroll-list-link navbar-scroll-list-treinos">Treinos</a></li>
+            </ul>
+            <button class="menu-toggle" id="menu_toggle_scroll">
         <span class="material-symbols-outlined">menu</span>
       </button>
-    </nav>
-  </header>
-    
+        </nav>
+    </header>
+
     <div class="container">
         <div class="initial-content-btn" id="initial_content_btn">
-    </div>
+        </div>
         <main>
             <h1>Treino de 3 dias divididos - O guia completo (2025)</h1>
             <div class="author">Escrito por Maria</div>
@@ -283,7 +286,7 @@
                 organizar uma divisão de treino em 3 dias, e essa é uma das estratégias mais comuns e usadas por quem frequenta academia no mundo todo, justamente por equilibrar bem a eficiência do treino com o tempo disponível.</p>
 
             <section class="treino">
-                <img src="../img/Guia de treino.png" alt="Rastreador de treino pesado" class="treino">
+                <img src="../img/Guia de treino.pngs" alt="Rastreador de treino pesado" class="treino">
             </section>
 
             <p>Com uma divisão tradicional de 3 dias para iniciantes, você vai treinar cada grupo muscular específico apenas uma vez por semana, garantindo cerca de sete dias completos de descanso para a recuperação. Esse tempo é ideal para quem está começando,
@@ -474,50 +477,78 @@
         </aside>
     </div>
     <footer>
-    <img src="https://i.postimg.cc/qvMDrqYw/logo.png" alt="" class="footer-image">
-    <div class="footer-text">
-      <p>Fortaleça seu corpo, um grupo muscular por vez.</p>
+        <img src="https://i.postimg.cc/qvMDrqYw/logo.png" alt="" class="footer-image">
+        <div class="footer-text">
+            <p>Fortaleça seu corpo, um grupo muscular por vez.</p>
+        </div>
+
+        <div class="redes-sociais" id="redes_sociais">
+            <ul>
+                <li><a href="https://www.instagram.com/eeantonietaborgesalves/" id="instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#" id="linkedin" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
+            </ul>
+
+            <div class="instagrams" id="instagrams">
+                <ul>
+                    <li>
+                        <a href="https://www.instagram.com/3d.aba_/" target="_blank"><img src="https://i.postimg.cc/yYKrfvyw/logo3D.png" alt="3D">3D</a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/eeantonietaborgesalves/" target="_blank"><img src="https://i.postimg.cc/dt9NgrWD/logo-escola.png" alt="ABA">ABA</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="linkedins" id="linkedins">
+                <ul>
+                    <li title="Prof. Allan">
+                        <a href="https://www.linkedin.com/in/allanmarcellinus/" target="_blank"><img src="https://i.postimg.cc/7hnJvpJS/allan-marcelino.jpg" alt=""></a>
+                    </li>
+                    <li title="Eduardo Marques">
+                        <a href="https://www.linkedin.com/in/eduardo-marques-356558337/" target="_blank"><img src="https://i.postimg.cc/zvghkBYr/eduardo-marques.jpg" alt=""></a>
+                    </li>
+                    <li title="Filippi Denner">
+                        <a href="https://www.linkedin.com/in/filippi-denner-63a76932b/" target="_blank"><img src="https://i.postimg.cc/mgGNP91R/filippi-denner.png" alt=""></a>
+                    </li>
+                    <li title="Ismael Laurentino">
+                        <a href="https://www.linkedin.com/in/ismael-laurentino-25723b327/" target="_blank"><img src="https://i.postimg.cc/7YznP96m/ismael-laurentino.jpg" alt=""></a>
+                    </li>
+                    <li title="João Pedro">
+                        <a href="https://www.linkedin.com/in/pedro-andrade-a42727311/" target="_blank"><img src="../img/alunos/joao 4.png" alt=""></a>
+                    </li>
+                    <li title="Kaue Yuuki">
+                        <a href="https://www.linkedin.com/in/kau%C3%AA-yamamoto-584933291/" target="_blank"><img src="https://i.postimg.cc/G29GHKM9/kaue-yuuki.jpg" alt=""></a>
+                    </li>
+                    <li title="Maria Clara">
+                        <a href="https://www.linkedin.com/in/maria-clara-fernandes-7588b9321/" target="_blank"><img src="https://i.postimg.cc/XJhFF5hL/maria-clara.jpg" alt=""></a>
+                    </li>
+                    <li title="Patrícia Dias">
+                        <a href="https://www.linkedin.com/in/patricia-dias-427637196/" target="_blank"><img src="https://i.postimg.cc/GmJPGpvD/patricia-dias.png" alt=""></a>
+                    </li>
+                    <li title="Paulo Ricardo">
+                        <a href="https://www.linkedin.com/in/paulo-ricardo-6a2559337/" target="_blank"><img src="https://i.postimg.cc/pdWfZtB6/paulo-ricardo.png" alt=""></a>
+                    </li>
+                    <li title="Pedro Henrique">
+                        <a href="https://www.linkedin.com/in/pedro-pascon/" target="_blank"><img src="https://i.postimg.cc/T2FcXFRK/pedro-henrique.jpg" alt=""></a>
+                    </li>
+                    <li title="Samuel Brito">
+                        <a href="https://www.linkedin.com/in/samuel-brito-melo-b8676832b/" target="_blank"><img src="https://i.postimg.cc/bdftVhq2/samuel-brito.jpg" alt=""></a>
+                    </li>
+                    <li title="Raul Lucena">
+                        <a href="https://www.linkedin.com/in/raul-lucena-7300a733b/" target="_blank"><img src="../img/alunos/Raul 4.png" alt=""></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <div class="footer-copyright">
+        ©Movimentos 2.0 - Todos os direitos reservados
     </div>
 
-    <div class="redes-sociais" id="redes_sociais">
-      <ul>
-        <li><a href="https://www.instagram.com/eeantonietaborgesalves/" id="instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-        <li><a href="#" id="linkedin" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
-      </ul>
+    <div id="overlay"></div>
 
-      <div class="instagrams" id="instagrams">
-        <ul>
-          <li><a href="https://www.instagram.com/3d.aba_/" target="_blank"><img src="https://i.postimg.cc/yYKrfvyw/logo3D.png" alt="3D">3D</a></li>
-          <li><a href="https://www.instagram.com/eeantonietaborgesalves/" target="_blank"><img src="https://i.postimg.cc/dt9NgrWD/logo-escola.png" alt="ABA">ABA</a></li>
-        </ul>
-      </div>
-
-      <div class="linkedins" id="linkedins">
-        <ul>
-          <li title="Prof. Allan"><a href="https://www.linkedin.com/in/allanmarcellinus/" target="_blank"><img src="https://i.postimg.cc/7hnJvpJS/allan-marcelino.jpg" alt=""></a></li>
-          <li title="Eduardo Marques"><a href="https://www.linkedin.com/in/eduardo-marques-356558337/" target="_blank"><img src="https://i.postimg.cc/zvghkBYr/eduardo-marques.jpg" alt=""></a></li>
-          <li title="Filippi Denner"><a href="https://www.linkedin.com/in/filippi-denner-63a76932b/" target="_blank"><img src="https://i.postimg.cc/mgGNP91R/filippi-denner.png" alt=""></a></li>
-          <li title="Ismael Laurentino"><a href="https://www.linkedin.com/in/ismael-laurentino-25723b327/" target="_blank"><img src="https://i.postimg.cc/7YznP96m/ismael-laurentino.jpg" alt=""></a></li>
-          <li title="João Pedro"><a href="https://www.linkedin.com/in/pedro-andrade-a42727311/" target="_blank"><img src="../img/alunos/joao 4.png" alt=""></a></li>
-          <li title="Kaue Yuuki"><a href="https://www.linkedin.com/in/kau%C3%AA-yamamoto-584933291/" target="_blank"><img src="https://i.postimg.cc/G29GHKM9/kaue-yuuki.jpg" alt=""></a></li>
-          <li title="Maria Clara"><a href="https://www.linkedin.com/in/maria-clara-fernandes-7588b9321/" target="_blank"><img src="https://i.postimg.cc/XJhFF5hL/maria-clara.jpg" alt=""></a></li>
-          <li title="Patrícia Dias"><a href="https://www.linkedin.com/in/patricia-dias-427637196/" target="_blank"><img src="https://i.postimg.cc/GmJPGpvD/patricia-dias.png" alt=""></a></li>
-          <li title="Paulo Ricardo"><a href="https://www.linkedin.com/in/paulo-ricardo-6a2559337/" target="_blank"><img src="https://i.postimg.cc/pdWfZtB6/paulo-ricardo.png" alt=""></a></li>
-          <li title="Pedro Henrique"><a href="https://www.linkedin.com/in/pedro-pascon/" target="_blank"><img src="https://i.postimg.cc/T2FcXFRK/pedro-henrique.jpg" alt=""></a></li>
-          <li title="Samuel Brito"><a href="https://www.linkedin.com/in/samuel-brito-melo-b8676832b/" target="_blank"><img src="https://i.postimg.cc/bdftVhq2/samuel-brito.jpg" alt=""></a></li>
-          <li title="Raul Lucena"><a href="https://www.linkedin.com/in/raul-lucena-7300a733b/" target="_blank"><img src="../img/alunos/Raul 4.png" alt=""></a></li>
-        </ul>
-      </div>
-    </div>
-  </footer>
-
-  <div class="footer-copyright">
-    ©Movimentos 2.0 - Todos os direitos reservados
-  </div>
-
-  <div id="overlay"></div>
-  
-  <script src="../script/script.js"></script>
+    <script src="../script/script.js"></script>
 
 </body>
 
