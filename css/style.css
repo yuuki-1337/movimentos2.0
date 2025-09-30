@@ -480,6 +480,7 @@
       background-color: var(--cor-de-fundo);
       gap: 50px;
       padding: 8%;
+      margin-top: 50px;
   }
   
   .footer-image{
@@ -1615,6 +1616,7 @@ input[type=number] {
 .Remover img{
   width: 40px;
   cursor: pointer;
+  max-height: 40px;
   
 }
 .Criar{
