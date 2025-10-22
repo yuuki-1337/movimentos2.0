@@ -487,6 +487,42 @@ main{
   color: var(--cor-verde);
   font-size: 1.6rem;
 }
+.formulario-btn{
+  position: fixed;
+  text-decoration: none;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  background-color: #D2FE08;
+  border-radius: 50px;
+  height: 30px;
+  padding: 5px;
+  top: 100px;
+  right: 30px;
+  z-index: 999;
+  color: black;
+  animation: shake 1s infinite;
+  cursor: pointer;
+  overflow: hidden;
+  
+}
+.formulario-btn p{
+  display: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+@keyframes shake {
+  0%   { top: 100px; }
+  10%  { top: 95px; }   /* 1º pulo */
+  20%  { top: 100px; }
+  30%  { top: 95px; }   /* 2º pulo */
+  40%  { top: 100px; }
+  100% { top: 100px; }  /* pausa até reiniciar */
+}
+.formulario-btn:hover{
+  animation: none;
+}
 footer{
     display: flex;
     flex-direction: column;
