@@ -2,412 +2,380 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PPLUL 5x/semana – Treino Completo</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empurrar/Puxar/Pernas/Superior/Inferior (PPLUL) Divisão (5x/semana)</title>
+  <link rel="stylesheet" href="../css/style2.css">
+ <!-- fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- GOOGLE FONTS -->
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
   <style>
     :root {
-      --verde: #D2FE08;
-      --fundo: #061736;
-      --azul: #051129;
-      --cinza: #f8fafc;
-      --borda: #e2e8f0;
+      --cor-verde: #D2FE08;
+      --cor-de-fundo: #061736;
+      --cor-azul-escuro: #051129;
     }
-    * { margin:0; padding:0; box-sizing:border-box; }
+
+    /* ===== Reset ===== */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Inter', sans-serif;
-      background: #f4f4f4;
-      color: #1e293b;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: #f4f4f4f4;
+      color: #111;
       line-height: 1.6;
     }
-    a { color: #0f62fe; text-decoration: none; }
 
-    /* HEADER */
-    header {
-      background: var(--fundo);
-      padding: 1rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .navbar {
-      max-width: 1200px;
-      margin: auto;
-      padding: 0 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .navbar-logo { height: 50px; }
-    .navbar-items {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-    .navbar-link {
-      color: #fff;
-      font-weight: 600;
-    }
-    .navbar-link-treinos { color: var(--verde); }
-
-    /* PAGE */
-    .page {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    .content-header h1 {
-      font-size: clamp(1.8rem, 5vw, 2.5rem);
-      font-weight: 800;
-      margin-bottom: .5rem;
-    }
-    .author { color: #3b82f6; font-size: .9rem; }
-
-    .main-layout {
-      display: grid;
-      grid-template-columns: 3fr 1fr;
-      gap: 40px;
-      margin-top: 2rem;
+    header{
+      background: var(--cor-de-fundo);
     }
 
-    /* TOC */
+    .page { max-width:f 1200px; margin: 0 auto; padding: 20px; display: flex; flex-direction: column; }
+
+    
+    .content{
+      background: #f4f4f4;
+    }
+    /* ===== Content Header ===== */
+    .content-header {
+      background: transparent;
+    }
+    .content-header h1 { font-size: clamp(1.5rem, 5vw, 2.25rem); margin-bottom: 8px; font-weight: 800; }
+    .content-header .author { color: #3b82f6; font-size: 14px; margin-bottom: 20px; }
+
+    /* ===== Layout ===== */
+    .main-layout { display: grid; grid-template-columns: 3fr 1fr; gap: 40px; }
+    .content img { max-width: 100%; border-radius: 6px; margin: 18px 0; }
+
+    .content h2 { font-size: 24px; margin: 28px 0 12px; line-height: 1.25; font-weight: 800; }
+    .content h3 { font-size: 20px; margin: 20px 0 10px; font-weight: 700; }
+    .content h4 { font-size: 18px; margin: 16px 0 8px; font-weight: 600; }
+    .content p { margin: 12px 0; }
+    .content ul, .content ol { margin: 14px 0 20px 20px; }
+    .content li { margin: 6px 0; }
+
+    /* ===== TOC ===== */
     .toc {
-      background: var(--cinza);
-      border: 1px solid var(--borda);
-      border-radius: 10px;
-      padding: 1rem;
-      margin: 2rem 0;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      background: #f8fafc;
+      padding: 14px;
+      margin: 20px 0;
     }
-    .toc ol { padding-left: 1.2rem; margin-top: .5rem; }
-    .toc a { font-size: .95rem; }
-    .toc-toggle {
-      background: none;
-      border: none;
-      color: #6b7280;
-      cursor: pointer;
-    }
+    .toc-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .toc h3 { font-size: 18px; margin: 0; }
+    .toc ul, .toc ol { padding-left: 20px; }
+    .toc a { color: #0f62fe; text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+    .toc .hidden { display: none; }
+    .toc-toggle { cursor: pointer; border: 0; background: transparent; color: #6b7280; }
 
-    /* DIAS */
-    .days-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1rem;
-      margin: 1.5rem 0;
-    }
-    .days-grid section {
-      background: #fff;
-      border: 1px solid #ececec;
-      border-radius: 10px;
-      padding: 1rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,.05);
-    }
-    .days-grid h3 {
-      font-size: 1.2rem;
-      color: var(--azul);
-      margin-bottom: .8rem;
-    }
-    .days-grid li {
-      padding: .4rem 0;
-      font-size: .95rem;
-    }
+    /* ===== Sidebar ===== */
+    .sidebar .share { margin-bottom: 28px; }
+    .share-title { margin: 0 0 8px; color: #555; font-weight: 600; }
+    .icons { display: flex; gap: 10px; }
+    .icons img { width: 32px; height: 32px; cursor: pointer; border-radius: 50%; }
 
-    /* SIDEBAR */
-    .sidebar {
-      position: sticky;
-      top: 100px;
-      align-self: start;
-    }
     .app-box {
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
       background: #fff;
-      border: 1px solid var(--borda);
-      border-radius: 12px;
-      padding: 1.2rem;
+      padding: 16px;
       text-align: center;
-      margin-top: 2rem;
+    }
+    .app-box img { width: 160px; height: 160px; object-fit: contain; border: 1px solid #eee; border-radius: 6px; margin: 14px 0; }
+    .app-box a {
+      display: block;
+      margin: 6px 0;
+      font-weight: 700;
+      text-decoration: none;
+      color: #0f62fe;
     }
 
-    /* ===== COMENTÁRIOS ===== */
-    .comentarios {
-      background: #fff;
-      padding: 60px 20px;
-      text-align: center;
-      margin: 80px auto 0;
-      max-width: 1000px;
-    }
-    .comentarios h2 {
-      font-size: 2rem;
-      color: var(--azul);
-      margin-bottom: 40px;
-    }
-    .comentario-container {
-      position: relative;
-      height: 220px;
-      overflow: hidden;
-    }
-    .comentario {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      background: #fff;
-      border-radius: 16px;
-      padding: 30px;
-      box-shadow: 0 8px 25px rgba(0,0,0,.08);
-      display: flex;
-      align-items: center;
-      gap: 25px;
-      opacity: 0;
-      transition: opacity 0.6s ease;
-    }
-    .comentario.active {
-      opacity: 1;
-      position: relative;
-    }
-    .comentario img {
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid var(--verde);
-    }
-    .comentario-info h4 {
-      margin: 0 0 8px;
-      font-size: 1.2rem;
-      color: var(--azul);
-    }
-    .estrelas {
-      color: #FFD700;
-      font-size: 1.1rem;
-    }
-    .comentario-info p {
-      font-size: 1rem;
-      color: #444;
-      margin-top: 10px;
-    }
-    .comentario-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: #fff;
-      border: none;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      font-size: 1.6rem;
-      color: var(--azul);
-      cursor: pointer;
-      box-shadow: 0 4px 15px rgba(0,0,0,.1);
-      z-index: 10;
-    }
-    .comentario-btn:hover {
-      background: var(--verde);
-      color: #fff;
-    }
-    .prev { left: 10px; }
-    .next { right: 10px; }
-    .dots {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 20px;
-    }
-    .dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: #ccc;
-      cursor: pointer;
-    }
-    .dot.active { background: var(--verde); transform: scale(1.3); }
+    /* ===== Dias Grid ===== */
+    .days-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+    .days-grid section { border: 1px solid #ececec; border-radius: 8px; padding: 12px 14px; background: #fff; }
 
-    /* FOOTER */
-    footer {
-      background: var(--fundo);
-      color: #fff;
-      text-align: center;
-      padding: 3rem 1rem 1rem;
-      margin-top: 80px;
-    }
-    .footer-image { height: 60px; margin-bottom: 1rem; }
+    /* ===== Comparação ===== */
+    .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 10px 0 6px; }
+    .compare-col { border: 1px solid #eaeaea; border-radius: 8px; padding: 12px 14px; background: #fff; }
 
-    /* RESPONSIVO */
+    /* ===== Conclusão ===== */
+    .conclusion { border-left: 4px solid #22c55e; background: #f6fef8; padding: 10px 12px; border-radius: 6px; }
+
+    /* ===== Footer ===== */
+    
+    /* ===== Responsivo ===== */
     @media (max-width: 900px) {
       .main-layout { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 700px) {
-      .comentario { flex-direction: column; text-align: center; }
-      .comentario-info { text-align: center; }
+      .sidebar { max-width: 100%; }
+      .days-grid, .compare { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-
-<header>
-  <nav class="navbar">
-    <a href="../index.html"><img src="https://i.postimg.cc/qvMDrqYw/logo.png" alt="Logo" class="navbar-logo"></a>
-    <ul class="navbar-items">
-      <li><a href="../pages/sobre.html" class="navbar-link">Sobre</a></li>
-      <li><a href="../pages/blog.html" class="navbar-link">Blog</a></li>
-      <li><a href="../pages/imc.html" class="navbar-link">IMC</a></li>
-      <li><a href="../pages/treinos.html" class="navbar-link navbar-link-treinos">Treinos</a></li>
-    </ul>
-  </nav>
-</header>
-
-<div class="page">
-  <div class="content-header">
-    <h1>Empurrar / Puxar / Pernas / Superior/Inferior (PPLUL) Divisão (5x/semana)</h1>
-    <p class="author">Escrito por Maria Clara Fernandes</p>
-  </div>
-
-  <div class="main-layout">
-    <main class="content">
-      <img src="../img/Captura de tela 2025-08-04 181008.png" alt="Treino com halteres">
-      <p>Empurrar/puxar/pernas (PPL) e parte superior/inferior são divisões populares para organizar seu treino semanal...</p>
-
-      <h2>Principais conclusões</h2>
-      <ul>
-        <li>Ideal para quem quer treinar cinco dias sem mudar a programação toda semana.</li>
-        <li>Parte superior 3x/semana, pernas 2x/semana.</li>
+  <header>
+    <!-- MENU -->
+    <nav class="navbar">
+      <a href="../index.html">
+        <img src="https://i.postimg.cc/qvMDrqYw/logo.png" alt="" class="navbar-logo">
+      </a>
+      <ul class="navbar-items">
+        <li class="navbar-item"><a href="./sobre.html" class="navbar-link">Sobre</a></li>
+        <li class="navbar-item"><a href="./blog.html" class="navbar-link">Blog</a></li>
+        <li class="navbar-item"><a href="./imc.html" class="navbar-link">IMC</a></li>
+        <li class="navbar-item"><a href="./treinos.html" class="navbar-link navbar-link-treinos">Treinos</a></li>
       </ul>
+      <button class="menu-toggle" id="menu_toggle">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </nav>
 
-      <div class="toc">
-        <div style="display:flex; justify-content:space-between; align-items:center;">
-          <h3>Conteúdo</h3>
-          <button class="toc-toggle">[ ocultar ]</button>
+    <!-- MENU MOBILE -->
+    <nav class="menu-mobile" id="menu_mobile">
+      <ul class="menu-mobile-items">
+        <li class="menu-mobile-item">
+          <a href="../index.html" class="menu-mobile-link"><i class="fa-regular fa-house"></i>Home</a>
+        </li>
+        <li class="menu-mobile-item">
+          <a href="../pages/sobre.html" class="menu-mobile-link">Sobre</a>
+        </li>
+        <li class="menu-mobile-item">
+          <a href="../pages/blog.html" class="menu-mobile-link">Blog</a>
+        </li>
+        <li class="menu-mobile-item">
+          <a href="../pages/imc.html" class="menu-mobile-link"><i class="fa-solid fa-person"></i>IMC</a>
+        </li>
+        <li class="menu-mobile-item">
+          <a href="../pages/treinos.html" class="menu-mobile-link menu-mobile-treinos"><i class="fa-solid fa-dumbbell"></i>Treinos</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- MENU SCROLL -->
+    <nav class="navbar-scroll">
+      <a href="../index.html">
+        <img src="https://i.postimg.cc/PfYRzBYW/logo2.png" alt="" class="navbar-scroll-image">
+      </a>
+      <ul class="navbar-scroll-list">
+        <li class="navbar-scroll-list-item"><a href="../index.html" class="navbar-scroll-list-link">Home</a></li>
+        <li class="navbar-scroll-list-item"><a href="../pages/sobre.html" class="navbar-scroll-list-link">Sobre</a></li>
+        <li class="navbar-scroll-list-item"><a href="../pages/blog.html" class="navbar-scroll-list-link">Blog</a></li>
+        <li class="navbar-scroll-list-item"><a href="../pages/imc.html" class="navbar-scroll-list-link">IMC</a></li>
+        <li class="navbar-scroll-list-item"><a href="../pages/treinos.html" class="navbar-scroll-list-link navbar-scroll-list-treinos">Treinos</a></li>
+      </ul>
+      <button class="menu-toggle" id="menu_toggle_scroll">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </nav>
+  </header>
+
+  <div class="page">
+    <div class="initial-content-btn" id="initial_content_btn">
+    </div>
+    <!-- Conteúdo Header -->
+    <div class="content-header">
+      <h1>Empurrar / Puxar / Pernas / Superior/Inferior (PPLUL) Divisão (5x/semana)</h1>
+      <p class="author">Escrito por Maria Clara Fernandes</p>
+    </div>
+
+    <div class="main-layout">
+      <!-- Conteúdo -->
+      <main class="content">
+        <img src="../img/Captura de tela 2025-08-04 181008.png" alt="Treino com halteres">
+
+        <p>Empurrar/puxar/pernas (PPL) e parte superior/inferior são divisões populares para organizar seu treino semanal. Ambas funcionam bem para frequências diferentes...</p>
+        <p>Se você estiver procurando algo intermediário, como cinco treinos semanais, a divisão empurrar/puxar/pernas/superior/inferior funciona perfeitamente.</p>
+
+        <h2>Principais conclusões</h2>
+        <ul>
+          <li>Push pull legs upper lower é um treino dividido em 5 dias que consiste em cinco treinos distintos.</li>
+          <li>Ideal para quem quer treinar cinco dias sem que a programação mude a cada semana.</li>
+          <li>Você pode começar sua semana com empurrar/puxar/pernas e terminar com superior/inferior ou vice-versa.</li>
+          <li>Permite treinar a parte superior 3 vezes e pernas 2 vezes por semana.</li>
+        </ul>
+
+        <!-- TOC -->
+        <div class="toc">
+          <div class="toc-header">
+            <h3>Conteúdo</h3>
+            <button class="toc-toggle">[ ocultar ]</button>
+          </div>
+          <ol>
+            <li><a href="#principais-conclusoes">Principais conclusões</a></li>
+            <li><a href="#o-que-e">O que é a divisão Push Pull Legs Upper Lower de 5 dias?</a></li>
+            <li><a href="#opcoes">Opções de programação</a></li>
+            <li><a href="#exemplo-treino">Exemplo de treino PPLUL</a></li>
+            <li><a href="#modificacoes">Modificações na divisão</a></li>
+            <li><a href="#como-estruturar">Como estruturar seus treinos</a></li>
+            <li><a href="#beneficios">Benefícios</a></li>
+            <li><a href="#faq">Perguntas frequentes</a></li>
+            <li><a href="#conclusao">Conclusão</a></li>
+          </ol>
         </div>
-        <ol>
-          <li><a href="#exemplo-treino">Exemplo de treino</a></li>
-          <li><a href="#conclusao">Conclusão</a></li>
-        </ol>
-      </div>
 
-      <h2 id="exemplo-treino">Exemplo de treino PPLUL</h2>
-      <div class="days-grid">
-        <section><h3>Dia 1: Empurrar</h3><ul>
-          <li>Supino reto com barra – 3×6–10</li>
-          <li>Desenvolvimento com halteres – 3×10–12</li>
-        </ul></section>
-        <section><h3>Dia 2: Puxar</h3><ul>
-          <li>Remada baixa – 3×6–10</li>
-          <li>Puxada alta – 3×8–12</li>
-        </ul></section>
-        <section><h3>Dia 3: Pernas</h3><ul>
-          <li>Agachamento com barra – 3×6–10</li>
-          <li>Leg press – 3×10–12</li>
-        </ul></section>
-        <section><h3>Dia 4: Superior</h3><ul>
-          <li>Supino inclinado – 3×6–10</li>
-        </ul></section>
-        <section><h3>Dia 5: Inferior</h3><ul>
-          <li>Agachamento Hack – 3×6–10</li>
-        </ul></section>
-      </div>
+        <h2 id="o-que-e">O que é a divisão Push Pull Legs Upper Lower de 5 dias?</h2>
+        <p>Combina a clássica divisão empurrar/puxar/pernas com superior/inferior. São 5 treinos semanais...</p>
+        <p><strong>Sequência comum:</strong> empurrar – puxar – pernas – superior – inferior.</p>
 
-      <h2 id="conclusao">Conclusão</h2>
-      <div style="border-left:4px solid #22c55e;background:#f6fef8;padding:15px;border-radius:8px;">
-        <p>O PPLUL é perfeito para 5 treinos por semana com recuperação total.</p>
-      </div>
-    </main>
+        <h2 id="opcoes">3 opções de programação de empurrar/puxar/pernas/divisão superior/inferior</h2>
+        <ul>
+          <li>Segunda: Superior</li>
+          <li>Terça: Inferior</li>
+          <li>Quarta: Folga</li>
+          <li>Quinta: Empurrar</li>
+          <li>Sexta: Puxar</li>
+          <li>Sábado: Pernas</li>
+          <li>Domingo: Folga</li>
+        </ul>
 
-    <aside class="sidebar">
-      <div class="share">
-        <p style="font-weight:600;margin-bottom:.5rem;">Compartilhe</p>
-        <div style="display:flex;gap:.8rem;">
-          <img src="../img/pinterest.png" alt="Pinterest" style="width:36px;cursor:pointer;">
-          <img src="../img/facebook.png" alt="Facebook" style="width:36px;cursor:pointer;">
+        <h2 id="exemplo-treino">Exemplo de treino PPLUL</h2>
+        <div class="days-grid">
+          <section>
+            <h3>Dia 1: Empurrar</h3>
+            <ul>
+              <li>Supino reto com barra – 3×6–10</li>
+              <li>Desenvolvimento com halteres – 3×10–12</li>
+              <li>Crossover cabo baixo – 3×12–15</li>
+              <li>Tríceps Francês unilateral – 3×12–15</li>
+              <li>Tríceps corda – 3×12–15</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Dia 2: Puxar</h3>
+            <ul>
+              <li>Remada baixa – 3×6–10</li>
+              <li>Puxada alta – 3×8–12</li>
+              <li>Rosca bíceps halteres – 3×12–15</li>
+              <li>Rosca martelo – 3×12–15</li>
+              <li>Face pull – 3×15–25</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Dia 3: Pernas</h3>
+            <ul>
+              <li>Agachamento com barra – 3×6–10</li>
+              <li>Leg press – 3×10–12</li>
+              <li>Passada com halteres – 3×12–15</li>
+              <li>Cadeira extensora– 3×12–15</li>
+              <li>Cadeira flexora – 3×12–15</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Dia 4: Superior</h3>
+            <ul>
+              <li>Supino inclinado com halteres – 3×6–10</li>
+              <li>Puxada Alta – 3×8–12</li>
+              <li>Desenvolvimento com barra – 3×10–12</li>
+              <li>Rosca bíceps com barra – 3×12–15</li>
+              <li>Tríceps testa – 3×12–15</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Dia 5: Inferior</h3>
+            <ul>
+              <li>Agachamento Hack – 3×6–10</li>
+              <li>Stiff – 3×10–12</li>
+              <li>Mesa flexora – 3×12–15</li>
+              <li>Panturrilha em pé – 4×15–20</li>
+              <li>Panturrilha sentado – 4×15–20</li>
+            </ul>
+          </section>
         </div>
-      </div>
-      <div class="app-box">
-        <h3>Baixar App</h3>
-        <img src="../img/Qr code.png" alt="QR Code" style="width:140px;margin:1rem 0;">
-        <a href="#">App Store</a> | <a href="#">Google Play</a>
-      </div>
-    </aside>
+
+        <h2 id="modificacoes">Possíveis modificações</h2>
+        <p>Você pode inverter os dias ou adicionar exercícios acessórios conforme necessidade. A divisão é flexível para adaptação de força e hipertrofia.</p>
+
+        <h2 id="como-estruturar">Como estruturar seus treinos</h2>
+        <p>Comece com exercícios compostos, depois acessórios. Treine até 70-85% do seu esforço máximo, garantindo técnica correta.</p>
+
+        <h2 id="beneficios">Benefícios do PPLUL</h2>
+        <ul>
+          <li>Treina cada grupo muscular duas vezes por semana.</li>
+          <li>Permite recuperação adequada entre os treinos.</li>
+          <li>Combina hipertrofia e força de forma equilibrada.</li>
+          <li>Fácil adaptação para 5 dias/semana.</li>
+        </ul>
+
+        <h2 id="faq">Perguntas frequentes</h2>
+        <h4>Preciso treinar sempre na mesma ordem?</h4>
+        <p>Não necessariamente. Você pode trocar a ordem dos dias, desde que respeite a recuperação muscular.</p>
+        <h4>Qual é a diferença entre PPLUL e PPL tradicional?</h4>
+        <p>PPLUL combina PPL com divisão superior/inferior, dando ênfase extra à parte superior do corpo.</p>
+
+        <h2 id="conclusao">Conclusão</h2>
+        <div class="conclusion">
+          <p>O PPLUL é uma excelente divisão para quem treina 5x por semana, equilibrando frequência, intensidade e recuperação. Você consegue estimular todos os grupos musculares adequadamente, adaptando os exercícios conforme seu nível e objetivo.</p>
+        </div>
+      </main>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="share">
+          <p class="share-title">Compartilhe esta publicação</p>
+          <div class="icons">
+            <img src="../img/pinterest.png" alt="Pinterest">
+            <img src="../img/facebook.png" alt="Facebook">
+            <img src="../img/twitter.png" alt="Twitter">
+            <img src="../img/reddit.png" alt="Reddit">
+          </div>
+        </div>
+        <div class="app-box">
+          <h3>Baixar Aplicativo</h3>
+          <img src="../img/Qr code.png" alt="QR Code">
+          <a href="#">Loja de aplicativos</a>
+          <a href="#">Google Play</a>
+        </div>
+      </aside>
+    </div>
   </div>
-</div>
 
-<!-- COMENTÁRIOS (FORA DO .page) -->
-<section class="comentarios">
-  <h2>O que nossos leitores dizem</h2>
-  <div class="comentario-container">
-    <button class="comentario-btn prev">←</button>
+  <!-- FOOTER -->
+  <footer>
+        <img src="https://i.postimg.cc/qvMDrqYw/logo.png" alt="" class="footer-image">
+        <div class="footer-text">
+            <p>Fortaleça seu corpo, um grupo muscular por vez.</p>
+        </div>
 
-    <div class="comentario active">
-      <img src="../img/Foto Avaliador2.png" alt="Gabriel">
-      <div class="comentario-info">
-        <h4>Gabriel Souza</h4>
-        <div class="estrelas">★★★★☆</div>
-        <p>"Texto muito bem explicado! Ideal pra quem está começando."</p>
-      </div>
+        <div class="redes-sociais" id="redes_sociais">
+            <ul>
+                <li><a href="https://www.instagram.com/eeantonietaborgesalves/" id="instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#" id="linkedin" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
+            </ul>
+
+            <div class="instagrams" id="instagrams">
+                <ul>
+                    <li><a href="https://www.instagram.com/3d.aba_/" target="_blank"><img src="https://i.postimg.cc/yYKrfvyw/logo3D.png" alt="3D">3D</a></li>
+                    <li><a href="https://www.instagram.com/eeantonietaborgesalves/" target="_blank"><img src="https://i.postimg.cc/dt9NgrWD/logo-escola.png" alt="ABA">ABA</a></li>
+                </ul>
+            </div>
+
+            <div class="linkedins" id="linkedins">
+                <ul>
+                    <li title="Prof. Allan"><a href="https://www.linkedin.com/in/allanmarcellinus/" target="_blank"><img src="https://i.postimg.cc/7hnJvpJS/allan-marcelino.jpg" alt=""></a></li>
+                    <li title="Eduardo Marques"><a href="https://www.linkedin.com/in/eduardo-marques-356558337/" target="_blank"><img src="https://i.postimg.cc/zvghkBYr/eduardo-marques.jpg" alt=""></a></li>
+                    <li title="Filippi Denner"><a href="https://www.linkedin.com/in/filippi-denner-63a76932b/" target="_blank"><img src="https://i.postimg.cc/mgGNP91R/filippi-denner.png" alt=""></a></li>
+                    <li title="Ismael Laurentino"><a href="https://www.linkedin.com/in/ismael-laurentino-25723b327/" target="_blank"><img src="https://i.postimg.cc/7YznP96m/ismael-laurentino.jpg" alt=""></a></li>
+                    <li title="João Pedro"><a href="https://www.linkedin.com/in/pedro-andrade-a42727311/" target="_blank"><img src="../img/alunos/joao 4.png" alt=""></a></li>
+                    <li title="Kaue Yuuki"><a href="https://www.linkedin.com/in/kau%C3%AA-yamamoto-584933291/" target="_blank"><img src="https://i.postimg.cc/G29GHKM9/kaue-yuuki.jpg" alt=""></a></li>
+                    <li title="Maria Clara"><a href="https://www.linkedin.com/in/maria-clara-fernandes-7588b9321/" target="_blank"><img src="https://i.postimg.cc/XJhFF5hL/maria-clara.jpg" alt=""></a></li>
+                    <li title="Patrícia Dias"><a href="https://www.linkedin.com/in/patricia-dias-427637196/" target="_blank"><img src="https://i.postimg.cc/GmJPGpvD/patricia-dias.png" alt=""></a></li>
+                    <li title="Paulo Ricardo"><a href="../img/alunos/Paulo 4.png" target="_blank"><img src="../img/alunos/Paulo 4.png" alt=""></a></li>
+                    <li title="Pedro Henrique"><a href="https://www.linkedin.com/in/pedro-pascon/" target="_blank"><img src="https://i.postimg.cc/T2FcXFRK/pedro-henrique.jpg" alt=""></a></li>
+                    <li title="Samuel Brito"><a href="https://www.linkedin.com/in/samuel-brito-melo-b8676832b/" target="_blank"><img src="https://i.postimg.cc/bdftVhq2/samuel-brito.jpg" alt=""></a></li>
+                    <li title="Raul Lucena"><a href="https://www.linkedin.com/in/raul-lucena-7300a733b/" target="_blank"><img src="../img/alunos/Raul 4.png" alt=""></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <div class="footer-copyright">
+        ©Movimentos 2.0 - Todos os direitos reservados
     </div>
 
-    <div class="comentario">
-      <img src="../img/Foto Avaliador1.png" alt="Murilo">
-      <div class="comentario-info">
-        <h4>Murilo Morgado</h4>
-        <div class="estrelas">★★★★★</div>
-        <p>"Gostei demais da explicação e das opções de treino."</p>
-      </div>
-    </div>
+    <div id="overlay"></div>
 
-    <div class="comentario">
-      <img src="../img/Foto Avaliador3.png" alt="Ivanete">
-      <div class="comentario-info">
-        <h4>Ivanete Pereira</h4>
-        <div class="estrelas">★★★☆☆</div>
-        <p>"Conteúdo bem completo, ajudou muito!"</p>
-      </div>
-    </div>
-
-    <button class="comentario-btn next">→</button>
-  </div>
-
-  <div class="dots">
-    <span class="dot active"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-  </div>
-</section>
-
-<!-- FOOTER (FORA DO .page) -->
-<footer>
-  <img src="https://i.postimg.cc/qvMDrqYw/logo.png" alt="Logo" class="footer-image">
-  <p>Fortaleça seu corpo, um grupo muscular por vez.</p>
-  <div style="margin-top:2rem;">
-    <a href="https://instagram.com" style="color:#fff;font-size:1.8rem;margin:0 .5rem;">Instagram</a>
-  </div>
-</footer>
-<div style="background:#000;color:#aaa;text-align:center;padding:1rem;font-size:.9rem;">
-  ©Movimentos 2.0 - Todos os direitos reservados
-</div>
-
-<script>
-  // Carrossel
-  const slides = document.querySelectorAll('.comentario');
-  const dots = document.querySelectorAll('.dot');
-  let current = 0;
-
-  function show(n) {
-    slides.forEach((s, i) => s.classList.toggle('active', i === n));
-    dots.forEach((d, i) => d.classList.toggle('active', i === n));
-  }
-
-  document.querySelector('.prev').onclick = () => show((current - 1 + slides.length) % slides.length);
-  document.querySelector('.next').onclick = () => show((current + 1) % slides.length);
-  dots.forEach((d, i) => d.onclick = () => show(i));
-
-  setInterval(() => {
-    current = (current + 1) % slides.length;
-    show(current);
-  }, 8000);
-
-  // TOC
-  document.querySelector('.toc-toggle').onclick = function() {
-    const ol = this.parentElement.nextElementSibling;
-    ol.style.display = ol.style.display === 'none' ? 'block' : 'none';
-    this.textContent = this.textContent === '[ ocultar ]' ? '[ mostrar ]' : '[ ocultar ]';
-  };
-</script>
+  <script src="../script/script.js"></script>
 </body>
 </html>
