@@ -5,65 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Empurrar/Puxar/Pernas/Superior/Inferior (PPLUL) Divisão (5x/semana)</title>
   <link rel="stylesheet" href="../css/style2.css">
- <!-- fontawesome -->
+  <!-- fontawesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
   <!-- GOOGLE FONTS -->
-
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-
   <style>
     :root {
       --cor-verde: #D2FE08;
       --cor-de-fundo: #061736;
       --cor-azul-escuro: #051129;
     }
-
     /* ===== Reset ===== */
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background: #f4f4f4f4;
-      color: #111;
-      line-height: 1.6;
-    }
-
-    header{
-      background: var(--cor-de-fundo);
-    }
-
-    .page { max-width:f 1200px; margin: 0 auto; padding: 20px; display: flex; flex-direction: column; }
-
-    
-    .content{
-      background: #f4f4f4;
-    }
+    body { font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background: #f4f4f4f4; color: #111; line-height: 1.6; }
+    header{ background: var(--cor-de-fundo); }
+    .page { max-width: 1200px; margin: 0 auto; padding: 20px; display: flex; flex-direction: column; }
+    .content{ background: #f4f4f4; }
     /* ===== Content Header ===== */
-    .content-header {
-      background: transparent;
-    }
+    .content-header { background: transparent; }
     .content-header h1 { font-size: clamp(1.5rem, 5vw, 2.25rem); margin-bottom: 8px; font-weight: 800; }
     .content-header .author { color: #3b82f6; font-size: 14px; margin-bottom: 20px; }
-
     /* ===== Layout ===== */
     .main-layout { display: grid; grid-template-columns: 3fr 1fr; gap: 40px; }
     .content img { max-width: 100%; border-radius: 6px; margin: 18px 0; }
-
     .content h2 { font-size: 24px; margin: 28px 0 12px; line-height: 1.25; font-weight: 800; }
     .content h3 { font-size: 20px; margin: 20px 0 10px; font-weight: 700; }
     .content h4 { font-size: 18px; margin: 16px 0 8px; font-weight: 600; }
     .content p { margin: 12px 0; }
     .content ul, .content ol { margin: 14px 0 20px 20px; }
     .content li { margin: 6px 0; }
-
     /* ===== TOC ===== */
-    .toc {
-      border: 1px solid #e5e7eb;
-      border-radius: 8px;
-      background: #f8fafc;
-      padding: 14px;
-      margin: 20px 0;
-    }
+    .toc { border: 1px solid #e5e7eb; border-radius: 8px; background: #f8fafc; padding: 14px; margin: 20px 0; }
     .toc-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
     .toc h3 { font-size: 18px; margin: 0; }
     .toc ul, .toc ol { padding-left: 20px; }
@@ -71,47 +43,112 @@
     .toc a:hover { text-decoration: underline; }
     .toc .hidden { display: none; }
     .toc-toggle { cursor: pointer; border: 0; background: transparent; color: #6b7280; }
-
     /* ===== Sidebar ===== */
     .sidebar .share { margin-bottom: 28px; }
     .share-title { margin: 0 0 8px; color: #555; font-weight: 600; }
     .icons { display: flex; gap: 10px; }
     .icons img { width: 32px; height: 32px; cursor: pointer; border-radius: 50%; }
-
-    .app-box {
-      border: 1px solid #e5e7eb;
-      border-radius: 10px;
-      background: #fff;
-      padding: 16px;
-      text-align: center;
-    }
+    .app-box { border: 1px solid #e5e7eb; border-radius: 10px; background: #fff; padding: 16px; text-align: center; }
     .app-box img { width: 160px; height: 160px; object-fit: contain; border: 1px solid #eee; border-radius: 6px; margin: 14px 0; }
-    .app-box a {
-      display: block;
-      margin: 6px 0;
-      font-weight: 700;
-      text-decoration: none;
-      color: #0f62fe;
-    }
-
+    .app-box a { display: block; margin: 6px 0; font-weight: 700; text-decoration: none; color: #0f62fe; }
     /* ===== Dias Grid ===== */
     .days-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
     .days-grid section { border: 1px solid #ececec; border-radius: 8px; padding: 12px 14px; background: #fff; }
-
     /* ===== Comparação ===== */
     .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 10px 0 6px; }
     .compare-col { border: 1px solid #eaeaea; border-radius: 8px; padding: 12px 14px; background: #fff; }
-
     /* ===== Conclusão ===== */
     .conclusion { border-left: 4px solid #22c55e; background: #f6fef8; padding: 10px 12px; border-radius: 6px; }
-
     /* ===== Footer ===== */
-    
     /* ===== Responsivo ===== */
     @media (max-width: 900px) {
       .main-layout { grid-template-columns: 1fr; }
       .sidebar { max-width: 100%; }
       .days-grid, .compare { grid-template-columns: 1fr; }
+    }
+
+    /* ===== SEÇÃO DE COMENTÁRIOS (ADICIONADA) ===== */
+    .comentarios {
+      background-color: #f9f9f9;
+      padding: 50px 20px;
+      text-align: center;
+      border-top: 1px solid #ccc;
+      margin: 60px 0 0;
+    }
+    .comentarios h2 {
+      font-size: 1.8rem;
+      margin-bottom: 40px;
+      color: #111;
+    }
+    .comentario-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .comentario {
+      background: #fff;
+      border-radius: 10px;
+      padding: 25px;
+      display: none;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 0.5s ease;
+    }
+    .comentario.active {
+      display: flex;
+    }
+    .comentario img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #D2FE08;
+    }
+    .comentario-info {
+      text-align: left;
+    }
+    .comentario-info h4 {
+      margin: 0;
+      font-size: 1.1rem;
+      color: #051129;
+    }
+    .estrelas {
+      color: #FFD700;
+      margin: 5px 0;
+    }
+    .comentario-info p {
+      font-size: 0.95rem;
+      color: #444;
+    }
+    .comentario-btn {
+      background: none;
+      border: none;
+      color: #007bff;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 10px;
+      transition: color 0.2s ease;
+    }
+    .comentario-btn:hover {
+      color: #0056b3;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 700px) {
+      .comentario {
+        flex-direction: column;
+        text-align: center;
+      }
+      .comentario-info {
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -132,7 +169,6 @@
         <span class="material-symbols-outlined">menu</span>
       </button>
     </nav>
-
     <!-- MENU MOBILE -->
     <nav class="menu-mobile" id="menu_mobile">
       <ul class="menu-mobile-items">
@@ -153,7 +189,6 @@
         </li>
       </ul>
     </nav>
-
     <!-- MENU SCROLL -->
     <nav class="navbar-scroll">
       <a href="../index.html">
@@ -173,8 +208,7 @@
   </header>
 
   <div class="page">
-    <div class="initial-content-btn" id="initial_content_btn">
-    </div>
+    <div class="initial-content-btn" id="initial_content_btn"></div>
     <!-- Conteúdo Header -->
     <div class="content-header">
       <h1>Empurrar / Puxar / Pernas / Superior/Inferior (PPLUL) Divisão (5x/semana)</h1>
@@ -185,7 +219,6 @@
       <!-- Conteúdo -->
       <main class="content">
         <img src="../img/Captura de tela 2025-08-04 181008.png" alt="Treino com halteres">
-
         <p>Empurrar/puxar/pernas (PPL) e parte superior/inferior são divisões populares para organizar seu treino semanal. Ambas funcionam bem para frequências diferentes...</p>
         <p>Se você estiver procurando algo intermediário, como cinco treinos semanais, a divisão empurrar/puxar/pernas/superior/inferior funciona perfeitamente.</p>
 
@@ -332,50 +365,126 @@
     </div>
   </div>
 
+  <!-- ===== SEÇÃO DE COMENTÁRIOS (ADICIONADA AQUI, ANTES DO FOOTER) ===== -->
+  <section class="comentarios">
+    <h2>O que nossos leitores dizem</h2>
+    <div class="comentario-container">
+      <button class="comentario-btn prev" aria-label="Comentário anterior">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <div class="comentario active">
+        <img src="../img/Foto Avaliador2.png" alt="Foto do avaliador">
+        <div class="comentario-info">
+          <h4>Gabriel Souza</h4>
+          <div class="estrelas">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <p>"Texto muito bem explicado! Ideal pra quem está começando."</p>
+        </div>
+      </div>
+      <div class="comentario">
+        <img src="../img/Foto Avaliador1.png" alt="Foto do avaliador">
+        <div class="comentario-info">
+          <h4>Murilo Morgado</h4>
+          <div class="estrelas">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p>"Gostei demais da explicação e das opções de treino. Simples e direto."</p>
+        </div>
+      </div>
+      <div class="comentario">
+        <img src="../img/Foto Avaliador3.png" alt="Foto do avaliador">
+        <div class="comentario-info">
+          <h4>Ivanete Pereira</h4>
+          <div class="estrelas">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <p>"Conteúdo bem completo, ajudou a organizar minha rotina de treino."</p>
+        </div>
+      </div>
+      <button class="comentario-btn next" aria-label="Próximo comentário">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer>
-        <img src="https://i.postimg.cc/qvMDrqYw/logo.png" alt="" class="footer-image">
-        <div class="footer-text">
-            <p>Fortaleça seu corpo, um grupo muscular por vez.</p>
-        </div>
-
-        <div class="redes-sociais" id="redes_sociais">
-            <ul>
-                <li><a href="https://www.instagram.com/eeantonietaborgesalves/" id="instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-                <li><a href="#" id="linkedin" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
-            </ul>
-
-            <div class="instagrams" id="instagrams">
-                <ul>
-                    <li><a href="https://www.instagram.com/3d.aba_/" target="_blank"><img src="https://i.postimg.cc/yYKrfvyw/logo3D.png" alt="3D">3D</a></li>
-                    <li><a href="https://www.instagram.com/eeantonietaborgesalves/" target="_blank"><img src="https://i.postimg.cc/dt9NgrWD/logo-escola.png" alt="ABA">ABA</a></li>
-                </ul>
-            </div>
-
-            <div class="linkedins" id="linkedins">
-                <ul>
-                    <li title="Prof. Allan"><a href="https://www.linkedin.com/in/allanmarcellinus/" target="_blank"><img src="https://i.postimg.cc/7hnJvpJS/allan-marcelino.jpg" alt=""></a></li>
-                    <li title="Eduardo Marques"><a href="https://www.linkedin.com/in/eduardo-marques-356558337/" target="_blank"><img src="https://i.postimg.cc/zvghkBYr/eduardo-marques.jpg" alt=""></a></li>
-                    <li title="Filippi Denner"><a href="https://www.linkedin.com/in/filippi-denner-63a76932b/" target="_blank"><img src="https://i.postimg.cc/mgGNP91R/filippi-denner.png" alt=""></a></li>
-                    <li title="Ismael Laurentino"><a href="https://www.linkedin.com/in/ismael-laurentino-25723b327/" target="_blank"><img src="https://i.postimg.cc/7YznP96m/ismael-laurentino.jpg" alt=""></a></li>
-                    <li title="João Pedro"><a href="https://www.linkedin.com/in/pedro-andrade-a42727311/" target="_blank"><img src="../img/alunos/joao 4.png" alt=""></a></li>
-                    <li title="Kaue Yuuki"><a href="https://www.linkedin.com/in/kau%C3%AA-yamamoto-584933291/" target="_blank"><img src="https://i.postimg.cc/G29GHKM9/kaue-yuuki.jpg" alt=""></a></li>
-                    <li title="Maria Clara"><a href="https://www.linkedin.com/in/maria-clara-fernandes-7588b9321/" target="_blank"><img src="https://i.postimg.cc/XJhFF5hL/maria-clara.jpg" alt=""></a></li>
-                    <li title="Patrícia Dias"><a href="https://www.linkedin.com/in/patricia-dias-427637196/" target="_blank"><img src="https://i.postimg.cc/GmJPGpvD/patricia-dias.png" alt=""></a></li>
-                    <li title="Paulo Ricardo"><a href="../img/alunos/Paulo 4.png" target="_blank"><img src="../img/alunos/Paulo 4.png" alt=""></a></li>
-                    <li title="Pedro Henrique"><a href="https://www.linkedin.com/in/pedro-pascon/" target="_blank"><img src="https://i.postimg.cc/T2FcXFRK/pedro-henrique.jpg" alt=""></a></li>
-                    <li title="Samuel Brito"><a href="https://www.linkedin.com/in/samuel-brito-melo-b8676832b/" target="_blank"><img src="https://i.postimg.cc/bdftVhq2/samuel-brito.jpg" alt=""></a></li>
-                    <li title="Raul Lucena"><a href="https://www.linkedin.com/in/raul-lucena-7300a733b/" target="_blank"><img src="../img/alunos/Raul 4.png" alt=""></a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
-    <div class="footer-copyright">
-        ©Movimentos 2.0 - Todos os direitos reservados
+    <img src="https://i.postimg.cc/qvMDrqYw/logo.png" alt="" class="footer-image">
+    <div class="footer-text">
+      <p>Fortaleça seu corpo, um grupo muscular por vez.</p>
     </div>
+    <div class="redes-sociais" id="redes_sociais">
+      <ul>
+        <li><a href="https://www.instagram.com/eeantonietaborgesalves/" id="instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+        <li><a href="#" id="linkedin" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
+      </ul>
+      <div class="instagrams" id="instagrams">
+        <ul>
+          <li><a href="https://www.instagram.com/3d.aba_/" target="_blank"><img src="https://i.postimg.cc/yYKrfvyw/logo3D.png" alt="3D">3D</a></li>
+          <li><a href="https://www.instagram.com/eeantonietaborgesalves/" target="_blank"><img src="https://i.postimg.cc/dt9NgrWD/logo-escola.png" alt="ABA">ABA</a></li>
+        </ul>
+      </div>
+      <div class="linkedins" id="linkedins">
+        <ul>
+          <li title="Prof. Allan"><a href="https://www.linkedin.com/in/allanmarcellinus/" target="_blank"><img src="https://i.postimg.cc/7hnJvpJS/allan-marcelino.jpg" alt=""></a></li>
+          <li title="Eduardo Marques"><a href="https://www.linkedin.com/in/eduardo-marques-356558337/" target="_blank"><img src="https://i.postimg.cc/zvghkBYr/eduardo-marques.jpg" alt=""></a></li>
+          <li title="Filippi Denner"><a href="https://www.linkedin.com/in/filippi-denner-63a76932b/" target="_blank"><img src="https://i.postimg.cc/mgGNP91R/filippi-denner.png" alt=""></a></li>
+          <li title="Ismael Laurentino"><a href="https://www.linkedin.com/in/ismael-laurentino-25723b327/" target="_blank"><img src="https://i.postimg.cc/7YznP96m/ismael-laurentino.jpg" alt=""></a></li>
+          <li title="João Pedro"><a href="https://www.linkedin.com/in/pedro-andrade-a42727311/" target="_blank"><img src="../img/alunos/joao 4.png" alt=""></a></li>
+          <li title="Kaue Yuuki"><a href="https://www.linkedin.com/in/kau%C3%AA-yamamoto-584933291/" target="_blank"><img src="https://i.postimg.cc/G29GHKM9/kaue-yuuki.jpg" alt=""></a></li>
+          <li title="Maria Clara"><a href="https://www.linkedin.com/in/maria-clara-fernandes-7588b9321/" target="_blank"><img src="https://i.postimg.cc/XJhFF5hL/maria-clara.jpg" alt=""></a></li>
+          <li title="Patrícia Dias"><a href="https://www.linkedin.com/in/patricia-dias-427637196/" target="_blank"><img src="https://i.postimg.cc/GmJPGpvD/patricia-dias.png" alt=""></a></li>
+          <li title="Paulo Ricardo"><a href="../img/alunos/Paulo 4.png" target="_blank"><img src="../img/alunos/Paulo 4.png" alt=""></a></li>
+          <li title="Pedro Henrique"><a href="https://www.linkedin.com/in/pedro-pascon/" target="_blank"><img src="https://i.postimg.cc/T2FcXFRK/pedro-henrique.jpg" alt=""></a></li>
+          <li title="Samuel Brito"><a href="https://www.linkedin.com/in/samuel-brito-melo-b8676832b/" target="_blank"><img src="https://i.postimg.cc/bdftVhq2/samuel-brito.jpg" alt=""></a></li>
+          <li title="Raul Lucena"><a href="https://www.linkedin.com/in/raul-lucena-7300a733b/" target="_blank"><img src="../img/alunos/Raul 4.png" alt=""></a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <div class="footer-copyright">
+    ©Movimentos 2.0 - Todos os direitos reservados
+  </div>
+  <div id="overlay"></div>
 
-    <div id="overlay"></div>
-
+  <!-- SEU SCRIPT ORIGINAL (NÃO MEXI EM NADA) -->
   <script src="../script/script.js"></script>
+
+  <!-- SCRIPT DO CARROSSEL DE COMENTÁRIOS (SÓ ISSO ADICIONEI) -->
+  <script>
+    const comentarios = document.querySelectorAll('.comentario');
+    const prevBtn = document.querySelector('.comentario-btn.prev');
+    const nextBtn = document.querySelector('.comentario-btn.next');
+    let currentIndex = 0;
+
+    function showComentario(index) {
+      comentarios.forEach((c, i) => {
+        c.classList.toggle('active', i === index);
+      });
+    }
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + comentarios.length) % comentarios.length;
+      showComentario(currentIndex);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % comentarios.length;
+      showComentario(currentIndex);
+    });
+
+    // Troca automática a cada 8 segundos
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % comentarios.length;
+      showComentario(currentIndex);
+    }, 8000);
+  </script>
 </body>
 </html>
