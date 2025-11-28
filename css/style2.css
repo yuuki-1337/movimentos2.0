@@ -391,6 +391,8 @@ main{
   padding: 30px;
 }
 
+
+
 .main-content-grid-container::before {
   content: "";
   position: absolute;
@@ -412,6 +414,15 @@ main{
 
 .main-content-grid-container-text{
   font-size: 1.2rem;
+}
+
+.main-content-grid-container {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.main-content-grid-container:hover {
+  transform: scale(1.03);
 }
 .imc-calculator-link *{
   transition: all 0.3s ease;
@@ -696,6 +707,16 @@ footer{
   font-weight: 400;
   padding: 15px;
   color: white;
+}
+.main-content-grid-container {
+  position: relative;
+}
+
+.card-link {
+  position: absolute;
+  inset: 0; /* cobre o card inteiro */
+  z-index: 5;
+  text-decoration: none;
 }
 
 @media (max-width: 768px){
