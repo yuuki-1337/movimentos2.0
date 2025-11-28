@@ -1,142 +1,84 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculadora IMC</title>
+  <title>Página de treino</title>
   <link rel="stylesheet" href="../css/style.css">
-    <!-- fontawesome -->
+  <link rel="stylesheet" href="../css/style2.css">
+  <!-- fontawesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- GOOGLE FONTS -->
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-  <style>
-    *{
-      padding: 0;
-      margin: 0;
-      box-sizing: border-box;
-    }
-    body{
-      width: 100%;
-      min-height: 100vh;
-      font-family: inter;
-    }
-    main{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    <script>
+  // Contadores de séries separados para cada exercício
+  const seriesAtuais = {
+    peck: 3,
+    paralelas: 3,
+    flexao: 3
+  };
+  const maxSeries = 5;
 
-      width: 100%;
-      min-height: 800px;
+  function adicionarSerie(exercicioId) {
+    if (seriesAtuais[exercicioId] >= maxSeries) {
       
-    background: linear-gradient(to bottom, #000 , #061736, #061736);
-      padding: 50px 8%;
-    }
-    .container{
-      position: absolute;
-      left: 50%;
-      transform: translate(-50%);
-    }
-    .box{
-      min-width: 400px;
-      background: #FAFAFA;
-      border-radius: 20px;
-      text-align: center;
-      position: relative;
-      border: 4px solid #dfe1e5;
-
-    }
-    .title{
-      color: #000;
-      font-weight: bold;
-      font-size: clamp(1rem, calc(5vw + 2rem), 2rem);
-      padding: 30px;
-
-    }
-    .content{
-      padding: 0 40px;
-
-    }
-    .input{
-      background: #fff;
-      box-shadow: 0px 0px 95px -30px rgba(0,0,0,0.15);
-      border-radius: 28px;
-      padding: 20px;
-      margin-bottom: 20px;
-
-    }
-    .input label{
-      display: block;
-      font-size: 18px;
-      font-weight: 600;
-      color: #000;
-      margin-bottom: 20px;
-
-    }
-    .input input{
-      outline: none;
-      border: none;
-      border-bottom: 1px solid #1245A3;
-      width: 60%;
-      text-align: center;
-      font-size: 20px;
-
-    }
-    button#calculate{
-      font-family: poppins;
-      color: #fff;
-      background: #1245A3;
-      font-size: 16px;
-      border-radius: 12px;
-      padding: 12px 0;
-      width: 100%;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s ease-in;
-    }
-    button#calculate:hover{
-      filter: opacity(0.9);
-    }
-    .result{
-      padding: 30px 20px;
-    }
-    .result p{
-      font-weight: 600;
-      font-size: 22px;
-      color: #000;
-      margin-bottom: 15px;
-
-    }
-    .result #result{
-      font-size: 36px;
-      font-weight: 900;
-      color: #1245A3;
-      background-color: #eaeaea;
-      display: inline-block;
-      padding: 7px 20px;
-      border-radius: 55px;
-      margin-bottom: 25px;
-    }
-    #comment{
-      color: #4f4df9;
-      font-weight: 800;
+      return;
     }
 
-    @media (max-width: 768px){
-      main{
-        min-height: 1000px;
-        justify-content: center;
-      }
-      .box{
-        min-width: 300px;
-      }
+    const container = document.getElementById(exercicioId);
+
+    // Adiciona nova série
+    const serie = container.querySelector('.serie');
+    const novaSerie = document.createElement('div');
+    novaSerie.classList.add('serienumero');
+    novaSerie.innerHTML = '<input type="number" min="1" max="999" placeholder="0">';
+    serie.appendChild(novaSerie);
+
+    // Adiciona nova repetição
+    const repeticoes = container.querySelector('.repeticoes');
+    const novaRepeticao = document.createElement('div');
+    novaRepeticao.classList.add('repeticoesnumero');
+    novaRepeticao.innerHTML = '<input type="number" min="1" max="999" placeholder="0">';
+    repeticoes.appendChild(novaRepeticao);
+
+    // Adiciona nova carga
+    const carga = container.querySelector('.carga');
+    const novaCarga = document.createElement('div');
+    novaCarga.classList.add('cargaadicionada');
+    novaCarga.innerHTML = '<input type="number" placeholder="0">';
+    carga.appendChild(novaCarga);
+
+    seriesAtuais[exercicioId]++;
+  }
+
+  function removerUltimaSerie(exercicioId) {
+    if (seriesAtuais[exercicioId] <= 3) {
+      
+      return;
     }
 
-  </style>
+    const container = document.getElementById(exercicioId);
+
+    // Remove última série
+    const series = container.querySelectorAll('.serie .serienumero');
+    series[series.length - 1].remove();
+
+    // Remove última repetição
+    const repeticoes = container.querySelectorAll('.repeticoes .repeticoesnumero');
+    repeticoes[repeticoes.length - 1].remove();
+
+    // Remove última carga
+    const cargas = container.querySelectorAll('.carga .cargaadicionada');
+    cargas[cargas.length - 1].remove();
+
+    seriesAtuais[exercicioId]--;
+  }
+</script>
 </head>
-<body>
-   <header>
+<body class="body1">
+  <header>
     <!-- MENU -->
     <nav class="navbar">
       <a href="../index.html">
@@ -145,14 +87,7 @@
       <ul class="navbar-items">
         <li class="navbar-item"><a href="./sobre.html" class="navbar-link">Sobre</a></li>
         <li class="navbar-item"><a href="./blog.html" class="navbar-link">Blog</a></li>
-        <li class="navbar-item imc-wrapper"><a href="./pages/imc.html" class="navbar-link navbar-link-imc">IMC <i class="fa-solid fa-angle-right"></i></a>
-          <div class="imc-extension">
-            <ul>
-              <li><a href="./imc.html" class="imc"><i class="fa-solid fa-person"></i> IMC</a></li>
-              <li><a href="./tmb.html" class="tmb"><i class="fa-solid fa-fire"></i> Metabolismo</a></li>
-              <li><a href="./agua.html" class="agua"><i class="fa-solid fa-droplet"></i> Água</a></li>
-            </ul>
-          </div></li>
+        <li class="navbar-item"><a href="./imc.html" class="navbar-link">IMC</a></li>
         <li class="navbar-item"><a href="./treinos.html" class="navbar-link navbar-link-treinos">Treinos</a></li>
       </ul>
       <button class="menu-toggle" id="menu_toggle">
@@ -188,17 +123,9 @@
       </a>
       <ul class="navbar-scroll-list">
         <li class="navbar-scroll-list-item"><a href="../index.html" class="navbar-scroll-list-link">Home</a></li>
-        <li class="navbar-scroll-list-item"><a href="../pages/sobre.html" class="navbar-scroll-list-link">Sobre</a></li>
+        <li class="navbar-scroll-list-item"><a href="./p" class="navbar-scroll-list-link">Sobre</a></li>
         <li class="navbar-scroll-list-item"><a href="../pages/blog.html" class="navbar-scroll-list-link">Blog</a></li>
-        <li class="navbar-scroll-list-item imc-wrapper"><a href="./pages/imc.html" class="navbar-scroll-list-link navbar-scroll-imc">IMC <i class="fa-solid fa-angle-right"></i></a>
-          <div class="imc-extension">
-            <ul>
-              <li><a href="./imc.html"><i class="fa-solid fa-person"></i> IMC</a></li>
-              <li><a href="./tmb.html"><i class="fa-solid fa-fire"></i> Metabolismo</a></li>
-              <li><a href="./agua.html"><i class="fa-solid fa-droplet"></i> Água</a></li>
-            </ul>
-          </div>
-          </li>
+        <li class="navbar-scroll-list-item"><a href="../pages/imc.html" class="navbar-scroll-list-link">IMC</a></li>
         <li class="navbar-scroll-list-item"><a href="../pages/treinos.html" class="navbar-scroll-list-link navbar-scroll-list-treinos">Treinos</a></li>
       </ul>
       <button class="menu-toggle" id="menu_toggle_scroll">
@@ -206,32 +133,48 @@
       </button>
     </nav>
   </header>
+  <!-- CONTEÚDO PRINCIPAL -->
   <main>
-    <div class="initial-content-btn" id="initial_content_btn">
-    </div>
-    <div class="container" id="container">
-      <div class="box">
-        <h1 class="title">Calculadora IMC</h1>
-        <div class="content">
-          <div class="input">
-            <label for="height">Altura(cm)</label>
-            <input type="number" id="height">
+    <div class="treinos_montados">
+          <div class="floorMusc11">
+            <a href="../pages/3dias.html" class="musculo11">
+              <img class="musculosimg1" src="../img/dia.png" alt="Panturrilha">
+              <img class="musculosimg1" src="../img/1.png" alt="Panturrilha">
+              
+            </a>
+            <a href="../pages/4dias.html" class="musculo11">
+              <img class="musculosimg1" src="../img/dia.png" alt="Panturrilha">
+              <img class="musculosimg1" src="../img/2.png" alt="Panturrilha">
+              
+            </a>
+            
           </div>
-          <div class="input">
-            <label for="weight">Peso(kg)</label>
-            <input type="number" id="weight">
+          <div class="floorMusc11">
+            <a href="../pages/3dias.html" class="musculo11">
+              <img class="musculosimg1" src="../img/dia.png" alt="Panturrilha">
+              <img class="musculosimg1" src="../img/3.png" alt="Panturrilha">
+              
+            </a>
+            <a href="../pages/4dias.html" class="musculo11">
+              <img class="musculosimg1" src="../img/dia.png" alt="Panturrilha">
+              <img class="musculosimg1" src="../img/4.png" alt="Panturrilha">
+              
+            </a>
+            
           </div>
-          <button id="calculate">Calcular IMC</button>
+          <div class="treinos_montados">
+          <div class="floorMusc11">
+            <a href="../pages/5dias.html" class="musculo11">
+              <img class="musculosimg1" src="../img/dia.png" alt="Panturrilha">
+              <img class="musculosimg1" src="../img/5.png" alt="Panturrilha">
+              
+            </a>
+            
+            
+          </div>
         </div>
-        <div class="result">
-          <p>Seu IMC é</p>
-          <div id="result">00.00</div>
-          <p class="comment"></p>
-          <p class="obs" style=" font-size: 0.95rem;"></p>
-        </div>
-      </div>
-    </div>
   </main>
+
   <footer>
     <img src="https://i.postimg.cc/qvMDrqYw/logo.png" alt="" class="footer-image">
     <div class="footer-text">
@@ -275,54 +218,7 @@
   </div>
 
   <div id="overlay"></div>
-  
+
   <script src="../script/script.js"></script>
-
-  <script>
-    //CALCULADORA IMC
-const btn = document.getElementById('calculate');
-
-btn.addEventListener('click', ()=>{
-  let height = document.querySelector('#height').value;
-  let weight = document.querySelector('#weight').value;
-
-  if(height == '' || weight == ''){
-    alert('Por favor preencha os dados!');
-    return;
-  }
-
-  height = height / 100;
-  let IMC = (weight / (height * height));
-  IMC = IMC.toFixed(2);
-  console.log(IMC);
-
-  document.querySelector('#result').innerHTML = IMC;
-  let status = '';
-  let color = '';
-
-  if(IMC < 18.5){
-    status = "Abaixo do Peso";
-    color = '#6CA6D9';
-
-  }
-  if(IMC >= 18.5 && IMC < 25){
-    status = "Saudável";
-    color = '#1FB259';
-  }
-  if(IMC >= 25 && IMC < 30){
-    status = "Faixa de Atenção";
-    color = '#FFC145';
-  }
-  if(IMC >= 30){
-    status = "Faixa de Risco";
-    color = '#F20732';
-  }
-  if(IMC )
-  document.getElementById('result').style.color = color;
-  document.querySelector('.comment').innerHTML = `<span id="comment" style="color: ${color}">${status}</span>`;
-  document.querySelector('.obs').innerHTML = `• Consulte um médico para mais informações.`;
-  
-});
-  </script>
 </body>
 </html>
