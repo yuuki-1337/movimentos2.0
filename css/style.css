@@ -599,6 +599,7 @@
 
   .main-treinos{
     padding: 8%;
+    margin-top: -150px;
   }
   
   @media (max-width: 768px){
@@ -1810,4 +1811,17 @@ input[type=number] {
     align-items: center;
     justify-content: center;
     margin-bottom: 40px;
+}
+
+.btn-voltar {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #D2FE08;
+    color: black;
+    padding: 10px 50px;
+    font-size: 20px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 40px;
 }
