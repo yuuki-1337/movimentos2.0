@@ -63,6 +63,10 @@
     background-color: var(--cor-verde);
     color: black;
   }
+
+  .navbar-link i{
+    transform: rotate(90deg);
+  }
   
   .menu-toggle{
     display: none;
@@ -157,6 +161,7 @@
     color: #fff;
     -webkit-tap-highlight-color: transparent;
     transition: 0.3s ease;
+    padding: 25px 10px;
   }
   .navbar-scroll-list-link:hover{
     opacity: 0.5;
@@ -169,7 +174,57 @@
   
   }
   .navbar-scroll-list-link i{
-    font-size: 1.5rem;
+    transform: rotate(90deg);
+  }
+
+  .imc-extension{
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.5);
+    width: 200px;
+    top: 155%;
+    right: 0;
+    border-radius: 20px;
+    padding-top: 10px;
+    z-index: 1000;
+  }
+  .imc-extension ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+  }
+  .imc-extension li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+  }
+  .imc-extension a{
+    width: 100%;
+    text-decoration: none;
+    color: white;
+  }
+  .imc-extension li:hover{
+    background: rgba(0, 0, 0, 0.5);
+  }
+  .imc-wrapper{
+    position: relative;
+  }
+  .imc-wrapper:hover .imc-extension{
+    display: flex;
+  }
+  .menu-toggle{
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
   }
   
   #overlay{
