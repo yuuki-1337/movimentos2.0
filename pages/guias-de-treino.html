@@ -70,6 +70,9 @@
     -webkit-tap-highlight-color: transparent;
     
   }
+  .navbar-link i{
+    transform: rotate(90deg);
+  }
   .navbar-link:hover{
     filter: brightness(0.7);
   }
@@ -78,7 +81,48 @@
     background-color: var(--cor-verde);
     color: black;
   }
-
+  .imc-extension{
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.5);
+  width: 200px;
+  top: 155%;
+  right: 0;
+  border-radius: 20px;
+  padding-top: 10px;
+  z-index: 1000;
+}
+.imc-extension ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+}
+.imc-extension li{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+.imc-extension a{
+  width: 100%;
+  text-decoration: none;
+  color: white;
+}
+.imc-extension li:hover{
+  background: rgba(0, 0, 0, 0.5);
+}
+.imc-wrapper{
+  position: relative;
+}
+.imc-wrapper:hover .imc-extension{
+  display: flex;
+}
   .menu-toggle{
     display: none;
     background: none;
@@ -172,6 +216,7 @@
     color: #fff;
     -webkit-tap-highlight-color: transparent;
     transition: 0.3s ease;
+    padding: 25px 10px;
   }
   .navbar-scroll-list-link:hover{
     opacity: 0.5;
@@ -184,7 +229,7 @@
 
   }
   .navbar-scroll-list-link i{
-    font-size: 1.5rem;
+    transform: rotate(90deg);
   }
 
   #overlay{
@@ -423,7 +468,14 @@
       <ul class="navbar-items">
         <li class="navbar-item"><a href="./sobre.html" class="navbar-link">Sobre</a></li>
         <li class="navbar-item"><a href="./blog.html" class="navbar-link">Blog</a></li>
-        <li class="navbar-item"><a href="./imc.html" class="navbar-link">IMC</a></li>
+        <li class="navbar-item imc-wrapper"><a href="./pages/imc.html" class="navbar-link navbar-link-imc">IMC <i class="fa-solid fa-angle-right"></i></a>
+          <div class="imc-extension">
+            <ul>
+              <li><a href="./imc.html" class="imc"><i class="fa-solid fa-person"></i> IMC</a></li>
+              <li><a href="./tmb.html" class="tmb"><i class="fa-solid fa-fire"></i> Metabolismo</a></li>
+              <li><a href="./agua.html" class="agua"><i class="fa-solid fa-droplet"></i> Água</a></li>
+            </ul>
+          </div></li>
         <li class="navbar-item"><a href="./treinos.html" class="navbar-link navbar-link-treinos">Treinos</a></li>
       </ul>
       <button class="menu-toggle" id="menu_toggle">
@@ -456,7 +508,15 @@
         <li class="navbar-scroll-list-item"><a href="../index.html" class="navbar-scroll-list-link">Home</a></li>
         <li class="navbar-scroll-list-item"><a href="./sobre.html" class="navbar-scroll-list-link">Sobre</a></li>
         <li class="navbar-scroll-list-item"><a href="./blog.html" class="navbar-scroll-list-link">Blog</a></li>
-        <li class="navbar-scroll-list-item"><a href="./imc.html" class="navbar-scroll-list-link">IMC</a></li>
+        <li class="navbar-scroll-list-item imc-wrapper"><a href="./pages/imc.html" class="navbar-scroll-list-link navbar-scroll-imc">IMC <i class="fa-solid fa-angle-right"></i></a>
+          <div class="imc-extension">
+            <ul>
+              <li><a href="./imc.html"><i class="fa-solid fa-person"></i> IMC</a></li>
+              <li><a href="./tmb.html"><i class="fa-solid fa-fire"></i> Metabolismo</a></li>
+              <li><a href="./agua.html"><i class="fa-solid fa-droplet"></i> Água</a></li>
+            </ul>
+          </div>
+          </li>
         <li class="navbar-scroll-list-item"><a href="./treinos.html" class="navbar-scroll-list-link navbar-scroll-list-treinos">Treinos</a></li>
       </ul>
       <button class="menu-toggle" id="menu_toggle_scroll">
