@@ -13,7 +13,7 @@
 }
 
 body{
-  font-family: "Inter";
+  font-family: 'Inter', sans-serif;
   background-color: black;
   color: white;
 }
@@ -46,12 +46,15 @@ header{
 
 .navbar-link{
   text-decoration: none;
-  padding: 10px 30px;
+  padding: 15px 30px;
   border-radius: 40px;
   color: white;
   transition: 0.3s ease;
   -webkit-tap-highlight-color: transparent;
   
+}
+.navbar-link i{
+  transform: rotate(90deg);
 }
 .navbar-link:hover{
   filter: brightness(0.7);
@@ -62,6 +65,48 @@ header{
   color: black;
 }
 
+.imc-extension{
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.5);
+  width: 200px;
+  top: 155%;
+  right: 0;
+  border-radius: 20px;
+  padding-top: 10px;
+  z-index: 1000;
+}
+.imc-extension ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+}
+.imc-extension li{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+.imc-extension a{
+  width: 100%;
+  text-decoration: none;
+  color: white;
+}
+.imc-extension li:hover{
+  background: rgba(0, 0, 0, 0.5);
+}
+.imc-wrapper{
+  position: relative;
+}
+.imc-wrapper:hover .imc-extension{
+  display: flex;
+}
 .menu-toggle{
   display: none;
   background: none;
@@ -155,6 +200,7 @@ header{
   color: #fff;
   -webkit-tap-highlight-color: transparent;
   transition: 0.3s ease;
+  padding: 25px 10px;
 }
 .navbar-scroll-list-link:hover{
   opacity: 0.5;
@@ -167,7 +213,7 @@ header{
 
 }
 .navbar-scroll-list-link i{
-  font-size: 1.5rem;
+  transform: rotate(90deg);
 }
 
 #overlay{
@@ -233,7 +279,7 @@ main{
     position: absolute;
     height: 100dvh;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to right, #000, transparent);
     z-index: 1;
 }
 .initial-content > * {
