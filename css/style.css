@@ -1460,6 +1460,14 @@ h2 span {
     align-items: center;
     justify-content: center;
 }
+.peito1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vh;
+    height: 60vh;
+}
 .treinoTitulo{
     width: 100%;
     display: flex;
