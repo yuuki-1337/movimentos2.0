@@ -100,7 +100,7 @@ header{
   color: white;
 }
 .imc-extension li:hover{
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.9);
 }
 .imc-wrapper{
   position: relative;
@@ -440,18 +440,31 @@ main{
 .main-content-grid-container:hover {
   transform: scale(1.03);
 }
+
+.funcionalidades-container{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 40px;
+
+}
 .funcionalidades-link *{
   transition: all 0.3s ease;
 }
 .funcionalidades-link{
   display: flex;
   text-decoration: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   color: white;
-  width: 100%;
+  width: 250px;
   height: 250px;
-  background: linear-gradient(to right, #1245a3, #061736);
-  border: 2px solid transparent;
-  border-radius: 10px;
+  background: linear-gradient(45deg, #000, #061736);
+  border: 1px solid transparent;
+  background-clip: padding-box;
+  border-radius: 20px;
   margin-top: 50px;
   padding: 30px;
   transition: all 0.3s ease;
@@ -459,37 +472,34 @@ main{
 }
 
 .funcionalidades-link:hover{
-  border: 2px solid #f4f4f4;
-  background: linear-gradient(to left, #1245a3, #061736);
+  border: 1px solid var(--cor-verde);
 }
+
+.funcionalidades-link:hover .funcionalidades-btn{
+  background: var(--cor-verde);
+  color: black;
+}
+.funcionalidades-link:hover .funcionalidades-icon{
+  color: var(--cor-verde);
+}
+
 .funcionalidades-link i{
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-left: auto;
   margin-top: auto;
-  border: 2px solid rgba(255, 255, 255, 0.18);
-  font-size: 1.8rem;
-  transform: rotate(45deg);
+  font-size: 3rem;
 }
-.funcionalidades-link:hover i{
-  color: #1245a3;
-  background: white;
-  border: 2px solid white;
-}
-.funcionalidades-text{
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  width: 80%;
-}
-.funcionalidades-text p{
+.funcionalidades-link button{
+  font-family: inter, sans-serif;
   margin-top: auto;
+  background: #061736;
+  color: white;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-weight: 600;
+  cursor: pointer;
 }
+
 .main-content-objetivos{
   display: flex;
   flex-direction: column;

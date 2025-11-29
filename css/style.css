@@ -13,7 +13,7 @@
   }
   
   body{
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     background-color: var(--cor-de-fundo);
     color: white;
   }
@@ -48,7 +48,7 @@
   
   .navbar-link{
     text-decoration: none;
-    padding: 10px 30px;
+    padding: 15px 30px;
     border-radius: 40px;
     color: white;
     transition: 0.3s ease;
@@ -183,6 +183,7 @@
     display: none;
     flex-direction: column;
     background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(15px);
     width: 200px;
     top: 155%;
     right: 0;
@@ -212,7 +213,7 @@
     color: white;
   }
   .imc-extension li:hover{
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.9);
   }
   .imc-wrapper{
     position: relative;
@@ -1403,6 +1404,8 @@ h2 span {
     max-width: 800px;
     border-radius: 12px;
     margin-bottom: 50px;
+    object-fit: cover;
+    object-position: center;
     z-index: 1;
 }
  
@@ -1454,9 +1457,9 @@ h2 span {
     width: 100%;
     border-radius: 12px;
     margin-bottom: 10px;
-    width: 241px;
-    height: 241px;
-    max-width: 100%;
+    max-width: 241px;
+    height: 250px;
+    object-fit: cover;
 }
  
 .membro h3 {
@@ -1467,7 +1470,7 @@ h2 span {
  
 .membro p {
     font-size: 0.9rem;
-      
+    text-align: center;
     color: #ccc;
 }    
  

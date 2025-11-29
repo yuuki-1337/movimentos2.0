@@ -12,6 +12,7 @@
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
     :root{
     --cor-verde: #D2FE08;
     --cor-de-fundo: #061736;
@@ -24,7 +25,7 @@
   }
   
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: inter, sans-serif;
       margin: 0;
       padding: 0;
       background: var(--cor-de-fundo);
@@ -63,7 +64,7 @@
 
     .navbar-link{
       text-decoration: none;
-      padding: 10px 30px;
+      padding: 15px 30px;
       border-radius: 40px;
       color: white;
       transition: 0.3s ease;
@@ -86,6 +87,7 @@
       display: none;
       flex-direction: column;
       background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(15px);
       width: 200px;
       top: 155%;
       right: 0;
@@ -115,7 +117,7 @@
       color: white;
     }
     .imc-extension li:hover{
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.9);
     }
     .imc-wrapper{
       position: relative;
