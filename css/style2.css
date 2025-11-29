@@ -712,7 +712,7 @@ footer{
   position: relative;
 }
 
-.card-link {
+.card-link-index {
   position: absolute;
   inset: 0; /* cobre o card inteiro */
   z-index: 5;
