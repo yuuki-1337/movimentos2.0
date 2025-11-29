@@ -145,6 +145,7 @@
     padding: 5px 25px;
     top: -200px;
     z-index: 1000;
+    box-shadow: 0 0px 20px black;
     transition: top 0.4s ease;
   }
   .navbar-scroll.active{

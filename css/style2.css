@@ -69,6 +69,7 @@ header{
   position: absolute;
   display: none;
   flex-direction: column;
+  backdrop-filter: blur(15px);
   background: rgba(0, 0, 0, 0.5);
   width: 200px;
   top: 155%;
@@ -99,7 +100,7 @@ header{
   color: white;
 }
 .imc-extension li:hover{
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.7);
 }
 .imc-wrapper{
   position: relative;
@@ -131,6 +132,7 @@ header{
   opacity: 0;
   top: -500px;
   transition: opacity 0.5s ease;
+  box-shadow: 0 0px 20px black;
   z-index: 1000;
 }
 
@@ -184,6 +186,7 @@ header{
   padding: 5px 25px;
   top: -200px;
   z-index: 1000;
+  box-shadow: 0 0px 20px black;
   transition: top 0.4s ease;
 }
 .navbar-scroll.active{
@@ -355,6 +358,7 @@ main{
 }
 
 .main-content-grid{
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(3, 300px);
@@ -387,7 +391,7 @@ main{
   display: flex;
   flex-direction: column;
   gap: 20px;
-  border-radius: 10px;
+  border-radius: 20px;
   padding: 30px;
 }
 
@@ -397,7 +401,7 @@ main{
   content: "";
   position: absolute;
   inset: 0; 
-  background: rgba(0, 0, 0, 0.5); 
+  background: linear-gradient(to top, #000 20%, transparent); 
   z-index: 1;
 }
 
@@ -405,6 +409,18 @@ main{
 .main-content-grid-container p {
   position: relative;
   z-index: 2; 
+}
+
+.main-content-grid-container span{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding: 8px 15px;
+  border-radius: 20px;
+  color: black;
+  background: var(--cor-verde);
+  font-size: 14px;
+  z-index: 2;
 }
 
 .main-content-grid-container-title{
@@ -424,10 +440,10 @@ main{
 .main-content-grid-container:hover {
   transform: scale(1.03);
 }
-.imc-calculator-link *{
+.funcionalidades-link *{
   transition: all 0.3s ease;
 }
-.imc-calculator-link{
+.funcionalidades-link{
   display: flex;
   text-decoration: none;
   color: white;
@@ -442,11 +458,11 @@ main{
   
 }
 
-.imc-calculator-link:hover{
+.funcionalidades-link:hover{
   border: 2px solid #f4f4f4;
   background: linear-gradient(to left, #1245a3, #061736);
 }
-.imc-calculator-link i{
+.funcionalidades-link i{
   position: relative;
   display: flex;
   align-items: center;
@@ -460,18 +476,18 @@ main{
   font-size: 1.8rem;
   transform: rotate(45deg);
 }
-.imc-calculator-link:hover i{
+.funcionalidades-link:hover i{
   color: #1245a3;
   background: white;
   border: 2px solid white;
 }
-.imc-calculator-link-text{
+.funcionalidades-text{
   display: flex;
   flex-direction: column;
   align-items: start;
   width: 80%;
 }
-.imc-calculator-link-text p{
+.funcionalidades-text p{
   margin-top: auto;
 }
 .main-content-objetivos{
