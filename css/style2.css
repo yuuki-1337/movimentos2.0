@@ -444,8 +444,10 @@ main{
 .funcionalidades-container{
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: start;
+  margin-top: 40px;
   gap: 40px;
 
 }
@@ -459,13 +461,13 @@ main{
   align-items: center;
   justify-content: center;
   color: white;
-  width: 250px;
-  height: 250px;
+  width: 100%;
+  max-width: 250px;
+  aspect-ratio: 1 / 1;
   background: linear-gradient(45deg, #000, #061736);
   border: 1px solid transparent;
   background-clip: padding-box;
   border-radius: 20px;
-  margin-top: 50px;
   padding: 30px;
   transition: all 0.3s ease;
   
@@ -483,9 +485,9 @@ main{
   color: var(--cor-verde);
 }
 
-.funcionalidades-link i{
+.funcionalidades-icon{
   margin-top: auto;
-  font-size: 3rem;
+  font-size: clamp(1rem, calc(2vw + 1rem), 3rem);
 }
 .funcionalidades-link button{
   font-family: inter, sans-serif;
@@ -498,6 +500,16 @@ main{
   padding: 10px 20px;
   font-weight: 600;
   cursor: pointer;
+}
+
+@media (max-width: 1024px){
+  .funcionalidades-container{
+    gap: 20px;
+  }
+  .funcionalidades-link{
+    max-width: 140px;
+    padding: 10px;
+  }
 }
 
 .main-content-objetivos{
