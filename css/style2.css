@@ -446,7 +446,7 @@ main{
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
   margin-top: 40px;
   gap: 40px;
 

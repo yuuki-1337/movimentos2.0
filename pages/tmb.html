@@ -225,7 +225,7 @@
     </div>
     <div class="container">
       <div class="box">
-        <h1 class="title">Calculadora TMB</h1>
+        <h1 class="title">Calculadora TMB<br>(Taxa Metabólica Basal)</h1>
         <div class="content">
           <div class="input">
             <label for="height">Altura (cm)</label>
@@ -255,24 +255,25 @@
             <label for="activity">Nível de atividade física</label>
             <select id="activity" required>
               <option value="" disabled selected>Selecione</option>
-              <option value="1.375">Leve</option>
-              <option value="1.55">Moderado</option>
-              <option value="1.725">Intenso</option>
+              <option value="1.375">Leve (1–2x na semana)</option>
+              <option value="1.55">Moderado (3–5x na semana)</option>
+              <option value="1.725">Intenso (Todos os dias)</option>
             </select>
           </div>
 
-          <button id="calculate">Calcular TMB</button>
+          <button id="calculate">Calcular</button>
         </div>
 
         <div class="result">
-          <p>Sua TMB é:</p>
+          <p>Sua Taxa Metabólica Basal é:</p>
           <div id="result">00.00 kcal/dia</div>
           <p id="comment"></p>
           <div class="extra-results" id="extraResults" style="display:none;">
-            <p><strong>Calorias para manutenção: <br></strong> <span id="maintain">0</span> kcal</p>
-            <p><strong>Para emagrecer (-500 kcal): <br></strong> <span id="cut">0</span> kcal</p>
-            <p><strong>Para ganho de massa (+500 kcal): <br></strong> <span id="bulk">0</span> kcal</p>
+            <p style="text-align: center;"><strong>Calorias para manutenção: <br></strong> <span id="maintain">0</span> kcal</p>
+            <p style="text-align: center;"><strong>Para emagrecer (-500 kcal): <br></strong> <span id="cut">0</span> kcal</p>
+            <p style="text-align: center;"><strong>Para ganho de massa (+500 kcal): <br></strong> <span id="bulk">0</span> kcal</p>
           </div>
+          <br>
           <p class="obs"></p>
         </div>
       </div>
@@ -292,12 +293,12 @@
         <li><a href="#" id="linkedin" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
       </ul>
 
-      <div class="instagrams" id="instagrams">
-        <ul>
-          <li><a href="https://www.instagram.com/3d.aba_/" target="_blank"><img src="https://i.postimg.cc/yYKrfvyw/logo3D.png" alt="3D">3D</a></li>
-          <li><a href="https://www.instagram.com/eeantonietaborgesalves/" target="_blank"><img src="https://i.postimg.cc/dt9NgrWD/logo-escola.png" alt="ABA">ABA</a></li>
-        </ul>
-      </div>
+    <div class="instagrams" id="instagrams">
+          <ul>
+            
+            <li><a href="https://www.instagram.com/eeantonietaborgesalves/" target="_blank"><img src="https://i.postimg.cc/dt9NgrWD/logo-escola.png" alt="ABA">Profª. Antonieta Borges Alves</a></li>
+          </ul>
+        </div>
 
       <div class="linkedins" id="linkedins">
         <ul>
