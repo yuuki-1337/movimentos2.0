@@ -1396,6 +1396,7 @@ h2 span {
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 .sobre-nos img {
     display: block;
@@ -1410,7 +1411,7 @@ h2 span {
 }
  
 .sobre-nos-text {
-  display: flex;
+    display: flex;
     background: #000;
     padding: 5%;
     border-radius: 10px;
@@ -1418,9 +1419,11 @@ h2 span {
     max-width: 900px;
     text-align: center;
     margin-top: -350px;
+    
+    
 }
 .sobre-nos-text p{
-  font-size: 1.6rem;
+  font-size: clamp(1.5rem, calc(5vw + 1rem), 1rem);
   margin-top: auto;
 }
  
