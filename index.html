@@ -13,6 +13,11 @@
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+/>
+
 </head>
 <body>
   <header>
@@ -143,12 +148,30 @@
         </a>
       </div>
     </section>
+    <div class="slider">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="./img/pexels-olly-3757376.jpg" alt="">
+            <h2>Seu corpo, sua evolução</h2>
+            <p>Treinos personalizados, controle de hábitos e ferramentas completas para sua rotina</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/pexels-ivan-s-4162488.jpg" alt="">
+            <h2>Disciplina é liberdade</h2>
+            <p>Crie constância com treinos eficientes e acompanhamento inteligente</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/pexels-tima-miroshnichenko-5327467.jpg" alt="">
+            <h2>Treine com propósito</h2>
+            <p>Entenda seu IMC, metabolismo, hidratação e eleve sua performance</p>
+          </div>
+        </div>
+        <div class="swiper-button-next"><i class="fa-solid fa-angle-right"></i></div>
+        <div class="swiper-button-prev"><i class="fa-solid fa-angle-left"></i></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
     <section class="main-content-objetivos">
-      <div class="main-content-objetivos-initia">
-      </div>
-      <div class="main-content-objetivos-embreve">
-
-      </div>
       <h2 class="main-content-objetivos-breve">Em breve? Nosso <span style="color: var(--cor-verde);">aplicativo!</span></h2>
       
         <div class="main-content-objetivos-container">
@@ -182,6 +205,24 @@
           </div>
         </div>
     </section>
+      <div class="movimentos-btn" id="movimentos_btn">
+        <img src="./img/logo2.png" alt="" class="movimentos-btn-image">
+      </div>
+      <div class="movimentos-button timer-btn">
+          <i class="fa-regular fa-clock"></i>
+      </div>
+      <div class="movimentos-button imc-btn">
+          <a href="./pages/imc.html"></a>
+          <i class="fa-solid fa-person-running funcionalidades-icon"></i>
+      </div>
+      <div class="movimentos-button metabolismo-btn">
+          <a href="./pages/tmb.html"></a>
+          <i class="fa-solid fa-fire funcionalidades-icon"></i>
+      </div>
+      <div class="movimentos-button agua-btn">
+          <a href="./pages/agua.html"></a>
+          <i class="fa-solid fa-droplet funcionalidades-icon"></i>
+      </div>
   </main>
   <footer>
     <img src="https://i.postimg.cc/qvMDrqYw/logo.png" alt="" class="footer-image">
@@ -222,7 +263,26 @@
   </div>
 
   <div id="overlay"></div>
+  <div id="overlay_movimentos"></div>
 
   <script src="./script/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      keyboard: {
+        enabled: true,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
 </body>
 </html>
