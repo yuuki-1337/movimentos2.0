@@ -5,12 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Página de treino</title>
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/style2.css">
-  <!-- fontawesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- GOOGLE FONTS -->
-      <script>
+    <script>
   // Contadores de séries separados para cada exercício
   const seriesAtuais = {
     peck: 3,
@@ -74,7 +70,14 @@
     seriesAtuais[exercicioId]--;
   }
 </script>
+
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <!-- GOOGLE FONTS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_forward_ios" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
+
 </head>
 <body class="body1">
   <header>
@@ -129,7 +132,7 @@
       </a>
       <ul class="navbar-scroll-list">
         <li class="navbar-scroll-list-item"><a href="../index.html" class="navbar-scroll-list-link">Home</a></li>
-        <li class="navbar-scroll-list-item"><a href="../pages/sobre.html" class="navbar-scroll-list-link">Sobre</a></li>
+        <li class="navbar-scroll-list-item"><a href="./sobre.html" class="navbar-scroll-list-link">Sobre</a></li>
         <li class="navbar-scroll-list-item"><a href="../pages/blog.html" class="navbar-scroll-list-link">Blog</a></li>
         <li class="navbar-scroll-list-item imc-wrapper"><a href="../pages/imc.html" class="navbar-scroll-list-link navbar-scroll-imc">IMC <i class="fa-solid fa-angle-right"></i></a>
           <div class="imc-extension">
@@ -149,15 +152,15 @@
   </header>
   <!-- CONTEÚDO PRINCIPAL -->
 
+  <!-- CONTEÚDO PRINCIPAL -->
   <main class="peito">
-    
     
     <!-- PECK DECK / VOADOR -->
     <div class="treinoTitulo">
-      <h1>ROSCA SIMULTÂNEA</h1>
+      <h1>DESENVOLVIMENTO</h1>
     </div>
     <div class="imagemdetalhe">
-      <img src="../img/rosca-simultanea.gif" alt="voador">
+      <img src="../img/desenvolvimento.gif" alt="voador">
     </div>
     <div class="repeticoes-container" id="peck">
       <div class="serie">
@@ -189,10 +192,10 @@
 
     <!-- PARALELAS -->
     <div class="treinoTitulo">
-      <h1>ROSCA CONCENTRADA</h1>
+      <h1>ELEVAÇÃO LATERAL</h1>
     </div>
     <div class="imagemdetalhe">
-      <img src="../img/rosca-concentrada.gif" alt="paralelas">
+      <img src="../img/elevação lateral.gif" alt="elevação lateral">
     </div>
     <div class="repeticoes-container" id="paralelas">
       <div class="serie">
@@ -224,10 +227,10 @@
 
     <!-- FLEXÃO DE BRAÇO -->
     <div class="treinoTitulo">
-      <h1>ROSCA INCLINADA</h1>
+      <h1>VOADOR INVERTIDO</h1>
     </div>
     <div class="imagemdetalhe">
-      <img src="../img/rosca-inclinada.gif" alt="flexao">
+      <img src="../img/Voadorinvertido.gif" alt="flexao">
     </div>
     <div class="repeticoes-container" id="flexao">
       <div class="serie">
@@ -256,8 +259,7 @@
       <button class="Criar" type="button" onclick="adicionarSerie('flexao')">Adicionar série</button>
       <button class="Remover" type="button" onclick="removerUltimaSerie('flexao')"><img src="../img/Lixeira.png" alt=""></button>
     </div>
-
-    <a href="treinos.html" class="btn-voltar">VOLTAR</a>
+    <a href="4dias.html" class="btn-voltar">VOLTAR</a>
   </main>
 
   <footer>

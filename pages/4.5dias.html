@@ -15,7 +15,9 @@
   const seriesAtuais = {
     peck: 3,
     paralelas: 3,
-    flexao: 3
+    flexao: 3,
+    roscaSimultanea: 3,
+    roscaInclinada: 3
   };
   const maxSeries = 5;
 
@@ -73,6 +75,7 @@
 
     seriesAtuais[exercicioId]--;
   }
+  
 </script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
@@ -86,7 +89,7 @@
       <ul class="navbar-items">
         <li class="navbar-item"><a href="./sobre.html" class="navbar-link">Sobre</a></li>
         <li class="navbar-item"><a href="./blog.html" class="navbar-link">Blog</a></li>
-        <li class="navbar-item imc-wrapper"><a href="../pages/imc.html" class="navbar-link navbar-link-imc">IMC <i class="fa-solid fa-angle-right"></i></a>
+        <li class="navbar-item imc-wrapper"><a href="../pages/imc.html" class="navbar-link navbar-link-imc">IMC </a>
           <div class="imc-extension">
             <ul>
               <li><a href="./imc.html" class="imc"><i class="fa-solid fa-person"></i> IMC</a></li>
@@ -131,7 +134,7 @@
         <li class="navbar-scroll-list-item"><a href="../index.html" class="navbar-scroll-list-link">Home</a></li>
         <li class="navbar-scroll-list-item"><a href="../pages/sobre.html" class="navbar-scroll-list-link">Sobre</a></li>
         <li class="navbar-scroll-list-item"><a href="../pages/blog.html" class="navbar-scroll-list-link">Blog</a></li>
-        <li class="navbar-scroll-list-item imc-wrapper"><a href="../pages/imc.html" class="navbar-scroll-list-link navbar-scroll-imc">IMC <i class="fa-solid fa-angle-right"></i></a>
+        <li class="navbar-scroll-list-item imc-wrapper"><a href="../pages/imc.html" class="navbar-scroll-list-link navbar-scroll-imc">IMC </a>
           <div class="imc-extension">
             <ul>
               <li><a href="./imc.html"><i class="fa-solid fa-person"></i> IMC</a></li>
@@ -151,14 +154,9 @@
 
   <main class="peito">
     
-    
     <!-- PECK DECK / VOADOR -->
-    <div class="treinoTitulo">
-      <h1>ROSCA SIMULTÂNEA</h1>
-    </div>
-    <div class="imagemdetalhe">
-      <img src="../img/rosca-simultanea.gif" alt="voador">
-    </div>
+    <div class="treinoTitulo"><h1>PECK DECK / VOADOR</h1></div>
+    <div class="imagemdetalhe"><img src="../img/Voador.gif" alt="voador"></div>
     <div class="repeticoes-container" id="peck">
       <div class="serie">
         <h1>SÉRIE</h1>
@@ -186,13 +184,46 @@
       <button class="Criar" type="button" onclick="adicionarSerie('peck')">Adicionar série</button>
       <button class="Remover" type="button" onclick="removerUltimaSerie('peck')"><img src="../img/Lixeira.png" alt=""></button>
     </div>
-
-    <!-- PARALELAS -->
+    <!-- PECK DECK / VOADOR -->
+    
     <div class="treinoTitulo">
-      <h1>ROSCA CONCENTRADA</h1>
+      <h1>REMADA CURVADA</h1>
     </div>
     <div class="imagemdetalhe">
-      <img src="../img/rosca-concentrada.gif" alt="paralelas">
+      <img src="../img/Remadacurvada.gif" alt="voador">
+    </div>
+    <div class="repeticoes-container" id="flexao">
+  <div class="serie">
+    <h1>SÉRIE</h1>
+    <div class="serienumero"><input type="number" min="1" max="999" placeholder="0"></div>
+    <div class="serienumero"><input type="number" min="1" max="999" placeholder="0"></div>
+    <div class="serienumero"><input type="number" min="1" max="999" placeholder="0"></div>
+  </div>
+  <div class="repeticoes">
+    <h1>REPETIÇÕES</h1>
+    <div class="repeticoesnumero"><input type="number" min="1" max="999" placeholder="0"></div>
+    <div class="repeticoesnumero"><input type="number" min="1" max="999" placeholder="0"></div>
+    <div class="repeticoesnumero"><input type="number" min="1" max="999" placeholder="0"></div>
+  </div>
+  <div class="carga">
+    <h1>CARGA ADICIONADA (KG)</h1>
+    <div class="cargaadicionada"><input type="number" placeholder="0"></div>
+    <div class="cargaadicionada"><input type="number" placeholder="0"></div>
+    <div class="cargaadicionada"><input type="number" placeholder="0"></div>
+  </div>
+</div>
+<div class="botoes">
+  <a class="adicionar" type="button" onclick="adicionarSerie('flexao')">
+    <img src="../img/AdicionarIcon.png" alt="">
+  </a>
+  <button class="Criar" type="button" onclick="adicionarSerie('flexao')">Adicionar série</button>
+  <button class="Remover" type="button" onclick="removerUltimaSerie('flexao')"><img src="../img/Lixeira.png" alt=""></button>
+</div>
+    <div class="treinoTitulo">
+      <h1>ROSCA SIMULTÂNEA</h1>
+    </div>
+    <div class="imagemdetalhe">
+      <img src="../img/rosca-simultanea.gif" alt="voador">
     </div>
     <div class="repeticoes-container" id="paralelas">
       <div class="serie">
@@ -221,15 +252,13 @@
       <button class="Criar" type="button" onclick="adicionarSerie('paralelas')">Adicionar série</button>
       <button class="Remover" type="button" onclick="removerUltimaSerie('paralelas')"><img src="../img/Lixeira.png" alt=""></button>
     </div>
-
-    <!-- FLEXÃO DE BRAÇO -->
     <div class="treinoTitulo">
-      <h1>ROSCA INCLINADA</h1>
+      <h1>FLEXÃO DIAMANTE</h1>
     </div>
     <div class="imagemdetalhe">
-      <img src="../img/rosca-inclinada.gif" alt="flexao">
+      <img src="../img/flexão diamante.gif" alt="flexão diamante"> 
     </div>
-    <div class="repeticoes-container" id="flexao">
+    <div class="repeticoes-container" id="roscaInclinada">
       <div class="serie">
         <h1>SÉRIE</h1>
         <div class="serienumero"><input type="number" min="1" max="999" placeholder="0"></div>
@@ -250,14 +279,14 @@
       </div>
     </div>
     <div class="botoes">
-      <a class="adicionar" type="button" onclick="adicionarSerie('flexao')">
+      <a class="adicionar" type="button" onclick="adicionarSerie('roscaInclinada')">
         <img src="../img/AdicionarIcon.png" alt="">
       </a>
-      <button class="Criar" type="button" onclick="adicionarSerie('flexao')">Adicionar série</button>
-      <button class="Remover" type="button" onclick="removerUltimaSerie('flexao')"><img src="../img/Lixeira.png" alt=""></button>
+      <button class="Criar" type="button" onclick="adicionarSerie('roscaInclinada')">Adicionar série</button>
+      <button class="Remover" type="button" onclick="removerUltimaSerie('roscaInclinada')"><img src="../img/Lixeira.png" alt=""></button>
     </div>
-
-    <a href="treinos.html" class="btn-voltar">VOLTAR</a>
+    
+    <a href="5dias.html" class="btn-voltar">VOLTAR</a>
   </main>
 
   <footer>
