@@ -74,3 +74,29 @@ redes_sociais.addEventListener("mouseleave", () => {
     linkedins.classList.remove("active");
 });
 
+const movimentos_btn = document.getElementById("movimentos_btn");
+const overlay_movimentos = document.getElementById("overlay_movimentos");
+
+movimentos_btn.addEventListener("click", () => {
+  document.querySelectorAll(".timer-btn, .agua-btn, .metabolismo-btn, .imc-btn, .movimentos-btn").forEach(btn => {
+    btn.classList.toggle("active");
+  });
+  overlay_movimentos.classList.toggle("active");
+
+});
+
+function fecharMenu() {
+  document.querySelectorAll(".timer-btn, .agua-btn, .metabolismo-btn, .imc-btn, .movimentos-btn")
+    .forEach(btn => btn.classList.remove("active"));
+
+  overlay_movimentos.classList.remove("active");
+}
+document.addEventListener("click", (e) => {
+  const clicouNoBotaoPrincipal = movimentos_btn.contains(e.target);
+  const clicouNosBotoes = [...document.querySelectorAll(".movimentos-button")]
+    .some(btn => btn.contains(e.target));
+
+  if (!clicouNoBotaoPrincipal && !clicouNosBotoes) {
+    fecharMenu();
+  }
+});

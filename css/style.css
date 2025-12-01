@@ -183,7 +183,7 @@
     display: none;
     flex-direction: column;
     background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(10px);
     width: 200px;
     top: 155%;
     right: 0;
