@@ -868,6 +868,7 @@ footer{
 .timer-btn.active{
   right: 80px;
   bottom: 210px;
+  color: white;
   opacity: 1;
   transform: scale(1);
   visibility: visible;

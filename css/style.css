@@ -245,6 +245,130 @@
     opacity: 1;
     pointer-events: all;
   }
+
+  #overlay_movimentos{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 150%;
+    height: 150%;
+    background: linear-gradient(-45deg, #000 20%, rgba(0, 0, 0, 0.4));
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 996;
+  }
+  #overlay_movimentos.active{
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .movimentos-btn{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 5vw;
+    right: 5vw;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 999;
+    transition: all 0.3s ease;
+  }
+  .movimentos-btn:hover{
+    background: rgba(0, 0, 0, 0.7);
+    transform: scale(1.1);
+  }
+  .movimentos-btn:focus, .movimentos-btn:active{
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .movimentos-btn.active{
+    transform: scale(1);
+    background: #000;
+  }
+  .movimentos-btn-image{
+    margin-right: 3px;
+  }
+  .movimentos-button{
+    position: fixed;
+    right: 5vw;
+    bottom: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #000, #061736);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    width: 70px;
+    height: 70px;
+    padding: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    transform: scale(0.4);  /* encolhidos */
+    visibility: hidden;
+
+    transition:
+      transform 0.35s ease,
+      opacity 0.25s ease,
+      right 0.35s ease,
+      bottom 0.35s ease;
+    z-index: 998;
+  }
+
+  .movimentos-btn *{
+    transition: all 0.3s ease;
+  }
+  .movimentos-button a{
+    position: absolute;
+    inset: 0;
+  }
+
+  .agua-btn.active{
+    right: 170px;
+    bottom: 20px;
+    color: aqua;
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+  }
+  .imc-btn.active{
+    right: 210px;
+    bottom: 110px;
+    color: rgb(16, 228, 16);
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+  }
+  .metabolismo-btn.active{
+    right: 170px;
+    bottom: 200px;
+    color: rgb(255, 81, 0);
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+  }
+  .timer-btn.active{
+    right: 80px;
+    bottom: 210px;
+    color: white;
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+  }
+  .movimentos-button:hover{
+    transform: scale(1.1);
+  }
+
+  .movimentos-button i{
+    font-size: 2rem;
+  }
   
   main{
     background-color: var(--cor-de-fundo);
