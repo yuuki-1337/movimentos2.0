@@ -100,3 +100,46 @@ document.addEventListener("click", (e) => {
     fecharMenu();
   }
 });
+const timer_btn = document.getElementById("timer_btn");
+const reset_timer = document.querySelector(".reset-timer");
+const close_timer = document.querySelector(".close-timer");
+
+timer_btn.addEventListener("click", ()=> {
+    let timer_container = document.querySelector(".timer-container");
+    let timer_buttons = document.querySelector(".close-timer-container");
+    timer_buttons.classList.toggle("active");
+    timer_container.classList.toggle("active");
+    close_timer.addEventListener("click", () =>{
+      timer_buttons.classList.remove("active");
+      timer_container.classList.remove("active");
+        });
+    });
+
+function startTimer(duration){
+  let startingMinutes = duration;
+  let time = startingMinutes * 60;
+
+  const countdownEl = document.querySelector('.countdown');
+
+  contagem = setInterval(updateCountdown, 1000);
+
+  function updateCountdown() {
+      const minutes = Math.floor(time / 60);
+      let seconds = time % 60;
+
+      seconds = seconds < 10 ? '0' + seconds :  seconds;
+
+      countdownEl.innerHTML = `${minutes}:${seconds}`;
+
+      if (time <= 0) {
+          clearInterval(contagem);
+          countdownEl.style.color = "red";
+      }
+      reset_timer.addEventListener("click",() => {
+        clearInterval(contagem);
+      });
+
+      time--;
+  };
+
+}

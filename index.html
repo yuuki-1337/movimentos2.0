@@ -208,7 +208,7 @@
       <div class="movimentos-btn" id="movimentos_btn">
         <img src="./img/logo2.png" alt="" class="movimentos-btn-image">
       </div>
-      <div class="movimentos-button timer-btn">
+      <div class="movimentos-button timer-btn" id="timer_btn">
           <i class="fa-regular fa-clock"></i>
       </div>
       <div class="movimentos-button imc-btn">
@@ -222,6 +222,15 @@
       <div class="movimentos-button agua-btn">
           <a href="./pages/agua.html"></a>
           <i class="fa-solid fa-droplet funcionalidades-icon"></i>
+      </div>
+      <div class="timer-container">
+        <p class="countdown 1" onclick="startTimer(1)">1:00</p>
+        <p class="countdown 2" onclick="startTimer(2)">2:00</p>
+        <p class="countdown 3" onclick="startTimer(5)">5:00</p>
+      </div>
+      <div class="close-timer-container">
+        <i class="fa-solid fa-x close-timer"></i>
+        <i class="fa-solid fa-rotate-left reset-timer"></i>
       </div>
   </main>
   <footer>
