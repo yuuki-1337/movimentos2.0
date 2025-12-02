@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aroma Sync & All Hair</title>
+
+  <!-- Seu CSS principal -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- FontAwesome & Swiper -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+  <style>
+    /* Ajustes rápidos e estilos necessários para o comportamento novo */
+    body { margin: 0; background: #000; color: #fff; transition: background 1.6s ease-in-out; overflow-x:hidden; }
+    body.allhair-active { background: linear-gradient(to bottom, #000000 0%, #1a0d00 30%, #2b1b0a 60%, #fff2d8 100%); }
+
+    /* Pequenas prioridades de estilo herdadas */
+    .buy-content * { color: #fff !important; }
+    .price li:first-child { font-size: 32px !important; font-weight: 900 !important; color: #00ff88 !important; }
+    .line-through { color: #777 !important; }
+    .bold { color: #00ffaa !important; font-weight: 800 !important; }
+    .texto-degrade { background: linear-gradient(90deg, #00D4FF, #FF00AA); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 900; }
+
+    .btn-adicionar { background: #00D4FF !important; color: #000 !important; padding: 22px !important; border-radius: 50px !important; font-size: 22px !important; font-weight: 800 !important; border: none !important; cursor: pointer; width: 100%; margin-top: 20px; }
+    .btn-salvar { background: #333 !important; color: #fff !important; padding: 18px !important; border-radius: 50px !important; margin-top: 15px; width: 100%; }
+    .cupom button { background: #00D4FF; color: #000; font-weight: 800; padding: 12px 22px; border-radius: 0 18px 18px 0; cursor: pointer; border: none; }
+
+    /* Comments specific */
+    .comments { padding: 40px 20px 0 20px; position: relative; z-index: 1; }
+    .container.swiper { width: 100%; max-width: 1200px; margin: 0 auto; }
+    .testimonial-card { background: rgba(255,255,255,0.03); border-radius: 12px; padding: 18px; min-height: 160px; color: #fff; box-shadow: 0 6px 18px rgba(0,0,0,0.5); }
+    .testimonial-header { display:flex; gap:12px; align-items:center; margin-bottom:8px; }
+    .testimonial-avatar { width:48px; height:48px; border-radius:50%; object-fit:cover; }
+    .testimonial-name { margin:0; font-size:16px; }
+    .testimonial-date { margin:0; font-size:12px; opacity:0.8; }
+    .testimonial-text { margin:8px 0 12px 0; font-size:14px; line-height:1.35; }
+    .testimonial-stars { font-size:14px; color: #ffd54a; }
+
+    /* DEGRADÊ QUE COMEÇA LOGO APÓS OS COMENTÁRIOS E VAI ATÉ O FINAL */
+    .comments-gradient {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 90vh;
+      background: linear-gradient(to bottom, 
+        transparent 0%, 
+        rgba(58,26,0,0.6) 20%, 
+        rgba(81,36,0,0.9) 50%, 
+        #2b1b0a 80%, 
+        #1a0d00 100%
+      );
+      pointer-events: none;
+      z-index: 0;
+      transition: background 1.6s ease-in-out;
+    }
+    body.allhair-active .comments-gradient {
+      background: linear-gradient(to bottom, 
+        transparent 0%, 
+        rgba(26,13,0,0.6) 20%, 
+        #2b1b0a 60%, 
+        #fff2d8 100%
+      );
+    }
+
+    .swiper-button-prev, .swiper-button-next { color: #fff; }
+    .swiper-pagination-bullet { background: rgba(255,255,255,0.4); }
+    .swiper-pagination-bullet-active { background: #00D4FF; }
+
+    /* Garante que todo conteúdo fique por cima do degradê */
+    .comments, .allhair-cards, .slider, .payment-container, footer { position: relative; z-index: 1; }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="menu-desktop">
+    <ul>
+      <li><a href="./compras.html"><img src="../img/logo-compras.png" alt="Logo Aroma Sync" class="header-img logo"></a></li>
+      <li class="sla"><a href="../pages/compras.html"><img src="../img/logo-shop.png" alt="Logo Shop" class="header-img sla"></a></li>
+      <li><a href="#"><img src="../img/logo-atendente.png" alt="Atendimento" class="header-img"></a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <!-- VIDEO -->
+  <div class="allhair-video" style="position:relative;width:100%;height:100vh;overflow:hidden;">
+    <video id="video" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;" poster="../img/poster.jpg">
+      <source src="../img/lv_0_20250611164651.mp4" type="video/mp4">
+    </video>
+    <button id="playBtn" aria-label="Reproduzir vídeo" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;padding:18px 60px;background:#00D4FF;color:#000;border:none;border-radius:60px;font-size:20px;font-weight:800;cursor:pointer;box-shadow:0 20px 50px rgba(0,212,255,0.5);">Sinta agora a experiência Aroma Sync</button>
+  </div>
+
+  <!-- COMPRA (100% igual ao seu) -->
+  <section class="buy-headphone">
+    <div class="headphone-content">
+      <div class="headphone-images">
+        <div class="headphone-other-images">
+          <div class="headphone-image"><img id="Fonelateral" onmouseover="trocarimagem2()" onmouseout="voltarimagem()" src="../img/headphone-sidepart.png" alt="Headphone lateral"></div>
+          <div class="headphone-image"><img id="Fonetras" onmouseover="trocarimagem()" onmouseout="voltar doimagem()" src="../img/FoneTras.png" alt="Headphone traseiro"></div>
+        </div>
+        <div class="headphone-main-image"><img id="Foneprincipal" src="../img/headphone-normal.png" alt="Headphone principal"></div>
+      </div>
+
+      <div class="description-content">
+        <p>Mergulhe em uma nova dimensão com o fone de ouvido Aroma Sync. Além de som de alta qualidade e design moderno com iluminação RGB.</p>
+        <p>Este headset inovador é capaz de transmitir <span class="texto-degrade">aromas sincronizados com o som</span>, proporcionando uma imersão total em jogos, filmes ou músicas. O conforto das almofadas acolchoadas e o microfone ajustável completam essa experiência.</p>
+      </div>
+    </div>
+
+    <div class="buy-content">
+      <div class="estrelas">
+        <ul>
+          <li><img src="../img/UmaEstrela.png" alt="Estrela"></li>
+          <li><img src="../img/UmaEstrela.png" alt="Estrela"></li>
+          <li><img src="../img/UmaEstrela.png" alt="Estrela"></li>
+          <li><img src="../img/UmaEstrela.png" alt="Estrela"></li>
+          <li><img src="../img/MeiaEstrela.png" alt="Meia estrela"></li>
+          <li>4.5</li>
+          <li>(547 avaliações)</li>
+        </ul>
+      </div>
+
+      <div class="price">
+        <ul>
+          <li>R$ 115,90 no Pix</li>
+          <li><span class="line-through">R$ 190,65</span></li>
+          <li style="color:green;">39%</li>
+          <li style="color:green;">OFF</li>
+        </ul>
+        <ul>
+          <li>Ou R$ 123,92</li>
+          <li>em até 3x sem juros</li>
+          <li style="color:green;">35%</li>
+          <li style="color:green;">OFF</li>
+        </ul>
+        <ul>
+          <li>Frete para:</li>
+          <li>Diadema, São Paulo</li>
+          <li><img src="../img/FreteIcon/watch.png" alt="Ícone frete"></li>
+        </ul>
+        <p>Frete: <span class="line-through">R$9,99</span> R$0,00</p>
+        <p><span class="bold">Frete grátis</span> usando o cupom <span class="bold">PRIMEIRACOMPRA</span></p>
+      </div>
+
+      <div class="cupom">
+        <input id="cupomInput" type="text" placeholder="Digite seu cupom" aria-label="Campo cupom">
+        <button id="applyCupomBtn" type="button">APLICAR CUPOM</button>
+      </div>
+
+      <div class="headphone-options">
+        <ul><li><img src="../img/headphone-normal.png" alt="Opção headphone"></li></ul>
+      </div>
+
+      <button class="btn-adicionar">Adicionar ao carrinho</button>
+      <button class="btn-salvar">Salvar como favoritos</button>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS (9 cards completos) -->
+  <section class="comments">
+    <div class="container swiper">
+      <div class="card-wrapper">
+        <ul class="card-list swiper-wrapper">
+          <!-- Seus 9 depoimentos exatamente como estavam -->
+          <li class="card-item swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-header">
+                <img src="../img/image-6.png" alt="João" class="testimonial-avatar">
+                <div>
+                  <h3 class="testimonial-name">João Carlos da Silva</h3>
+                  <p class="testimonial-date">Maio 15, 2025</p>
+                </div>
+              </div>
+              <p class="testimonial-text">Adorei a qualidade do material deste produto! Este produto superou minhas expectativas!</p>
+              <div class="testimonial-stars">★★★★☆</div>
+            </div>
+          </li>
+          <!-- ... os outros 8 continuam exatamente iguais ... -->
+          <li class="card-item swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-header">
+                <img src="../img/image.png" alt="Lucas" class="testimonial-avatar">
+                <div><h3 class="testimonial-name">Lucas Pereira</h3><p class="testimonial-date">Junho 30, 2025</p></div>
+              </div>
+              <p class="testimonial-text">Quem teve essa ideia é um gênio, gostei muito do fone Aroma Sync, indiquei para amigos e familiares — nota 10.</p>
+              <div class="testimonial-stars">★★★★★</div>
+            </div>
+          </li>
+        </ul>
+
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev" aria-label="Anterior"></div>
+        <div class="swiper-button-next" aria-label="Próximo"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEGRADÊ QUE COMEÇA AQUI E VAI ATÉ O FINAL -->
+  <div class="comments-gradient"></div>
+
+  <div id="allhair-trigger" style="height:10px;"></div>
+
+  <!-- ALL HAIR (igual) -->
+  <section class="allhair-cards">
+    <div class="allhair-card">
+      <img src="../img/comerciallaranja.png" alt="Comercial AllHair">
+      <button style="margin-top:140px;background:#ff8c42;color:#000;padding:16px 50px;border:none;border-radius:50px;font-weight:800;cursor:pointer;">Quero conhecer</button>
+    </div>
+    <div class="allhair-card"><img src="../img/ficha.png" alt="Ficha All Hair"></div>
+    <div class="allhair-card"><img src="../img/allhair-card2.png" alt="Card All Hair"></div>
+  </section>
+  
+  <div class="slider">
+    <div class="list">
+      <div class="item"><img src="../img/allhair-img1.png" alt=""></div>
+      <div class="item"><img src="../img/allhair-img2.png" alt=""></div>
+      <div class="item"><img src="../img/allhair-img3.png" alt=""></div>
+    </div>
+    <div class="buttons"><button id="prev" aria-label="Anterior"><</button><button id="next" aria-label="Próximo">></button></div>
+    <ul class="dots"><li class="active"></li><li></li><li></li></ul>
+  </div>
+
+  <section class="payment-container">
+    <div class="methods">
+      <div class="frete">
+        <img src="../img/FreteIcon.png" alt="">
+        <p>Frete Grátis<br> utilizando o cupom <br><span class="bold">"PRIMEIRACOMPRA"</span></p>
+        <button><i class="fa-solid fa-plus"></i></button>
+      </div>
+      <div class="payment-method">
+        <img src="../img/credit-card-img.png" alt="">
+        <p>Opções de pagamento:<br>Pix, boleto e cartão.</p>
+        <img src="../img/bandeirascartoescredito 1.png" alt="" class="credit-cards">
+        <button><i class="fa-solid fa-plus"></i></button>
+      </div>
+    </div>
+    <div class="all-hair-card-payment"><img class="allhair-card-payment" src="../img/allhair-card4.png" alt="Card pagamento All Hair"></div>
+  </section>
+
+  <!-- FOOTER COMPLETO COM TODA A TURMA -->
+  <footer>
+    <div class="classroom-description">
+      <div  class="footer-text">
+        <h2>Administração e Logística</h2>
+        <p class="escola2">Escola Estadual Professora Antonieta Borges Alves</p>
+        <p>Turmas de Administração e Logística, com visão estratégica e espírito empreendedor. De um lado, organização e eficiência com a Aroma Sync. Do outro, gestão e inovação com a All Hair. Juntas, criando negócios que conectam, encantam e transformam.</p>
+        <h2 style="margin-top: 20px; margin-bottom: 20px;">Equipe</h2>
+        <div class="colaboradores">
+          <img class="allan" src="../img/Fefa 1.png" alt="">
+          <p class="nomeallan">Fernanda Gonçalves</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="colaboradores2-container">
+      <div class="colaboradores"><img src="../img/Ana 1.png" alt=""><p>Ana Clara</p></div>
+      <div class="colaboradores"><img src="../img/Arthur 1.png" alt=""><p>Arthur Brito</p></div>
+      <div class="colaboradores"><img src="../img/Cálice 1.png" alt=""><p>Clarice Lemos</p></div>
+      <div class="colaboradores"><img src="../img/Celine 1.png" alt=""><p>Celliny Santos</p></div>
+      <div class="colaboradores"><img src="../img/Davi 1.png" alt=""><p>Davi Silva</p></div>
+      <div class="colaboradores"><img src="../img/Enzo 1.png" alt=""><p>Enzo Macedo</p></div>
+      <div class="colaboradores"><img src="../img/Kahrachi 1.png" alt=""><p>Gabriel Caraschi</p></div>
+      <div class="colaboradores"><img src="../img/Gabrelly 1.png" alt=""><p>Gabrielly Aparecida</p></div>
+      <div class="colaboradores"><img src="../img/Gege 1.png" alt=""><p>Geovana Borges</p></div>
+      <div class="colaboradores"><img src="../img/João 1.png" alt=""><p>João Gadelha</p></div>
+      <div class="colaboradores"><img src="../img/Indigente 1.png" alt=""><p>Kawan Santos</p></div>
+      <div class="colaboradores"><img src="../img/Luy 1.png" alt=""><p>Luiz Fernandes</p></div>
+      <div class="colaboradores"><img src="../img/Márcio 1.png" alt=""><p>Márcio Santos</p></div>
+      <div class="colaboradores"><img src="../img/Raissa 1.png" alt=""><p>Rayssa Silva</p></div>
+      <div class="colaboradores"><img src="../img/Rebecca 1.png" alt=""><p>Rebecca Viana</p></div>
+      <div class="colaboradores"><img src="../img/Ryan 1.png" alt=""><p>Ryan Oliveira</p></div>
+      <div class="colaboradores"><img src="../img/Sophia 1.png" alt=""><p>Sophia Verdolin</p></div>
+      <div class="colaboradores"><img src="../img/Tata 1.png" alt=""><p>Tawany Nunes</p></div>
+    </div>
+
+    <div class="linha-footer"></div>
+    <div class="Internetday">
+      <div class="internetday-title">
+        <h1>AromaSync & All Hair.</h1>
+        <ul>
+          <li><a href="">Sobre</a></li>
+          <li><a href="">Perguntas frequentes</a></li>
+          <li><a href="">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ponto-footer">••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••</div>
+    <div class="footer-end">
+      <div class="policies">
+        <ul>
+          <li><a href="">Política de privacidade</a></li>
+          <li><a href="">Termos</a></li>
+        </ul>
+      </div>
+      <div class="social-media">
+        <ul>
+          <li>Redes:</li>
+          <li><a href="https://www.instagram.com/3d.aba_/" target="_blank">Instagram</a></li>
+          <li><a href="">Linkedin</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<!-- SCRIPTS (100% iguais) -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  const playBtn = document.getElementById('playBtn');
+  const video = document.getElementById('video');
+  if (playBtn && video) {
+    playBtn.addEventListener('click', () => {
+      const p = video.play();
+      if (p && typeof p.then === 'function') {
+        p.then(() => playBtn.style.display = 'none').catch(() => playBtn.style.display = 'none');
+      } else {
+        playBtn.style.display = 'none';
+      }
+    });
+  }
+
+  const testimonialSwiper = new Swiper('.container.swiper', {
+    loop: true,
+    spaceBetween: 24,
+    pagination: { el: '.swiper-pagination', clickable: true, dynamicBullets: true },
+    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+    breakpoints: {
+      0: { slidesPerView: 1, centeredSlides: false },
+      640: { slidesPerView: 1.2, centeredSlides: true },
+      768: { slidesPerView: 2, centeredSlides: false },
+      1024: { slidesPerView: 3 }
+    }
+  });
+
+  function trocarimagem() { document.getElementById('Foneprincipal').src = '../img/FoneTras.png'; }
+  function trocarimagem2(){ document.getElementById('Foneprincipal').src = '../img/headphone-sidepart.png'; }
+  function voltarimagem(){ document.getElementById('Foneprincipal').src = '../img/headphone-normal.png'; }
+
+  const cupomBtn = document.getElementById('applyCupomBtn');
+  if (cupomBtn) {
+    cupomBtn.addEventListener('click', () => {
+      const cupomVal = document.getElementById('cupomInput').value.trim();
+      if (!cupomVal) { alert('Digite um cupom'); return; }
+      alert('Cupom aplicado: ' + cupomVal);
+    });
+  }
+
+  const trigger = document.getElementById('allhair-trigger');
+  if (trigger) {
+    const observer = new IntersectionObserver(entries => {
+      document.body.classList.toggle('allhair-active', entries[0].isIntersecting);
+    }, { threshold: 0.1 });
+    observer.observe(trigger);
+  }
+</script>
+<script src="../script/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aroma Sync — Comprar Sync One</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Inter',sans-serif;background:#000;color:#fff;overflow-x:hidden}
+        
+        header{position:fixed;top:0;width:100%;padding:20px 5%;background:rgba(0,0,0,0.94);backdrop-filter:blur(15px);z-index:1000;border-bottom:1px solid #111}
+        .nav{max-width:1400px;margin:auto;display:flex;justify-content:space-between;align-items:center}
+        .nav img{height:50px}
+        .nav a{color:#aaa;margin-left:40px;font-weight:500;transition:.3s}
+        .nav a:hover{color:#00D4FF}
+
+        .video-hero{position:relative;height:100vh;overflow:hidden;margin-top:120px;display:flex;align-items:center;justify-content:center}
+        #bgVideo{position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;transform:translate(-50%,-50%);z-index:1}
+        .video-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.4),rgba(0,0,0,0.95));z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+        .gradient-title{background:linear-gradient(90deg,#00D4FF,#FF00AA,#FF4D00);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .play-btn{padding:20px 60px;background:#00D4FF;color:#000;border:none;border-radius:60px;font-size:21px;font-weight:800;cursor:pointer;box-shadow:0 20px 40px rgba(0,212,255,0.4);transition:.4s}
+        .play-btn:hover{background:#00eeff;transform:scale(1.05)}
+        .cinema-mode .video-overlay{transform:translateY(-100%);opacity:0}
+        .cinema-mode #bgVideo{transform:translate(-50%,-50%) scale(1.12)}
+
+        /* PRODUTO */
+        .product-wrapper{max-width:1400px;margin:140px auto 0;padding:0 5%;display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:start}
+        .headphone-container{position:relative;display:inline-block}
+        .main-img{width:100%;border-radius:36px;position:relative;z-index:3}
+
+        /* EFEITO AZUL NEON SUAVE GIRANDO — SÓ AZUL, COMO VOCÊ QUERIA */
+        .blue-glow{
+            position:absolute;
+            top:50%; left:50%;
+            width:80%;
+            height:80%;
+            background:radial-gradient(circle, #00D4FF 0%, transparent 70%);
+            border-radius:50%;
+            transform:translate(-50%,-50%);
+            filter:blur(90px);
+            opacity:0.5;
+            z-index:1;
+            animation:softRotate 20s linear infinite;
+        }
+        @keyframes softRotate{
+            from{transform:translate(-50%,-50%) rotate(0deg)}
+            to{transform:translate(-50%,-50%) rotate(360deg)}
+        }
+
+        .badge{position:absolute;top:-12px;left:-12px;background:#FF0066;color:#fff;padding:16px 32px;border-radius:50px;font-weight:900;font-size:17px;transform:rotate(-10deg);z-index:4}
+
+        /* CARD DE COMPRA (mantido perfeito) */
+        .buy-card{background:#0a0a0a;border:1px solid #222;border-radius:36px;padding:48px;box-shadow:0 40px 80px rgba(0,0,0,0.9)}
+        .estrelas ul{display:flex;align-items:center;gap:8px;list-style:none;margin-bottom:28px}
+        .estrelas img{height:28px}
+        .estrelas li:nth-child(6){margin-left:12px;color:#ccc;font-size:19px}
+        .estrelas li:last-child{color:#888;font-size:17px}
+
+        .price-main{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin:30px 0}
+        .price-main strong{font-size:52px;font-weight:900;color:#00D4FF}
+        .price-main del{font-size:32px;color:#666}
+        .discount-tag{background:#00ff88;color:#000;padding:10px 24px;border-radius:50px;font-weight:900;font-size:18px}
+        .parcelas{font-size:24px;margin:20px 0}
+        .parcelas strong{color:#00D4FF}
+        .frete-box{background:#111;padding:22px;border-radius:20px;margin:30px 0}
+        .frete-box p{margin:8px 0;font-size:18px}
+        .frete-box strong{color:#0f9}
+        .cupom-box{display:flex;background:#1a1a1a;border-radius:50px;overflow:hidden;margin:35px 0}
+        .cupom-box input{flex:1;padding:24px 30px;background:transparent;border:none;color:#fff;font-size:19px}
+        .cupom-box button{padding:0 50px;background:#00D4FF;color:#000;font-weight:900;font-size:18px;border:none;cursor:pointer}
+        .btn-adicionar{width:100%;padding:28px;background:#00D4FF;color:#000;font-size:30px;font-weight:900;border:none;border-radius:60px;cursor:pointer;margin:25px 0;box-shadow:0 25px 50px rgba(0,212,255,0.4);transition:all .4s}
+        .btn-adicionar:hover{background:#00eeff;transform:translateY(-8px)}
+        .btn-salvar{width:100%;padding:20px;background:transparent;border:2px solid #444;color:#aaa;font-size:22px;border-radius:60px;cursor:pointer;transition:.3s}
+        .btn-salvar:hover{border-color:#00D4FF;color:#00D4FF}
+
+        @media(max-width:968px){
+            .product-wrapper{grid-template-columns:1fr;text-align:center}
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav">
+            <a href="../index.html"><img src="../img/logo-compras.png" alt="Aroma Sync"></a>
+            <div>
+                <a href="../index.html">Início</a>
+                <a href="#">Comprar</a>
+                <a href="#">Contato</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="video-hero" id="videoHero">
+        <video autoplay muted loop playsinline id="bgVideo">
+            <source src="../img/lv_0_20250611164651.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay">
+            <h1 class="gradient-title">Sinta o som</h1>
+            <h1 style="font-size:76px">de um jeito<br>nunca visto</h1>
+            <p style="font-size:27px;color:#ccc;max-width:900px;margin:40px auto">
+                O primeiro fone do mundo que sincroniza aromas com a música
+            </p>
+            <button class="play-btn">Sinta agora a experiência Aroma Sync</button>
+        </div>
+    </section>
+
+    <!-- FONE COM EFEITO AZUL SUAVE -->
+    <section class="product-wrapper">
+        <div class="product-images" data-aos="fade-right">
+            <div class="headphone-container">
+                <img src="../img/headphone-normal.png" alt="Sync One" class="main-img">
+                <div class="blue-glow"></div>
+                <div class="badge">LANÇAMENTO 2025</div>
+            </div>
+        </div>
+
+        <div class="buy-card" data-aos="fade-left">
+            <div class="estrelas">
+                <ul>
+                    <li><img src="../img/UmaEstrela.png"></li>
+                    <li><img src="../img/UmaEstrela.png"></li>
+                    <li><img src="../img/UmaEstrela.png"></li>
+                    <li><img src="../img/UmaEstrela.png"></li>
+                    <li><img src="../img/MeiaEstrela.png"></li>
+                    <li>4.5</li>
+                    <li>(547 avaliações)</li>
+                </ul>
+            </div>
+
+            <div class="price-main">
+                <strong>R$ 115,90</strong>
+                <del>R$ 190,65</del>
+                <span class="discount-tag">39% OFF</span>
+            </div>
+            <p style="font-size:22px;color:#aaa">no Pix ou boleto</p>
+            <p class="parcelas">Ou <strong>R$ 123,92</strong> em até <strong>3x sem juros</strong></p>
+
+            <div class="frete-box">
+                <p>Frete para: <strong>Diadema, São Paulo</strong></p>
+                <p style="font-size:26px">Frete: <del>R$9,99</del> <strong style="color:#0f9">R$0,00</strong></p>
+                <p style="color:#0f9;font-weight:600">Frete grátis com <strong>PRIMEIRACOMPRA</strong></p>
+            </div>
+
+            <div class="cupom-box">
+                <input type="text" value="PRIMEIRACOMPRA" readonly>
+                <button>APLICADO</button>
+            </div>
+
+            <button class="btn-adicionar">Adicionar ao carrinho</button>
+            <button class="btn-salvar">Salvar como favoritos</button>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({duration:1200,once:true});
+        document.querySelector('.play-btn').addEventListener('click', () => {
+            document.getElementById('videoHero').classList.add('cinema-mode');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aroma Sync — Sinta o Som</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Inter',sans-serif;background:#000;color:#fff;overflow-x:hidden;line-height:1.6}
+        a{text-decoration:none}
+
+        header{position:fixed;top:0;left:0;width:100%;padding:20px 5%;background:rgba(0,0,0,0.85);backdrop-filter:blur(12px);z-index:1000}
+        .nav{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+        .nav img{height:58px; background-color: white; border-radius: 300px;}
+        .nav a{color:#f4f4f4;margin-left:40px;font-weight:500;transition:.3s}
+        .nav a:hover{color:#00D4FF}
+
+        .hero{height:120vh;display:flex;align-items:center;justify-content:space-between;padding:0 5%;background:linear-gradient(135deg,#000,#111)}
+        .hero-content h1{font-size:48px;font-weight:800;margin-bottom:10px}
+        .gradient-text{font-size:28px;background:linear-gradient(90deg,#00D4FF,#FF00AA,#FF4D00);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .hero-buttons{margin-top:20px;display:flex;gap:10px}
+        .btn{padding:12px 25px;border-radius:50px;font-weight:600;transition:.3s}
+        .btn-primary{background:#00D4FF;color:#000}
+        .btn-primary:hover{background:#00b0d1}
+        .btn-secondary{background:transparent;color:#00D4FF;border:2px solid #00D4FF}
+        .btn-secondary:hover{background:#00D4FF;color:#000}
+        .hero-img{max-width:400px;filter:drop-shadow(0 30px 60px rgba(0,212,255,0.3));animation:float 6s ease-in-out infinite}
+        @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}
+
+        section{padding:80px 5%}
+        .grid{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center}
+        .text h2{font-size:52px;margin-bottom:20px}
+        .text p{font-size:20px;color:#ccc;line-height:1.8}
+
+        /* CARROSSEL */
+        .slider-premium{padding:100px 0;background:#000}
+        .slider-container{
+            max-width:1200px;margin:0 auto;position:relative;overflow:hidden;
+            border-radius:30px;box-shadow:0 40px 80px rgba(0,0,0,0.7);
+        }
+        
+        .slider-wrapper{display:flex;transition:transform 0.8s cubic-bezier(0.7,0,0.3,1);}
+        .slide{min-width:100%;position:relative;}
+        .slide img{width:100%;height:auto;object-fit:contain;display:block;border-radius: 30px;}
+
+        .slide-content{
+            position:absolute;top:50%;left:10%;transform:translateY(-50%);
+            max-width:600px;z-index:10;
+        }
+        .slide-content h3{
+            font-size:60px;font-weight:300;line-height:1.2;margin-bottom:40px;
+        }
+        .slide-btn{
+            padding:18px 50px;border-radius:60px;font-size:20px;
+            font-weight:600;color:#fff;display:inline-block;
+        }
+        .slide:nth-child(1) .slide-btn {background:#1404C6;}
+        .slide:nth-child(2) .slide-btn {background:#CA62CE;}
+        /* terceiro slide não tem botão no CSS → está na própria imagem */
+
+        .slider-dots{text-align:center;margin-top:30px;}
+        .dot{height:14px;width:14px;background:#333;border-radius:100%;display:inline-block;margin:0 10px;cursor:pointer;transition:.4s;}
+        .dot.active{background:#00D4FF;transform:scale(1.4);}
+
+        .colors{text-align:center;background:#050505}
+        .section-title{font-size:56px;margin-bottom:20px}
+        .colors-grid{display:flex;justify-content:center;gap:60px;margin:80px 0;flex-wrap:wrap}
+        .color-card{padding:40px;border-radius:30px;transition:0.4s;box-shadow:0 20px 40px rgba(0,0,0,0.5)}
+        .color-card:hover{transform:translateY(-20px)}
+        .color-card.purple{background:#540457}
+        .color-card.blue{background:#63AEE2}
+        .color-card.pink{background:#DC3F5B}
+        .color-card img{width:280px;border-radius:16px}
+
+        footer{padding:100px 10% 60px;text-align:center;border-top:1px solid #222;background:#000}
+        footer h3{font-size:36px;margin-bottom:20px}
+        .social-links a{color:#00D4FF;margin:0 20px;font-size:18px}
+
+        @media(max-width:968px){
+            .hero,.grid{flex-direction:column;text-align:center;padding:0 5%}
+            .hero-content h1{font-size:42px}
+            .gradient-text{font-size:24px}
+            .slide-content h3{font-size:36px}
+            .slide img{height:auto; border-radius: 60px;}
+            .slide-btn{font-size:16px;padding:14px 30px}
+            .colors-grid{flex-direction:column;align-items:center}
+            .hero-img{max-width: 90%; height: auto; margin: 40px auto 0 auto;} /* Adicionado para responsividade */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav">
+            <a href="compras.html"><img src="img/logo.png" alt="Aroma Sync"></a>
+            <div>
+                <a href="">Sobre</a>
+                <a href="compras.html">Comprar</a>
+                <a href="#">Reservar</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" data-aos="fade-up">
+        <div class="hero-content">
+            <h1>Conheça o Sync One</h1>
+            <p class="gradient-text">Sinta o som — mergulhe em cada batida, viva experiências.</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-primary">Saiba mais</a>
+                <a href="compras.html" class="btn btn-secondary">Comprar agora</a>
+            </div>
+        </div>
+        <img src="img/headphone-normal.png" alt="Sync One" class="hero-img">
+    </section>
+
+    <section class="grid" data-aos="fade-up">
+        <div class="text" data-aos="fade-right">
+            <h2>Micropartículas Aromáticas</h2>
+            <p class="gradient-text">Feito para sentir cada detalhe.</p>
+            <p>Aroma Sync libera micropartículas aromáticas sincronizadas com a música, associando cheiros a notas e melodias.</p>
+        </div>
+        <div data-aos="fade-left"><img src="img/fonelado.png" style="border-radius:20px;width:100%"></div>
+    </section>
+
+    <section class="grid" style="background:#050505" data-aos="fade-up">
+        <div data-aos="fade-right"><img src="img/headphone-normal.png" style="border-radius:20px;width:100%"></div>
+        <div class="text" data-aos="fade-left">
+            <h2>Nossa História</h2>
+            <p class="gradient-text">Construindo o futuro, com base no passado.</p>
+            <p>Aroma Sync nasceu da ideia de unir música e aroma. Com <strong>tecnologia</strong>, <strong>design</strong> e neurociência, criamos o primeiro fone que sincroniza som e cheiro.</p>
+        </div>
+    </section>
+
+    <!-- CARROSSEL CORRIGIDO – TERCEIRO SLIDE AGORA PERFEITO -->
+    <section class="slider-premium">
+        <div class="slider-container">
+            <div class="slider-wrapper" id="sliderWrapper">
+                <!-- Slide 1 -->
+                <div class="slide">
+                    <img src="img/headphone-slide-img1.png" alt="Slide 1">
+                    <div class="slide-content">
+                        <h3>Prove a eficiência<br>do nosso fone</h3>
+                        <a href="compras.html" class="slide-btn">Experimente Agora</a>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="slide">
+                    <img src="img/headphone-slide-img2.png" alt="Slide 2">
+                    <div class="slide-content">
+                        <h3>Experimente a<br>experiência completa</h3>
+                        <a href="compras.html" class="slide-btn">Experimente</a>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="slide">
+                    <img src="img/headphone-slide-img3.png" alt="Lançamento Headphone">
+                    <!-- Nenhum conteúdo aqui em cima! Tudo já está na imagem -->
+                </div>
+            </div>
+
+            <div class="slider-dots">
+                <span class="dot active" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+            </div>
+        </div>
+    </section>
+
+    <section class="colors">
+        <h2 class="section-title" data-aos="fade-up">Em breve, novas cores</h2>
+        <p class="gradient-text" data-aos="fade-up">Faça sua reserva agora</p>
+        <div class="colors-grid">
+            <div class="color-card purple" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://i.postimg.cc/BbgBDCdH/headphone-purple.png" alt="Roxo">
+            </div>
+            <div class="color-card blue" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://i.postimg.cc/RCQRjMNh/headphone-blue.png" alt="Azul">
+            </div>
+            <div class="color-card pink" data-aos="fade-up" data-aos-delay="300">
+                <img src="https://i.postimg.cc/qvgxhyQ6/headphone-pink.png" alt="Rosa">
+            </div>
+        </div>
+        <a href="compras.html" class="btn btn-primary" style="font-size:24px;padding:20px 60px;margin-top:40px" data-aos="fade-up">Reservar Agora</a>
+    </section>
+
+    <footer>
+        <div class="classroom-description">
+            <div class="footer-text">
+                <h2>Desenvolvimento de Sistemas</h2>
+                <p class="escola2">Escola Estadual Professora Antonieta Borges Alves</p>
+                <p>Nossa sala é formada por apenas 11 alunos mas nem por isso deixamos de entregar a qualidade em nossos projetos. 3D a melhor sala do Antonieta Borges!
+                </p>
+                <h2 style="
+                margin-top: 20px;
+                margin-bottom: 20px;
+                ">Equipe</h2>
+<div class="colaboradores">
+	                <img class="allan" src="./img/image 6.png" >Allan Marcelino</p>
+	            </div>
+            </div>
+            <img class="fotogeral" src="./img/img sala 8.png" alt="">
+        </div>
+        <div class="colaboradores-container">
+            <div class="colaboradores">
+                <img src="./img/eduardo 4.png" alt="">
+                <p>Eduardo Marques</p>
+            </div>
+            <div class="colaboradores">
+                <img src="./img/filipi 4.png" alt="">
+                <p>Filippi Denner</p>
+            </div>
+
+            <div class="colaboradores">
+                <img src="./img/ismael 5.png" alt="">
+                <p>Ismael Laurentino</p>
+            </div>
+            <div class="colaboradores">
+                <img src="./img/joão.jpg" alt="">
+                <p>Joao Pedro</p>
+            </div>
+            <div class="colaboradores">
+                <img src="./img/yuki 5.png" alt="">
+                <p>Kaue Yuuki</p>
+            </div>
+            <div class="colaboradores">
+                <img src="./img/maria 5.png" alt="">
+                <p>Maria Clara</p>
+            </div>
+            <div class="colaboradores">
+                <img src="./img/patricia 5.png" alt="">
+                <p>Patricia Dias</p>
+            </div>
+            <div class="colaboradores">
+                <img src="./img/Paulo 4.png" alt="">
+                <p>Paulo Ricardo</p>
+            </div>
+            <div class="colaboradores">
+                <img src="./img/Pedro 4.png" alt="">
+                <p>Pedro Henrique</p>
+            </div>
+            <div class="colaboradores">
+                <img src="./img/download-Photoroom 14.png" alt="">
+                <p>Raul Lucena</p>
+            </div>
+            <div class="colaboradores">
+                <img src="./img/samuel 4.png" alt="">
+                <p>Samuel Brito</p>
+            </div>
+        </div>
+        <div class="linha-footer"></div>
+        <div class="Internetday">
+            <div class="internetday-title">
+                <h1>Aroma Sync.</h1>
+                <ul>
+                    <li><a href="">Sobre</a></li>
+                    <li><a href="">Perguntas frequentes</a></li>
+                    <li><a href="">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="ponto-footer" style="width: 100%; overflow: hidden; white-space: nowrap; text-align: center;">••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••</div>
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({duration:1000,once:true});
+
+        const wrapper = document.getElementById('sliderWrapper');
+        const dots = document.querySelectorAll('.dot');
+        let index = 0;
+
+        function currentSlide(n) {
+            index = n;
+            wrapper.style.transform = `translateX(-${n * 100}%)`;
+            dots.forEach((dot, i) => dot.classList.toggle('active', i === n));
+        }
+
+        setInterval(() => {
+            index = (index + 1) % 3;
+            currentSlide(index);
+        }, 6000);
+
+        currentSlide(0);
+    </script>
+</body>
+</html>
