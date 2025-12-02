@@ -100,46 +100,99 @@ document.addEventListener("click", (e) => {
     fecharMenu();
   }
 });
-const timer_btn = document.getElementById("timer_btn");
-const reset_timer = document.querySelector(".reset-timer");
-const close_timer = document.querySelector(".close-timer");
+let countdownInterval;
+let remainingSeconds = 0;
 
-timer_btn.addEventListener("click", ()=> {
-    let timer_container = document.querySelector(".timer-container");
-    let timer_buttons = document.querySelector(".close-timer-container");
-    timer_buttons.classList.toggle("active");
-    timer_container.classList.toggle("active");
-    close_timer.addEventListener("click", () =>{
-      timer_buttons.classList.remove("active");
-      timer_container.classList.remove("active");
-        });
-    });
+const timerContainer = document.querySelector(".timer-container");
+const closeTimerContainer = document.querySelector(".close-timer-container");
+const countdown = document.querySelector(".countdown");
+const times = document.querySelectorAll(".time");
+const closeBtn = document.querySelector(".close-timer");
+const resetBtn = document.querySelector(".reset-timer");
+const timerBtn = document.querySelector("#timer_btn");
 
-function startTimer(duration){
-  let startingMinutes = duration;
-  let time = startingMinutes * 60;
+// ABRIR O TIMER
+timerBtn.addEventListener("click", () => {
+  timerContainer.classList.add("active");
+  closeTimerContainer.classList.add("active");
 
-  const countdownEl = document.querySelector('.countdown');
+  // restaura o layout
+  clearInterval(countdownInterval);
+  countdown.classList.remove("active");
+  countdown.textContent = "";
+  countdown.style.background = "var(--cor-verde)";
+  countdown.style.color = "black";
 
-  contagem = setInterval(updateCountdown, 1000);
+  times.forEach(t => t.style.display = "block");
+});
 
-  function updateCountdown() {
-      const minutes = Math.floor(time / 60);
-      let seconds = time % 60;
+// INICIAR TIMER
+function startTimer(minutes) {
+  remainingSeconds = minutes * 60;
 
-      seconds = seconds < 10 ? '0' + seconds :  seconds;
+  // esconde os botões
+  times.forEach(t => t.style.display = "none");
 
-      countdownEl.innerHTML = `${minutes}:${seconds}`;
+  countdown.classList.add("active");
+  updateCountdownDisplay();
 
-      if (time <= 0) {
-          clearInterval(contagem);
-          countdownEl.style.color = "red";
-      }
-      reset_timer.addEventListener("click",() => {
-        clearInterval(contagem);
-      });
+  countdownInterval = setInterval(() => {
+    remainingSeconds--;
 
-      time--;
-  };
+    updateCountdownDisplay();
 
+    if (remainingSeconds <= 0) {
+      endTimer();
+    }
+  }, 1000);
 }
+
+// ATUALIZA O DISPLAY
+function updateCountdownDisplay() {
+  const min = Math.floor(remainingSeconds / 60);
+  const sec = remainingSeconds % 60;
+  countdown.textContent = `${min}:${sec.toString().padStart(2, '0')}`;
+}
+
+// QUANDO O TIMER ACABA
+function endTimer() {
+  clearInterval(countdownInterval);
+
+  // deixa vermelho
+  countdown.style.background = "red";
+  countdown.style.color = "white";
+
+  // vibração (se permitido)
+  if (navigator.vibrate) {
+    navigator.vibrate([300, 150, 300]);
+  }
+}
+
+// RESETAR TIMER
+resetBtn.addEventListener("click", () => {
+  clearInterval(countdownInterval);
+
+  countdown.classList.remove("active");
+  countdown.textContent = "";
+  countdown.style.background = "var(--cor-verde)";
+  countdown.style.color = "black";
+
+  times.forEach(t => t.style.display = "block");
+});
+
+// FECHAR TIMER
+closeBtn.addEventListener("click", () => {
+  clearInterval(countdownInterval);
+
+  timerContainer.classList.remove("active");
+  closeTimerContainer.classList.remove("active");
+
+  countdown.classList.remove("active");
+  countdown.textContent = "";
+
+  // Voltar estado
+  countdown.style.background = "var(--cor-verde)";
+  countdown.style.color = "black";
+
+  times.forEach(t => t.style.display = "block");
+});
