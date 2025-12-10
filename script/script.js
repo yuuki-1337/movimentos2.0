@@ -100,99 +100,130 @@ document.addEventListener("click", (e) => {
     fecharMenu();
   }
 });
-let countdownInterval;
-let remainingSeconds = 0;
 
-const timerContainer = document.querySelector(".timer-container");
-const closeTimerContainer = document.querySelector(".close-timer-container");
-const countdown = document.querySelector(".countdown");
-const times = document.querySelectorAll(".time");
-const closeBtn = document.querySelector(".close-timer");
-const resetBtn = document.querySelector(".reset-timer");
-const timerBtn = document.querySelector("#timer_btn");
 
-// ABRIR O TIMER
-timerBtn.addEventListener("click", () => {
-  timerContainer.classList.add("active");
-  closeTimerContainer.classList.add("active");
+document.addEventListener("DOMContentLoaded", () => {
+  let countdownInterval;
+  let remainingSeconds = 0;
 
-  // restaura o layout
-  clearInterval(countdownInterval);
-  countdown.classList.remove("active");
-  countdown.textContent = "";
-  countdown.style.background = "var(--cor-verde)";
-  countdown.style.color = "black";
+  const timerContainer = document.querySelector(".timer-container");
+  const closeTimerContainer = document.querySelector(".close-timer-container");
+  const countdown = document.querySelector(".countdown");
+  const times = document.querySelectorAll(".time");
+  const closeBtn = document.querySelector(".close-timer");
+  const resetBtn = document.querySelector(".reset-timer");
 
-  times.forEach(t => t.style.display = "block");
-});
+  // procurar tanto por id quanto por classe (compatibilidade)
+  let timerBtn = document.querySelector("#timer_btn") || document.querySelector(".timer-btn");
 
-// INICIAR TIMER
-function startTimer(minutes) {
-  remainingSeconds = minutes * 60;
+  console.log("timer.js carregado",
+              { timerBtnExists: !!timerBtn,
+                timerContainerExists: !!timerContainer,
+                countdownExists: !!countdown,
+                timesCount: times.length,
+                closeBtnExists: !!closeBtn,
+                resetBtnExists: !!resetBtn });
 
-  // esconde os botões
-  times.forEach(t => t.style.display = "none");
+  // função auxiliar: atualiza display com segurança
+  function updateCountdownDisplay() {
+    if (!countdown) return;
+    const min = Math.floor(remainingSeconds / 60);
+    const sec = remainingSeconds % 60;
+    countdown.textContent = `${min}:${sec.toString().padStart(2, "0")}`;
+  }
 
-  countdown.classList.add("active");
-  updateCountdownDisplay();
+  function endTimer() {
+    clearInterval(countdownInterval);
+    if (countdown) {
+      countdown.style.background = "red";
+      countdown.style.color = "white";
+    }
+    if (navigator.vibrate) {
+      navigator.vibrate([300, 150, 300]);
+    }
+  }
 
-  countdownInterval = setInterval(() => {
-    remainingSeconds--;
+  // abrir timer
+  if (timerBtn && timerContainer && closeTimerContainer && countdown) {
+    timerBtn.addEventListener("click", () => {
+      timerContainer.classList.add("active");
+      closeTimerContainer.classList.add("active");
 
+      clearInterval(countdownInterval);
+      countdown.classList.remove("active");
+      countdown.textContent = "";
+      countdown.style.background = "var(--cor-verde)";
+      countdown.style.color = "black";
+
+      times.forEach(t => t.style.display = "block");
+    });
+  } else {
+    console.warn("Não foi possível registrar listener de abertura do timer. Verifique elementos.", {
+      timerBtn: !!timerBtn, timerContainer: !!timerContainer, countdown: !!countdown
+    });
+  }
+
+  // iniciar timer - função pública
+  window.startTimer = function (minutes) {
+    if (!countdown) {
+      console.warn("Countdown não encontrado. startTimer abortado.");
+      return;
+    }
+
+    remainingSeconds = Math.max(0, Math.floor(Number(minutes) || 0) * 60);
+
+    // esconder botões se existirem
+    if (times.length) times.forEach(t => t.style.display = "none");
+
+    countdown.classList.add("active");
     updateCountdownDisplay();
 
-    if (remainingSeconds <= 0) {
-      endTimer();
-    }
-  }, 1000);
-}
+    clearInterval(countdownInterval);
+    countdownInterval = setInterval(() => {
+      remainingSeconds--;
+      updateCountdownDisplay();
 
-// ATUALIZA O DISPLAY
-function updateCountdownDisplay() {
-  const min = Math.floor(remainingSeconds / 60);
-  const sec = remainingSeconds % 60;
-  countdown.textContent = `${min}:${sec.toString().padStart(2, '0')}`;
-}
+      if (remainingSeconds <= 0) {
+        endTimer();
+      }
+    }, 1000);
+  };
 
-// QUANDO O TIMER ACABA
-function endTimer() {
-  clearInterval(countdownInterval);
+  // reset
+  if (resetBtn) {
+    resetBtn.addEventListener("click", () => {
+      clearInterval(countdownInterval);
 
-  // deixa vermelho
-  countdown.style.background = "red";
-  countdown.style.color = "white";
-
-  // vibração (se permitido)
-  if (navigator.vibrate) {
-    navigator.vibrate([300, 150, 300]);
+      if (countdown) {
+        countdown.classList.remove("active");
+        countdown.textContent = "";
+        countdown.style.background = "var(--cor-verde)";
+        countdown.style.color = "black";
+      }
+      if (times.length) times.forEach(t => t.style.display = "block");
+    });
+  } else {
+    console.warn("Botão reset não encontrado (.reset-timer).");
   }
-}
 
-// RESETAR TIMER
-resetBtn.addEventListener("click", () => {
-  clearInterval(countdownInterval);
+  // fechar
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      clearInterval(countdownInterval);
 
-  countdown.classList.remove("active");
-  countdown.textContent = "";
-  countdown.style.background = "var(--cor-verde)";
-  countdown.style.color = "black";
+      if (timerContainer) timerContainer.classList.remove("active");
+      if (closeTimerContainer) closeTimerContainer.classList.remove("active");
 
-  times.forEach(t => t.style.display = "block");
-});
+      if (countdown) {
+        countdown.classList.remove("active");
+        countdown.textContent = "";
+        countdown.style.background = "var(--cor-verde)";
+        countdown.style.color = "black";
+      }
 
-// FECHAR TIMER
-closeBtn.addEventListener("click", () => {
-  clearInterval(countdownInterval);
-
-  timerContainer.classList.remove("active");
-  closeTimerContainer.classList.remove("active");
-
-  countdown.classList.remove("active");
-  countdown.textContent = "";
-
-  // Voltar estado
-  countdown.style.background = "var(--cor-verde)";
-  countdown.style.color = "black";
-
-  times.forEach(t => t.style.display = "block");
+      if (times.length) times.forEach(t => t.style.display = "block");
+    });
+  } else {
+    console.warn("Botão fechar não encontrado (.close-timer).");
+  }
 });

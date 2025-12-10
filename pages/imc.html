@@ -249,6 +249,16 @@
           <a href="./agua.html"></a>
           <i class="fa-solid fa-droplet funcionalidades-icon"></i>
       </div>
+      <div class="timer-container">
+        <p class="time" onclick="startTimer(1)">1:00</p>
+        <p class="time" onclick="startTimer(2)">2:00</p>
+        <p class="time" onclick="startTimer(5)">5:00</p>
+        <p class="countdown"></p>
+      </div>
+      <div class="close-timer-container">
+        <i class="fa-solid fa-x close-timer"></i>
+        <i class="fa-solid fa-rotate-left reset-timer"></i>
+      </div>
       <div id="overlay_movimentos"></div>
   </main>
   <footer>
@@ -294,54 +304,54 @@
   </div>
 
   <div id="overlay"></div>
-  
+
   <script src="../script/script.js"></script>
 
   <script>
     //CALCULADORA IMC
-const btn = document.getElementById('calculate');
+    const btn = document.getElementById('calculate');
 
-btn.addEventListener('click', ()=>{
-  let height = document.querySelector('#height').value;
-  let weight = document.querySelector('#weight').value;
+    btn.addEventListener('click', ()=>{
+      let height = document.querySelector('#height').value;
+      let weight = document.querySelector('#weight').value;
 
-  if(height == '' || weight == ''){
-    alert('Por favor preencha os dados!');
-    return;
-  }
+      if(height == '' || weight == ''){
+        alert('Por favor preencha os dados!');
+        return;
+      }
 
-  height = height / 100;
-  let IMC = (weight / (height * height));
-  IMC = IMC.toFixed(2);
-  console.log(IMC);
+      height = height / 100;
+      let IMC = (weight / (height * height));
+      IMC = IMC.toFixed(2);
+      console.log(IMC);
 
-  document.querySelector('#result').innerHTML = IMC;
-  let status = '';
-  let color = '';
+      document.querySelector('#result').innerHTML = IMC;
+      let status = '';
+      let color = '';
 
-  if(IMC < 18.5){
-    status = "Abaixo do Peso";
-    color = '#6CA6D9';
+      if(IMC < 18.5){
+        status = "Abaixo do Peso";
+        color = '#6CA6D9';
 
-  }
-  if(IMC >= 18.5 && IMC < 25){
-    status = "Saudável";
-    color = '#1FB259';
-  }
-  if(IMC >= 25 && IMC < 30){
-    status = "Faixa de Atenção";
-    color = '#FFC145';
-  }
-  if(IMC >= 30){
-    status = "Faixa de Risco";
-    color = '#F20732';
-  }
-  if(IMC )
-  document.getElementById('result').style.color = color;
-  document.querySelector('.comment').innerHTML = `<span id="comment" style="color: ${color}">${status}</span>`;
-  document.querySelector('.obs').innerHTML = `• Valor mediano. Para mais informações, consulte um nutricionista.`;
-  
-});
+      }
+      if(IMC >= 18.5 && IMC < 25){
+        status = "Saudável";
+        color = '#1FB259';
+      }
+      if(IMC >= 25 && IMC < 30){
+        status = "Faixa de Atenção";
+        color = '#FFC145';
+      }
+      if(IMC >= 30){
+        status = "Faixa de Risco";
+        color = '#F20732';
+      }
+      if(IMC )
+      document.getElementById('result').style.color = color;
+      document.querySelector('.comment').innerHTML = `<span id="comment" style="color: ${color}">${status}</span>`;
+      document.querySelector('.obs').innerHTML = `• Valor mediano. Para mais informações, consulte um nutricionista.`;
+      
+    });
   </script>
 </body>
 </html>

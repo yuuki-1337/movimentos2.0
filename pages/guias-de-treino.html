@@ -250,6 +250,206 @@
       opacity: 1;
       pointer-events: all;
     }
+
+    .timer-container{
+  position: fixed;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  color: white;
+  width: 250px;
+  height: 70px;
+  gap: 20px;
+  top: 150px;
+  right: 50%;
+  padding: 10px;
+  transform: translate(50%, -50%);
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+}
+
+.timer-container *{
+  transition: all 0.3s ease;
+}
+
+.timer-container.active{
+  display: flex;
+}
+
+.close-timer-container{
+  position: fixed;
+  top: 220px;
+  right: 50%;
+  transform: translate(50%, -50%);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: white;
+  width: 120px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  gap: 20px;
+  border-radius: 20px;
+  z-index: 1000;
+}
+
+.close-timer-container i{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 20px;
+  cursor: pointer;
+}
+.close-timer-container i:hover{
+  filter: brightness(0.7);
+}
+
+.close-timer-container.active{
+  display: flex;
+}
+
+.time{
+  background: var(--cor-verde);
+  padding: 10px;
+  border-radius: 10px;
+  color: black;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.time:hover{
+  filter: brightness(0.7);
+}
+
+.countdown{
+  width: 100%;
+  height: 100%;
+  background: var(--cor-verde);
+  font-size: 2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 10px;
+  color: black;
+  display: none;
+  transition: all 0.3s ease;
+}
+.countdown.active{
+  display: flex;
+}
+
+.movimentos-btn{
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  bottom: 100px;
+  right: 90px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+.movimentos-btn:hover{
+  background: rgba(0, 0, 0, 0.7);
+  transform: scale(1.1);
+}
+.movimentos-btn:focus, .movimentos-btn:active{
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.movimentos-btn.active{
+  transform: scale(1);
+  background: #000;
+}
+.movimentos-btn-image{
+  margin-right: 3px;
+}
+.movimentos-button{
+  position: fixed;
+  right: 5vw;
+  bottom: 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, #000, #061736);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  width: 70px;
+  height: 70px;
+  padding: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  transform: scale(0.4);  /* encolhidos */
+  visibility: hidden;
+
+  transition:
+    transform 0.35s ease,
+    opacity 0.25s ease,
+    right 0.35s ease,
+    bottom 0.35s ease;
+  z-index: 998;
+}
+
+.movimentos-btn *{
+  transition: all 0.3s ease;
+}
+.movimentos-button a{
+  position: absolute;
+  inset: 0;
+}
+
+.agua-btn.active{
+  right: 170px;
+  bottom: 20px;
+  color: aqua;
+  opacity: 1;
+  transform: scale(1);
+  visibility: visible;
+}
+.imc-btn.active{
+  right: 210px;
+  bottom: 110px;
+  color: rgb(16, 228, 16);
+  opacity: 1;
+  transform: scale(1);
+  visibility: visible;
+}
+.metabolismo-btn.active{
+  right: 170px;
+  bottom: 200px;
+  color: rgb(255, 81, 0);
+  opacity: 1;
+  transform: scale(1);
+  visibility: visible;
+}
+.timer-btn.active{
+  right: 80px;
+  bottom: 210px;
+  color: white;
+  opacity: 1;
+  transform: scale(1);
+  visibility: visible;
+}
+.movimentos-button:hover{
+  transform: scale(1.1);
+}
+
+.movimentos-button i{
+  font-size: 2rem;
+}
     footer{
         display: flex;
         flex-direction: column;
@@ -621,6 +821,35 @@
   
       </div>
     </section>
+    <div class="movimentos-btn" id="movimentos_btn">
+        <img src="../img/logo2.png" alt="" class="movimentos-btn-image">
+      </div>
+      <div class="movimentos-button timer-btn">
+          <i class="fa-regular fa-clock"></i>
+      </div>
+      <div class="movimentos-button imc-btn">
+          <a href="./imc.html"></a>
+          <i class="fa-solid fa-person-running funcionalidades-icon"></i>
+      </div>
+      <div class="movimentos-button metabolismo-btn">
+          <a href="./tmb.html"></a>
+          <i class="fa-solid fa-fire funcionalidades-icon"></i>
+      </div>
+      <div class="movimentos-button agua-btn">
+          <a href="./agua.html"></a>
+          <i class="fa-solid fa-droplet funcionalidades-icon"></i>
+      </div>
+      <div id="overlay_movimentos"></div>
+      <div class="timer-container">
+        <p class="time" onclick="startTimer(1)">1:00</p>
+        <p class="time" onclick="startTimer(2)">2:00</p>
+        <p class="time" onclick="startTimer(5)">5:00</p>
+        <p class="countdown"></p>
+      </div>
+      <div class="close-timer-container">
+        <i class="fa-solid fa-x close-timer"></i>
+        <i class="fa-solid fa-rotate-left reset-timer"></i>
+      </div>
   </main>
     <footer>
       <img src="https://i.postimg.cc/qvMDrqYw/logo.png" alt="" class="footer-image">

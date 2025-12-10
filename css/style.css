@@ -270,8 +270,7 @@
     bottom: 100px;
     right: 90px;
     background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -362,6 +361,101 @@
     transform: scale(1);
     visibility: visible;
   }
+
+  .timer-container{
+  position: fixed;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  color: white;
+  width: 250px;
+  height: 70px;
+  gap: 20px;
+  top: 150px;
+  right: 50%;
+  padding: 10px;
+  transform: translate(50%, -50%);
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+}
+
+.timer-container *{
+  transition: all 0.3s ease;
+}
+
+.timer-container.active{
+  display: flex;
+}
+
+.close-timer-container{
+  position: fixed;
+  top: 220px;
+  right: 50%;
+  transform: translate(50%, -50%);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: white;
+  width: 120px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  gap: 20px;
+  border-radius: 20px;
+  z-index: 1000;
+}
+
+.close-timer-container i{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 20px;
+  cursor: pointer;
+}
+.close-timer-container i:hover{
+  filter: brightness(0.7);
+}
+
+.close-timer-container.active{
+  display: flex;
+}
+
+.time{
+  background: var(--cor-verde);
+  padding: 10px;
+  border-radius: 10px;
+  color: black;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.time:hover{
+  filter: brightness(0.7);
+}
+
+.countdown{
+  width: 100%;
+  height: 100%;
+  background: var(--cor-verde);
+  font-size: 2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 10px;
+  color: black;
+  display: none;
+  transition: all 0.3s ease;
+}
+.countdown.active{
+  display: flex;
+}
+
   .movimentos-button:hover{
     transform: scale(1.1);
   }
